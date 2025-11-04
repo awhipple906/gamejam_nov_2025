@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://c76or3qn4nag5"]
+
+[ext_resource type="SpriteFrames" uid="uid://dla6duj6yja06" path="res://Player/Animations/player.tres" id="1_07klf"]
+[ext_resource type="Script" uid="uid://rvhup4o0a6sb" path="res://Player/Model/test_blob.gd" id="1_nq1va"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nq1va"]
+radius = 0.2602539
+height = 1.5891113
+
+[node name="test_blob" type="CharacterBody3D"]
+script = ExtResource("1_nq1va")
+
+[node name="PlayerSprite3D" type="AnimatedSprite3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0.8601252, 0)
+sprite_frames = ExtResource("1_07klf")
+animation = &"left to right"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8473078, 0)
+shape = SubResource("CapsuleShape3D_nq1va")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.9659259, 0.25881907, 0, -0.25881907, 0.9659258, 0, 4.085728, 4.6912217)
