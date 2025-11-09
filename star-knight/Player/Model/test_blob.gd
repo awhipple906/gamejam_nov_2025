@@ -62,4 +62,5 @@ func play_animation(direction):
 	if direction.z == 1:
 		$PlayerSprite3D.play("right to left")
 		last_animation = "right to left"
+
 	

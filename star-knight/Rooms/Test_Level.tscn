@@ -1,12 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://rpad0js4gije"]
+[gd_scene load_steps=6 format=3 uid="uid://rpad0js4gije"]
 
 [ext_resource type="PackedScene" uid="uid://c76or3qn4nag5" path="res://Player/Model/test_blob.tscn" id="1_54g3h"]
+[ext_resource type="Texture2D" uid="uid://du3nal6tbelux" path="res://Art Assets/Environment/Textures/StoneFloorDiffuse.png" id="1_ma2j8"]
+[ext_resource type="PackedScene" uid="uid://4qr7arofkogc" path="res://Art Assets/Environment/pillar_2.tscn" id="3_afh5i"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ytkqd"]
 albedo_color = Color(0.27591452, 0.5381669, 0.91290975, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_54g3h"]
 albedo_color = Color(0.6213291, 0.7571598, 1, 1)
+albedo_texture = ExtResource("1_ma2j8")
+uv1_scale = Vector3(25.73, 25.73, 25.73)
+texture_filter = 0
 
 [node name="test_level" type="Node3D"]
 
@@ -29,7 +34,7 @@ size = Vector3(3.4638062, 1, 6.5195313)
 material = SubResource("StandardMaterial3D_ytkqd")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.01660204, -4.7683716e-07, -0.002957344)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.232512, -0.516552, -10.781227)
 use_collision = true
 size = Vector3(78.140625, 1, 66.208984)
 material = SubResource("StandardMaterial3D_54g3h")
@@ -40,4 +45,14 @@ shadow_enabled = true
 sky_mode = 1
 
 [node name="test_blob" parent="." instance=ExtResource("1_54g3h")]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -0.85957766, 1.5562899, 0.08414072)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.5821695, 0.85667133, -0.7405126)
+safe_margin = 0.001
+
+[node name="Pillar2" parent="." instance=ExtResource("3_afh5i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.9945083, -0.01649481, -10.665707)
+
+[node name="Pillar3" parent="." instance=ExtResource("3_afh5i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.107392, -0.01649481, -7.479048)
+
+[node name="Pillar4" parent="." instance=ExtResource("3_afh5i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.4930763, -0.016495049, -15.975691)
