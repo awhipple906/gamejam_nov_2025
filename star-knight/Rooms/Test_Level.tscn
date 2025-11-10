@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://rpad0js4gije"]
+[gd_scene load_steps=6 format=3 uid="uid://rpad0js4gije"]
 
 [ext_resource type="PackedScene" uid="uid://c76or3qn4nag5" path="res://Player/Model/test_blob.tscn" id="1_54g3h"]
+[ext_resource type="Texture2D" uid="uid://du3nal6tbelux" path="res://Art Assets/Environment/Textures/StoneFloorDiffuse.png" id="1_ma2j8"]
+[ext_resource type="PackedScene" uid="uid://4qr7arofkogc" path="res://Art Assets/Environment/pillar_2.tscn" id="3_afh5i"]
 [ext_resource type="Script" uid="uid://ro7q8a72qh5l" path="res://Rooms/test_level.gd" id="1_afh5i"]
-[ext_resource type="PackedScene" uid="uid://cwmmqhkk4jt6o" path="res://Enemies/small_enemy.tscn" id="2_ma2j8"]
 
 [sub_resource type="Environment" id="Environment_afh5i"]
 
@@ -12,8 +13,10 @@ polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 cell_height = 0.01
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_54g3h"]
-albedo_color = Color(0.6482234, 0.8247802, 0.36045134, 1)
-stencil_flags = 2
+albedo_color = Color(0.6213291, 0.7571598, 1, 1)
+albedo_texture = ExtResource("1_ma2j8")
+uv1_scale = Vector3(25.73, 25.73, 25.73)
+texture_filter = 0
 
 [node name="test_level" type="Node3D"]
 script = ExtResource("1_afh5i")
@@ -31,19 +34,26 @@ transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 25.1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.176172, 0.6160433, -11.489792)
 visible = false
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_afh5i")
-
-[node name="NavigationRegion3D" type="NavigationRegion3D" parent="WorldEnvironment"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7344961, 0)
-navigation_mesh = SubResource("NavigationMesh_bue66")
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="WorldEnvironment/NavigationRegion3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.01660204, -0.7344966, -0.002957344)
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.232512, -0.516552, -10.781227)
 use_collision = true
 size = Vector3(78.140625, 1, 66.208984)
 material = SubResource("StandardMaterial3D_54g3h")
 
-[node name="MeleeEnemy" parent="." instance=ExtResource("2_ma2j8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.208887, 1.7868986, 7.9436717)
-max_health = 15.0
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-3.7855173e-08, -0.5, 0.8660254, -2.1855694e-08, 0.8660254, 0.5, -1, 0, -4.371139e-08, 33.456345, 28.838186, 0.32318878)
+shadow_enabled = true
+sky_mode = 1
+
+[node name="test_blob" parent="." instance=ExtResource("1_54g3h")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.5821695, 0.85667133, -0.7405126)
+safe_margin = 0.001
+
+[node name="Pillar2" parent="." instance=ExtResource("3_afh5i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.9945083, -0.01649481, -10.665707)
+
+[node name="Pillar3" parent="." instance=ExtResource("3_afh5i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.107392, -0.01649481, -7.479048)
+
+[node name="Pillar4" parent="." instance=ExtResource("3_afh5i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.4930763, -0.016495049, -15.975691)
