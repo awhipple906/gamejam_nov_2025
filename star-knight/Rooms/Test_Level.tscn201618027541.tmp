@@ -29,7 +29,6 @@ transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 25.1
 
 [node name="SmallEnemy" parent="." instance=ExtResource("2_ma2j8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.176172, 0.6160433, -11.489792)
-visible = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_afh5i")

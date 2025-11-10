@@ -1,0 +1,88 @@
+[gd_resource type="SpriteFrames" load_steps=13 format=3 uid="uid://b8bhdylkk1je6"]
+
+[ext_resource type="Texture2D" uid="uid://dd45ehucalgar" path="res://Enemies/GrobCat/EnemyGrobcatSpriteSheet.png" id="1_wl2am"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ibjvx"]
+atlas = ExtResource("1_wl2am")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d6qm4"]
+atlas = ExtResource("1_wl2am")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gimvf"]
+atlas = ExtResource("1_wl2am")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7r8wg"]
+atlas = ExtResource("1_wl2am")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_llexo"]
+atlas = ExtResource("1_wl2am")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p54ms"]
+atlas = ExtResource("1_wl2am")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gp61u"]
+atlas = ExtResource("1_wl2am")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_herdf"]
+atlas = ExtResource("1_wl2am")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gutrl"]
+atlas = ExtResource("1_wl2am")
+region = Rect2(128, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aklg4"]
+atlas = ExtResource("1_wl2am")
+region = Rect2(160, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kf78b"]
+atlas = ExtResource("1_wl2am")
+region = Rect2(192, 64, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ibjvx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d6qm4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gimvf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7r8wg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_llexo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p54ms")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gp61u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_herdf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gutrl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aklg4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kf78b")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
