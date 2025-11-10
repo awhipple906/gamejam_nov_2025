@@ -7,8 +7,7 @@
 radius = 0.2602539
 height = 1.5891113
 
-[node name="test_blob" type="CharacterBody3D"]
-safe_margin = 0.01
+[node name="player" type="CharacterBody3D"]
 script = ExtResource("1_nq1va")
 
 [node name="PlayerSprite3D" type="AnimatedSprite3D" parent="."]

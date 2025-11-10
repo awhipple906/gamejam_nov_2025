@@ -4,4 +4,3 @@
 
 [node name="HealthComponent" type="Node3D"]
 script = ExtResource("1_wqj2l")
-MAX_HEALTH = null

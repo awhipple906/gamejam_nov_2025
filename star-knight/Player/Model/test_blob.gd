@@ -17,7 +17,7 @@ func _physics_process(delta):
 		input_direction_2D.x, 0.0, input_direction_2D.y
 	)
 	var direction = transform.basis * input_direction_3D
-	print(direction)
+	#print(direction)
 	play_animation(direction)
 	
 	
@@ -44,6 +44,8 @@ func _physics_process(delta):
 		velocity.y = 10.0
 	elif Input.is_action_just_released("jump") and velocity.y > 0.0:
 		velocity.y = 0.0
+	elif Input.is_action_just_pressed("primary_attack"):
+		swing(direction)
 	
 	move_and_slide()
 	
@@ -64,3 +66,10 @@ func play_animation(direction):
 		last_animation = "right to left"
 
 	
+func swing(direction):
+		var attack_angle = direction.z
+		print("Attack angle: " + str(attack_angle))
+		if attack_angle < 0:
+			print("Attacking Right")
+		else:
+			print("Attacking Left")
