@@ -7,14 +7,16 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u8p50"]
 height = 1.7836914
 
-[node name="GrobCat" type="CharacterBody3D"]
+[node name="GrobCat" type="CharacterBody3D" node_paths=PackedStringArray("animation")]
 script = ExtResource("1_iahmm")
+animation = NodePath("GrobCatSprite3d")
 
 [node name="GrobCatSprite3d" parent="." instance=ExtResource("1_l4lsv")]
 unique_name_in_owner = true
-transform = Transform3D(-2.1855696e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855696e-07, 0, 1, 0)
+transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, 0, 1, 0)
 sprite_frames = ExtResource("2_iahmm")
-animation = &"idle"
+animation = &"attack"
+frame_progress = 0.1455945
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1081543, 0)

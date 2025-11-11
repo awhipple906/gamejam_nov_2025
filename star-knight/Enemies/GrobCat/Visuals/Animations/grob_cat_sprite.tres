@@ -68,8 +68,8 @@ animations = [{
 "texture": SubResource("AtlasTexture_hnma7")
 }],
 "loop": true,
-"name": &"bite",
-"speed": 5.0
+"name": &"attack",
+"speed": 9.0
 }, {
 "frames": [{
 "duration": 1.0,
