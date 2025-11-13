@@ -11,6 +11,7 @@ height = 1.5891113
 
 [node name="player" type="CharacterBody3D" node_paths=PackedStringArray("playerHitboxComponent")]
 script = ExtResource("1_nq1va")
+speed = 15
 playerHitboxComponent = NodePath("HitboxComponent")
 
 [node name="PlayerSprite3D" type="AnimatedSprite3D" parent="."]
@@ -32,4 +33,4 @@ fov = 50.0
 health_component = NodePath("../HealthComponent")
 
 [node name="HealthComponent" parent="." instance=ExtResource("4_800hy")]
-MAX_HEALTH = 20
+MAX_HEALTH = 100
