@@ -10,18 +10,6 @@ class_name AttackStats
 var isOnCoolDown = false
 var attack_hit_box : CollisionShape3D
 
-func _on_hitbox_area_entered(area):
-	if area is HitboxComponent:
-		print("HITBOX ENTERED")
-		var hitbox : HitboxComponent = area
-	
-		var attack = Attack.new()
-		attack.attack_damage = damage
-		attack.knockback_force = knockback_force
-		
-		print("Dealing: " + str(damage) + " to Player")
-		hitbox.damage(attack)
-
 
 func _do_attack(body: Node3D) -> void:
 	if body is Player and !isOnCoolDown:
