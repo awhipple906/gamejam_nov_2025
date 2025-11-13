@@ -1,12 +1,19 @@
 extends CharacterBody3D
+class_name Player
 
 # How fast the player moves in meters per second.
 @export var speed = 14
 # The downward acceleration when in the air, in meters per second squared.
 @export var fall_acceleration = 75
-
+@export var playerHitboxComponent : HitboxComponent
 var target_velocity = Vector3.ZERO
 var last_animation = "idle"
+var health
+
+func _ready() -> void:
+	var health = playerHitboxComponent.health_component.health
+
+
 func _physics_process(delta):
 	const SPEED = 5.5
 	var input_direction_2D = Input.get_vector(
@@ -73,3 +80,9 @@ func swing(direction):
 			print("Attacking Right")
 		else:
 			print("Attacking Left")
+			
+func damage(attack_damage):
+	health =- attack_damage
+	print(health)
+	if health <= 0:
+		print("YOU ARE DEAD")

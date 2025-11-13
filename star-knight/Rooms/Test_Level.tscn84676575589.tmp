@@ -32,6 +32,8 @@ sky_mode = 1
 [node name="test_blob" parent="." instance=ExtResource("1_54g3h")]
 unique_name_in_owner = true
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.5821695, 0.85667133, -0.7405126)
+speed = 14
+fall_acceleration = 75
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_bue66")

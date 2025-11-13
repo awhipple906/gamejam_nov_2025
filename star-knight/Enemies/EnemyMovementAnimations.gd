@@ -11,6 +11,7 @@ func play_movement_animations(velocity):
 	if animation == null:
 		return
 	else:
+		#print("Playing Animation: " + str(last_animation))
 		if velocity.x < 0:
 			animation.play(last_animation)
 		if velocity.z < 0:
@@ -26,10 +27,15 @@ func play_movement_animations(velocity):
 			last_animation = "move"
 			current_face = "L"
 
-func play_attack_animations():
+func play_attack_animation():
+	print("Playing Attack Animations -------")
 	if current_face == "R":
 		animation.flip_h = true
 		animation.play("attack")
 	else:
 		animation.flip_h = false
 		animation.play("attack")
+
+func play_idle_animation():
+	print("--------- Playing Idle Animations")
+	animation.play("idle")
