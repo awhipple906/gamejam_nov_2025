@@ -1,58 +1,150 @@
-[gd_scene load_steps=6 format=3 uid="uid://rpad0js4gije"]
+[gd_scene load_steps=13 format=3 uid="uid://rpad0js4gije"]
 
 [ext_resource type="PackedScene" uid="uid://c76or3qn4nag5" path="res://Player/Model/test_blob.tscn" id="1_54g3h"]
 [ext_resource type="Texture2D" uid="uid://du3nal6tbelux" path="res://Art Assets/Environment/Textures/StoneFloorDiffuse.png" id="1_ma2j8"]
 [ext_resource type="PackedScene" uid="uid://4qr7arofkogc" path="res://Art Assets/Environment/pillar_2.tscn" id="3_afh5i"]
+[ext_resource type="PackedScene" uid="uid://b8ee46qphe5mo" path="res://Art Assets/Environment/pillar_broken_2.tscn" id="4_nkk0n"]
+[ext_resource type="PackedScene" uid="uid://d27fvc1n8usxn" path="res://Art Assets/Environment/orb_light.tscn" id="5_pgdpv"]
+[ext_resource type="PackedScene" uid="uid://xibr25nsnhu1" path="res://Art Assets/Environment/platform_1.tscn" id="6_pgdpv"]
+[ext_resource type="PackedScene" uid="uid://biv3bo2vdmxlo" path="res://Art Assets/Environment/item_pedestal.tscn" id="7_3jybe"]
+[ext_resource type="PackedScene" uid="uid://dbeeyfnjo30ug" path="res://Art Assets/Environment/door_2.tscn" id="8_kmmdh"]
+[ext_resource type="PackedScene" uid="uid://chh2rk7rvthi5" path="res://Art Assets/Environment/spikes.tscn" id="9_gq7we"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ytkqd"]
-albedo_color = Color(0.27591452, 0.5381669, 0.91290975, 1)
+albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_54g3h"]
-albedo_color = Color(0.6213291, 0.7571598, 1, 1)
+specular_mode = 1
 albedo_texture = ExtResource("1_ma2j8")
-uv1_scale = Vector3(25.73, 25.73, 25.73)
+uv1_scale = Vector3(30, 30, 30)
 texture_filter = 0
+
+[sub_resource type="Environment" id="Environment_nkk0n"]
+background_mode = 1
+ssr_enabled = true
+glow_enabled = true
+fog_mode = 1
+fog_density = 1.0
+fog_height_density = 4.4731
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.005
+volumetric_fog_sky_affect = 0.226
+adjustment_enabled = true
+adjustment_saturation = 1.5
 
 [node name="test_level" type="Node3D"]
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -13.635975, 2.1320343, 3.4174538)
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+stretch_shrink = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(288, 162)
+render_target_update_mode = 4
+
+[node name="CSGBox3D" type="CSGBox3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -41.95505, 1.282587, -10.775295)
 use_collision = true
-size = Vector3(3.4638062, 1, 6.5195313)
+size = Vector3(3.4638062, 1, 65.51001)
 material = SubResource("StandardMaterial3D_ytkqd")
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="."]
-transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -1.1342793, 2.1320343, -15.659435)
+[node name="CSGBox3D3" type="CSGBox3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 36.409813, 1.282587, -11.377087)
 use_collision = true
-size = Vector3(3.4638062, 1, 6.5195313)
+size = Vector3(3.4638062, 1, 65.10864)
 material = SubResource("StandardMaterial3D_ytkqd")
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="."]
-transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -23.988346, 2.1320343, -15.659435)
+[node name="CSGBox3D4" type="CSGBox3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(1.9106855e-15, -4.371139e-08, -1, -1, -4.371139e-08, 0, -4.371139e-08, 1, -4.371139e-08, -2.8155556, 1.282587, -43.739384)
 use_collision = true
-size = Vector3(3.4638062, 1, 6.5195313)
+size = Vector3(3.4638062, 1, 79.6405)
 material = SubResource("StandardMaterial3D_ytkqd")
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+[node name="CSGBox3D2" type="CSGBox3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.232512, -0.516552, -10.781227)
 use_collision = true
 size = Vector3(78.140625, 1, 66.208984)
 material = SubResource("StandardMaterial3D_54g3h")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-3.7855173e-08, -0.5, 0.8660254, -2.1855694e-08, 0.8660254, 0.5, -1, 0, -4.371139e-08, 33.456345, 28.838186, 0.32318878)
-shadow_enabled = true
-sky_mode = 1
+[node name="CSGBox3D5" type="CSGBox3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(1.9106855e-15, -4.371139e-08, -1, -1, -4.371139e-08, 0, -4.371139e-08, 1, -4.371139e-08, -2.8155556, 1.282587, 20.601803)
+use_collision = true
+size = Vector3(3.4638062, 1, 79.6405)
+material = SubResource("StandardMaterial3D_ytkqd")
 
-[node name="test_blob" parent="." instance=ExtResource("1_54g3h")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.5821695, 0.85667133, -0.7405126)
+[node name="test_blob" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_54g3h")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.5821695, 0.4599986, -0.7405126)
 safe_margin = 0.001
 
-[node name="Pillar2" parent="." instance=ExtResource("3_afh5i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.9945083, -0.01649481, -10.665707)
+[node name="PillarBroken2" parent="SubViewportContainer/SubViewport" instance=ExtResource("4_nkk0n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.9466915, -0.016552925, -12.017941)
 
-[node name="Pillar3" parent="." instance=ExtResource("3_afh5i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.107392, -0.01649481, -7.479048)
+[node name="PillarBroken3" parent="SubViewportContainer/SubViewport" instance=ExtResource("4_nkk0n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.838006, -0.03310585, -9.677867)
 
-[node name="Pillar4" parent="." instance=ExtResource("3_afh5i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.4930763, -0.016495049, -15.975691)
+[node name="PillarBroken4" parent="SubViewportContainer/SubViewport" instance=ExtResource("4_nkk0n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.838006, -0.03310585, -15.695335)
+
+[node name="Pillar2" parent="SubViewportContainer/SubViewport" instance=ExtResource("3_afh5i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -12)
+
+[node name="Pillar3" parent="SubViewportContainer/SubViewport" instance=ExtResource("3_afh5i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -7)
+
+[node name="Pillar6" parent="SubViewportContainer/SubViewport" instance=ExtResource("3_afh5i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 3.9838853, -12)
+
+[node name="Pillar7" parent="SubViewportContainer/SubViewport" instance=ExtResource("3_afh5i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 3.9909258, -17)
+
+[node name="Pillar4" parent="SubViewportContainer/SubViewport" instance=ExtResource("3_afh5i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -17)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport"]
+environment = SubResource("Environment_nkk0n")
+
+[node name="OrbLight" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_pgdpv")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 9.078359, 0, -8)
+
+[node name="OrbLight2" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_pgdpv")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 9.078359, 0, -16)
+
+[node name="Platform1" parent="SubViewportContainer/SubViewport" instance=ExtResource("6_pgdpv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.209077, 0.08677975, -21.280888)
+
+[node name="Platform2" parent="SubViewportContainer/SubViewport" instance=ExtResource("6_pgdpv")]
+transform = Transform3D(0.99655247, 0.08296475, 0, -0.08296475, 0.99655247, 0, 0, 0, 1, 7.8817234, -1.462684, -21.280888)
+
+[node name="Platform3" parent="SubViewportContainer/SubViewport" instance=ExtResource("6_pgdpv")]
+transform = Transform3D(0.9924715, 0.12141721, 0.016066808, -0.12247563, 0.9838947, 0.1301961, 0, -0.13118371, 0.9913581, 10.499075, -2.7821612, -21.280888)
+
+[node name="ItemPedestal" parent="SubViewportContainer/SubViewport" instance=ExtResource("7_3jybe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.906205, -0.024162233, -4.053212)
+
+[node name="Door2" parent="SubViewportContainer/SubViewport" instance=ExtResource("8_kmmdh")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 10.411929, 0.045783848, 0.75989914)
+
+[node name="Spikes" parent="SubViewportContainer/SubViewport" instance=ExtResource("9_gq7we")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, -8)
+
+[node name="Spikes2" parent="SubViewportContainer/SubViewport" instance=ExtResource("9_gq7we")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, -9)
+
+[node name="Spikes3" parent="SubViewportContainer/SubViewport" instance=ExtResource("9_gq7we")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, -10)
+
+[node name="Spikes4" parent="SubViewportContainer/SubViewport" instance=ExtResource("9_gq7we")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, -11.456514)
+
+[node name="Spikes5" parent="SubViewportContainer/SubViewport" instance=ExtResource("9_gq7we")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, -12.643015)
+
+[node name="Platform4" parent="SubViewportContainer/SubViewport" instance=ExtResource("6_pgdpv")]
+transform = Transform3D(0.96860486, 0.23130362, -0.09112225, -0.24860536, 0.9011946, -0.35502636, 0, 0.36653373, 0.9304048, 12.613017, -3.6266303, -22.041124)
