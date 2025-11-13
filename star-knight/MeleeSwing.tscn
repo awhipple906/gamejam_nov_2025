@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxs0a0atim1wc"]
+
+[sub_resource type="GDScript" id="GDScript_wdsq2"]
+script/source = "extends Area3D
+class_name MeleeWeapon
+
+@export"
+
+[node name="MeleeSwing" type="Area3D"]
+script = SubResource("GDScript_wdsq2")
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0043557584, 0.012390554, -0.007930279)
+polygon = PackedVector2Array(0.22773606, 0.33831963, 0.19444254, 0.42604983, 0.16086453, 0.46659452, 0.08129815, 0.5175202, -0.03483495, 0.5039405, -0.16459718, 0.456504)

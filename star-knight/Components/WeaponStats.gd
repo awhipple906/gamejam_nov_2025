@@ -1,5 +1,5 @@
 extends Resource
-class_name WeaponStats
+class_name MeleeWeaponStats
 
 
 @export_group("Attack")
@@ -7,6 +7,8 @@ class_name WeaponStats
 @export var damage := 5.0
 @export var max_peirce:= 1
 @export var knockback_force := 1.0
+@export var firing_cooldown := 1.0
+var attack_direction = null
 
 func _on_hitbox_area_entered(area):
 	if area is HitboxComponent:
@@ -15,5 +17,6 @@ func _on_hitbox_area_entered(area):
 		var attack = Attack.new()
 		attack.attack_damage = damage
 		attack.knockback_force = knockback_force
+		attack.attack_position = 
 	
 		hitbox.damage(attack)

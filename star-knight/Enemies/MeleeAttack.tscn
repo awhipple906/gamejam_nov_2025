@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://csxhdjx7y84og"]
+
+[ext_resource type="Script" uid="uid://ij5808k2t5xe" path="res://Enemies/GrobCat/Scripts/AttackStats.gd" id="1_yybgn"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_yybgn"]
+
+[node name="MeleeAttack" type="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5053583, 0)
+script = ExtResource("1_yybgn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.4524061, 0)
+shape = SubResource("SphereShape3D_yybgn")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

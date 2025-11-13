@@ -1,4 +1,4 @@
-extends Area3D
+extends Node3D
 class_name HitboxComponent
 
 @export var health_component: HealthComponent

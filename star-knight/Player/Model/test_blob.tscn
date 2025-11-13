@@ -192,6 +192,8 @@ height = 1.5891113
 [node name="test_blob" type="CharacterBody3D"]
 safe_margin = 0.01
 script = ExtResource("1_nq1va")
+speed = 15
+playerHitboxComponent = NodePath("HitboxComponent")
 
 [node name="PlayerSprite3D" type="AnimatedSprite3D" parent="."]
 unique_name_in_owner = true
