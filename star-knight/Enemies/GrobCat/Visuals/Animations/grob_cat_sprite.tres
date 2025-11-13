@@ -66,10 +66,13 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hnma7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ibjvx")
 }],
-"loop": true,
-"name": &"bite",
-"speed": 5.0
+"loop": false,
+"name": &"attack",
+"speed": 9.0
 }, {
 "frames": [{
 "duration": 1.0,

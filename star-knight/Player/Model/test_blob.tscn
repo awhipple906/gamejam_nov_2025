@@ -1,14 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://c76or3qn4nag5"]
+[gd_scene load_steps=6 format=3 uid="uid://c76or3qn4nag5"]
 
 [ext_resource type="SpriteFrames" uid="uid://dla6duj6yja06" path="res://Player/Animations/player.tres" id="1_07klf"]
 [ext_resource type="Script" uid="uid://rvhup4o0a6sb" path="res://Player/Model/test_blob.gd" id="1_nq1va"]
+[ext_resource type="PackedScene" uid="uid://clurdw1xfhx5s" path="res://Components/HitboxComponent.tscn" id="3_b7dwa"]
+[ext_resource type="PackedScene" uid="uid://gk5hu7ibrphb" path="res://Components/HealthComponent.tscn" id="4_800hy"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nq1va"]
 radius = 0.2602539
 height = 1.5891113
 
-[node name="player" type="CharacterBody3D"]
+[node name="player" type="CharacterBody3D" node_paths=PackedStringArray("playerHitboxComponent")]
 script = ExtResource("1_nq1va")
+playerHitboxComponent = NodePath("HitboxComponent")
 
 [node name="PlayerSprite3D" type="AnimatedSprite3D" parent="."]
 unique_name_in_owner = true
@@ -24,3 +27,9 @@ shape = SubResource("CapsuleShape3D_nq1va")
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.9426066, 0.33390558, 0, -0.3339056, 0.94260657, 0, 5.410139, 8.093893)
 fov = 50.0
+
+[node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("3_b7dwa")]
+health_component = NodePath("../HealthComponent")
+
+[node name="HealthComponent" parent="." instance=ExtResource("4_800hy")]
+MAX_HEALTH = 20

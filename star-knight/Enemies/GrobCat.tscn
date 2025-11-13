@@ -1,23 +1,32 @@
-[gd_scene load_steps=5 format=3 uid="uid://demm2645wfky3"]
+[gd_scene load_steps=6 format=3 uid="uid://demm2645wfky3"]
 
 [ext_resource type="Script" uid="uid://qnqn4g4b4e87" path="res://Enemies/GrobCat.gd" id="1_iahmm"]
 [ext_resource type="PackedScene" uid="uid://cgu4drpwlhhc6" path="res://Enemies/GrobCat/Visuals/GrobCatSprite3D.tscn" id="1_l4lsv"]
 [ext_resource type="SpriteFrames" uid="uid://b8bhdylkk1je6" path="res://Enemies/GrobCat/Visuals/Animations/grob_cat_sprite.tres" id="2_iahmm"]
+[ext_resource type="PackedScene" uid="uid://csxhdjx7y84og" path="res://Enemies/MeleeAttack.tscn" id="4_u8p50"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u8p50"]
 height = 1.7836914
 
-[node name="GrobCat" type="CharacterBody3D"]
+[node name="GrobCat" type="CharacterBody3D" node_paths=PackedStringArray("attack_stats", "animation")]
+collision_layer = 2
 script = ExtResource("1_iahmm")
+max_speed = 2.0
+attack_stats = NodePath("MeleeAttack")
+animation = NodePath("GrobCatSprite3d")
 
 [node name="GrobCatSprite3d" parent="." instance=ExtResource("1_l4lsv")]
 unique_name_in_owner = true
-transform = Transform3D(-2.1855696e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855696e-07, 0, 1, 0)
+transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, 0, 0.8195133, 0)
 sprite_frames = ExtResource("2_iahmm")
-animation = &"idle"
+animation = &"attack"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1081543, 0)
 shape = SubResource("CapsuleShape3D_u8p50")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." groups=["Enemies"]]
+
+[node name="MeleeAttack" parent="." instance=ExtResource("4_u8p50")]
+collision_layer = 2
+attack_cooldown = 2.0
