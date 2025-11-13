@@ -46,7 +46,6 @@ func _physics_process(delta: float) -> void:
 			attack_stats._do_attack(attack_stats.get_overlapping_bodies()[0])
 		#if we aren't attacking, we are out of range and are moving instead
 		if(target_out_of_range() and !stunned and !animation.is_playing()):
-			#print("I am not stunned and player left radius. Moving animation plays and I follow player.")
 			velocity = calculate_path()
 			animation_player.play_movement_animations(velocity)
 

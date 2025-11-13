@@ -5,11 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://gk5hu7ibrphb" path="res://Components/HealthComponent.tscn" id="3_vjkck"]
 [ext_resource type="PackedScene" uid="uid://clurdw1xfhx5s" path="res://Components/HitboxComponent.tscn" id="4_b7dwa"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nq1va"]
-radius = 0.2602539
-height = 1.5891113
-
 [sub_resource type="CylinderMesh" id="CylinderMesh_udf64"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nq1va"]
+radius = 0.30517578
+height = 2.0968018
 
 [node name="test_blob" type="CharacterBody3D" node_paths=PackedStringArray("playerHitboxComponent")]
 safe_margin = 0.01
@@ -27,10 +27,6 @@ alpha_cut = 2
 texture_filter = 0
 sprite_frames = ExtResource("1_07klf")
 animation = &"left to right"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8000424, 0)
-shape = SubResource("CapsuleShape3D_nq1va")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.9061307, 0.42299786, 0, -0.42299786, 0.9061307, 0, 7.740821, 13.814444)
@@ -57,3 +53,7 @@ MAX_HEALTH = 100
 
 [node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_b7dwa")]
 health_component = NodePath("../HealthComponent")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0538876, 0)
+shape = SubResource("CapsuleShape3D_nq1va")
