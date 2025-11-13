@@ -1,187 +1,9 @@
-[gd_scene load_steps=30 format=3 uid="uid://c76or3qn4nag5"]
+[gd_scene load_steps=7 format=3 uid="uid://c76or3qn4nag5"]
 
 [ext_resource type="SpriteFrames" uid="uid://dla6duj6yja06" path="res://Player/Animations/player.tres" id="1_07klf"]
 [ext_resource type="Script" uid="uid://rvhup4o0a6sb" path="res://Player/Model/test_blob.gd" id="1_nq1va"]
-[ext_resource type="Texture2D" uid="uid://chkdto2o5u3ae" path="res://Art Assets/Sprites/KnifeSheet.png" id="3_vjkck"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_b7dwa"]
-atlas = ExtResource("3_vjkck")
-region = Rect2(0, 192, 64, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_800hy"]
-atlas = ExtResource("3_vjkck")
-region = Rect2(64, 192, 64, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_55ncu"]
-atlas = ExtResource("3_vjkck")
-region = Rect2(128, 192, 64, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5gaap"]
-atlas = ExtResource("3_vjkck")
-region = Rect2(192, 192, 64, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_u2a0p"]
-atlas = ExtResource("3_vjkck")
-region = Rect2(256, 192, 64, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mmyqk"]
-atlas = ExtResource("3_vjkck")
-region = Rect2(0, 48, 64, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dyrfo"]
-atlas = ExtResource("3_vjkck")
-region = Rect2(64, 48, 64, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bs186"]
-atlas = ExtResource("3_vjkck")
-region = Rect2(128, 48, 64, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4h54n"]
-atlas = ExtResource("3_vjkck")
-region = Rect2(192, 48, 64, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gcjr7"]
-atlas = ExtResource("3_vjkck")
-region = Rect2(256, 48, 64, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ayvkf"]
-atlas = ExtResource("3_vjkck")
-region = Rect2(320, 48, 64, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x7t75"]
-atlas = ExtResource("3_vjkck")
-region = Rect2(384, 48, 64, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8tt1p"]
-atlas = ExtResource("3_vjkck")
-region = Rect2(448, 48, 64, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mgfca"]
-atlas = ExtResource("3_vjkck")
-region = Rect2(512, 48, 64, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pw4yr"]
-atlas = ExtResource("3_vjkck")
-region = Rect2(0, 0, 64, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_iskjt"]
-atlas = ExtResource("3_vjkck")
-region = Rect2(64, 0, 64, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cdxvs"]
-atlas = ExtResource("3_vjkck")
-region = Rect2(128, 0, 64, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0460u"]
-atlas = ExtResource("3_vjkck")
-region = Rect2(192, 0, 64, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wm0hg"]
-atlas = ExtResource("3_vjkck")
-region = Rect2(256, 0, 64, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ilnrs"]
-atlas = ExtResource("3_vjkck")
-region = Rect2(320, 0, 64, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_66lpm"]
-atlas = ExtResource("3_vjkck")
-region = Rect2(384, 0, 64, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_arfbj"]
-atlas = ExtResource("3_vjkck")
-region = Rect2(448, 0, 64, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0xnxs"]
-atlas = ExtResource("3_vjkck")
-region = Rect2(512, 0, 64, 48)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_udf64"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_b7dwa")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_800hy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_55ncu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5gaap")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_u2a0p")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mmyqk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dyrfo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bs186")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4h54n")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gcjr7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ayvkf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_x7t75")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8tt1p")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mgfca")
-}],
-"loop": true,
-"name": &"move left",
-"speed": 9.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pw4yr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_iskjt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cdxvs")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0460u")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wm0hg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ilnrs")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_66lpm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_arfbj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0xnxs")
-}],
-"loop": true,
-"name": &"move right",
-"speed": 9.0
-}]
+[ext_resource type="PackedScene" uid="uid://gk5hu7ibrphb" path="res://Components/HealthComponent.tscn" id="3_vjkck"]
+[ext_resource type="PackedScene" uid="uid://clurdw1xfhx5s" path="res://Components/HitboxComponent.tscn" id="4_b7dwa"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nq1va"]
 radius = 0.2602539
@@ -189,7 +11,7 @@ height = 1.5891113
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_udf64"]
 
-[node name="test_blob" type="CharacterBody3D"]
+[node name="test_blob" type="CharacterBody3D" node_paths=PackedStringArray("playerHitboxComponent")]
 safe_margin = 0.01
 script = ExtResource("1_nq1va")
 speed = 15
@@ -205,13 +27,6 @@ alpha_cut = 2
 texture_filter = 0
 sprite_frames = ExtResource("1_07klf")
 animation = &"left to right"
-
-[node name="KnifeSprite3D" type="AnimatedSprite3D" parent="."]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 1.206, 0.0039645135)
-texture_filter = 0
-sprite_frames = SubResource("SpriteFrames_udf64")
-animation = &"move right"
-frame_progress = 0.7914342
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8000424, 0)
@@ -236,3 +51,9 @@ layers = 512
 cast_shadow = 3
 gi_mode = 2
 mesh = SubResource("CylinderMesh_udf64")
+
+[node name="HealthComponent" parent="." instance=ExtResource("3_vjkck")]
+MAX_HEALTH = 100
+
+[node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_b7dwa")]
+health_component = NodePath("../HealthComponent")
