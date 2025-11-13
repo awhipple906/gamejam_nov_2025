@@ -18,6 +18,7 @@ var justAttacked = false
 var current_speed := 0.0
 
 @onready var nav_agent = $NavigationAgent3D
+@onready var physicsCheckNum = int(randf_range(2,30))
 
 
 func _ready() -> void:
@@ -26,33 +27,34 @@ func _ready() -> void:
 	print(player)
 	animation_player = EnemyMovementAnimations.new()
 	animation_player.set_animation(animation)
+	print("Physics Num:" + str(physicsCheckNum))
 
 #This is the Grobcat pathing to the player
 func _physics_process(delta: float) -> void:
 	#Small if statement to ensure we aren't checking physics every single second and tanking our machines
-	if(int(delta)%10 == 0):
+	#also ensure when the enemy spawns they are set to random interval so they aren't checking the same second
+	#as all other enemies.
+	if(int(delta)%physicsCheckNum == 0):
 		canCheckPhysics = true
 	else:
 		canCheckPhysics = false
-	
 	if(canCheckPhysics):
 		#if we are touching the player start to attack and stop moving
 		if(attack_stats.has_overlapping_bodies() and !target_out_of_range() and !attack_stats.isOnCoolDown):
 			velocity = Vector3(0,0,0)
 			animation_player.play_attack_animation()
-			print("WE ATTACKING YOU!")
 			attack_stats._do_attack(attack_stats.get_overlapping_bodies()[0])
-
-		#if we aren't attacking we are out of range and are moving instead
-		if(target_out_of_range() and !stunned):
+		#if we aren't attacking, we are out of range and are moving instead
+		if(target_out_of_range() and !stunned and !animation.is_playing()):
+			#print("I am not stunned and player left radius. Moving animation plays and I follow player.")
 			velocity = calculate_path()
 			animation_player.play_movement_animations(velocity)
-			isAttacking = false
-			
+
 		move_and_slide()
 
 func update_target_location(target_location):
-	nav_agent.target_position = target_location
+	if(canCheckPhysics):
+		nav_agent.target_position = target_location
 
 func target_out_of_range():
 	if !player:

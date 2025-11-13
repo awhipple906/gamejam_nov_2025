@@ -23,6 +23,7 @@ texture_filter = 0
 script = ExtResource("1_afh5i")
 
 [node name="GrobCat" parent="." groups=["Enemies"] instance=ExtResource("1_bue66")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.427989, 0, 3.5406144)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-3.7855173e-08, -0.5, 0.8660254, -2.1855694e-08, 0.8660254, 0.5, -1, 0, -4.371139e-08, 33.456345, 28.838186, 0.32318878)
