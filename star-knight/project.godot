@@ -58,6 +58,12 @@ primary_attack={
 ]
 }
 
+[layer_names]
+
+3d_render/layer_2="Player Layer"
+3d_render/layer_3="Lights"
+3d_render/layer_10="Player Drop Shadow"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
