@@ -1,0 +1,54 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://pc8upnhhvw87"]
+
+[ext_resource type="Texture2D" uid="uid://beku6n0p42cs0" path="res://Art Assets/UI/HealthContainer.png" id="1_14riw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65kfq"]
+atlas = ExtResource("1_14riw")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b3dh1"]
+atlas = ExtResource("1_14riw")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3uomg"]
+atlas = ExtResource("1_14riw")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sb7v5"]
+atlas = ExtResource("1_14riw")
+region = Rect2(0, 0, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65kfq")
+}],
+"loop": true,
+"name": &"0 health",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b3dh1")
+}],
+"loop": true,
+"name": &"1 health",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3uomg")
+}],
+"loop": true,
+"name": &"2 health",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sb7v5")
+}],
+"loop": true,
+"name": &"3 health",
+"speed": 5.0
+}]
