@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://0cqk3uuhs4ij"]
+
+[node name="Throt" type="CharacterBody3D"]
