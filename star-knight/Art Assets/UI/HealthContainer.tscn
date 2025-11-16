@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3jujwoowmjrl"]
+
+[ext_resource type="SpriteFrames" uid="uid://pc8upnhhvw87" path="res://Art Assets/UI/HealthContainer.tres" id="1_updro"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HealthBar" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HealthBar"]
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="health" type="TextureRect" parent="HealthBar/HBoxContainer"]
+layout_mode = 2
+
+[node name="Health" type="AnimatedSprite2D" parent="HealthBar/HBoxContainer/health"]
+position = Vector2(85, 985)
+scale = Vector2(4, 4)
+sprite_frames = ExtResource("1_updro")
+animation = &"3 health"
