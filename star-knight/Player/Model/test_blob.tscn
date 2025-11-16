@@ -57,3 +57,7 @@ health_component = NodePath("../HealthComponent")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0538876, 0)
 shape = SubResource("CapsuleShape3D_nq1va")
+
+[node name="sfx_player" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8747468, 0)
+bus = &"SFX"
