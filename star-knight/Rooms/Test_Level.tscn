@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://rpad0js4gije"]
+[gd_scene load_steps=17 format=3 uid="uid://rpad0js4gije"]
 
 [ext_resource type="PackedScene" uid="uid://c76or3qn4nag5" path="res://Player/Model/test_blob.tscn" id="1_54g3h"]
 [ext_resource type="Script" uid="uid://ro7q8a72qh5l" path="res://Rooms/test_level.gd" id="1_afh5i"]
 [ext_resource type="PackedScene" uid="uid://demm2645wfky3" path="res://Enemies/GrobCat.tscn" id="1_bue66"]
 [ext_resource type="Texture2D" uid="uid://du3nal6tbelux" path="res://Art Assets/Environment/Textures/StoneFloorDiffuse.png" id="1_ma2j8"]
+[ext_resource type="PackedScene" uid="uid://b3jujwoowmjrl" path="res://Art Assets/UI/HealthContainer.tscn" id="2_b3skl"]
 [ext_resource type="PackedScene" uid="uid://4qr7arofkogc" path="res://Art Assets/Environment/pillar_2.tscn" id="3_afh5i"]
 [ext_resource type="PackedScene" uid="uid://b8ee46qphe5mo" path="res://Art Assets/Environment/pillar_broken_2.tscn" id="4_nkk0n"]
 [ext_resource type="PackedScene" uid="uid://d27fvc1n8usxn" path="res://Art Assets/Environment/orb_light.tscn" id="5_pgdpv"]
@@ -41,19 +42,25 @@ adjustment_saturation = 1.5
 [node name="test_level" type="Node3D"]
 script = ExtResource("1_afh5i")
 
+[node name="HealthContainer" parent="." instance=ExtResource("2_b3skl")]
+offset_top = -2.0
+offset_bottom = -2.0
+
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+texture_filter = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_stretch_ratio = 0.0
 stretch = true
-stretch_shrink = 4
+stretch_shrink = 5
 metadata/_edit_use_anchors_ = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 handle_input_locally = false
-size = Vector2i(288, 162)
+size = Vector2i(384, 216)
 render_target_update_mode = 4
 
 [node name="test_blob" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_54g3h")]
@@ -64,6 +71,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.58
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.427989, 0, 3.5406144)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="SubViewportContainer/SubViewport"]
+top_level = true
 navigation_mesh = SubResource("NavigationMesh_qo3sl")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="SubViewportContainer/SubViewport/NavigationRegion3D"]

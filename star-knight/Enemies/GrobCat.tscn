@@ -33,4 +33,10 @@ shape = SubResource("CapsuleShape3D_u8p50")
 collision_layer = 2
 attack_cooldown = 1.0
 
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.44496584, 5.9241886, 0)
+light_energy = 16.0
+spot_range = 5.794
+spot_angle = 9.100063
+
 [connection signal="animation_finished" from="GrobCatSprite3d" to="." method="_on_grob_cat_attack_loop_finished"]
