@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://chh2rk7rvthi5"]
+
+[ext_resource type="PackedScene" uid="uid://dsqg0a7qvjmcw" path="res://Rooms/Traps/Spikes/Spikes.glb" id="1_gd3dw"]
+[ext_resource type="Script" uid="uid://dhsb1f0ll5adf" path="res://Rooms/Traps/Spikes/spikes.gd" id="2_hm3d8"]
+[ext_resource type="PackedScene" uid="uid://csxhdjx7y84og" path="res://Enemies/MeleeAttack.tscn" id="2_mqp8w"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mqp8w"]
+albedo_color = Color(0.66, 0.55132, 0.5346, 1)
+metallic = 1.0
+roughness = 0.35
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gd3dw"]
+size = Vector3(1.059082, 0.09446716, 1.0511475)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jkcxc"]
+size = Vector3(1, 0.38537598, 1)
+
+[node name="Spikes" node_paths=PackedStringArray("attack_stats") instance=ExtResource("1_gd3dw")]
+script = ExtResource("2_hm3d8")
+attack_stats = NodePath("SpikeMeleeAttack")
+
+[node name="Cube" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_mqp8w")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube" index="0"]
+collision_layer = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0021972656, 0.0043258667, -0.004211426)
+shape = SubResource("BoxShape3D_gd3dw")
+
+[node name="SpikeMeleeAttack" parent="." index="1" node_paths=PackedStringArray("attack_hitbox") instance=ExtResource("2_mqp8w")]
+collision_layer = 4
+collision_mask = 3
+damage = 1.0
+attack_cooldown = 1.0
+attack_hitbox = NodePath("CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpikeMeleeAttack" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.28333497, 0)
+shape = SubResource("BoxShape3D_jkcxc")

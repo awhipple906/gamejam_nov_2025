@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dsqg0a7qvjmcw"
-path="res://.godot/imported/Spikes.glb-49558d3e24b7c5fa7cf37b959f2b685b.scn"
+path="res://.godot/imported/Spikes.glb-caba611a12c96cdca984c5a7dcba2ef1.scn"
 
 [deps]
 
-source_file="res://Art Assets/Environment/Spikes.glb"
-dest_files=["res://.godot/imported/Spikes.glb-49558d3e24b7c5fa7cf37b959f2b685b.scn"]
+source_file="res://Rooms/Traps/Spikes/Spikes.glb"
+dest_files=["res://.godot/imported/Spikes.glb-caba611a12c96cdca984c5a7dcba2ef1.scn"]
 
 [params]
 

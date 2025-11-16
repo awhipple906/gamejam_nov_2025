@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://c76or3qn4nag5"]
 
 [ext_resource type="SpriteFrames" uid="uid://dla6duj6yja06" path="res://Player/Animations/player.tres" id="1_07klf"]
-[ext_resource type="Script" uid="uid://rvhup4o0a6sb" path="res://Player/Model/test_blob.gd" id="1_nq1va"]
+[ext_resource type="Script" uid="uid://rvhup4o0a6sb" path="res://Player/Model/Player.gd" id="1_nq1va"]
 [ext_resource type="PackedScene" uid="uid://gk5hu7ibrphb" path="res://Components/HealthComponent.tscn" id="3_vjkck"]
 [ext_resource type="PackedScene" uid="uid://clurdw1xfhx5s" path="res://Components/HitboxComponent.tscn" id="4_b7dwa"]
 
@@ -11,10 +11,12 @@
 radius = 0.30517578
 height = 2.0968018
 
-[node name="test_blob" type="CharacterBody3D" node_paths=PackedStringArray("playerHitboxComponent")]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("playerHitboxComponent")]
+collision_mask = 15
 safe_margin = 0.01
 script = ExtResource("1_nq1va")
 speed = 15
+fall_acceleration = null
 playerHitboxComponent = NodePath("HitboxComponent")
 
 [node name="PlayerSprite3D" type="AnimatedSprite3D" parent="."]
