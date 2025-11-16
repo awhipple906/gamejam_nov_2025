@@ -2,10 +2,10 @@
 
 [ext_resource type="SpriteFrames" uid="uid://dla6duj6yja06" path="res://Player/Animations/player.tres" id="1_07klf"]
 [ext_resource type="Script" uid="uid://rvhup4o0a6sb" path="res://Player/Model/Player.gd" id="1_nq1va"]
-[ext_resource type="AudioStream" uid="uid://dgcps7xtdmdry" path="res://Player/Audio/PlayerJump.mp3" id="3_uexeo"]
+[ext_resource type="AudioStream" uid="uid://dgcps7xtdmdry" path="res://Player/Audio/PlayerJump.mp3" id="2_uexeo"]
+[ext_resource type="AudioStream" uid="uid://8ml3kqab0xkm" path="res://Player/Audio/PlayerStep.mp3" id="3_mbhvf"]
 [ext_resource type="PackedScene" uid="uid://gk5hu7ibrphb" path="res://Components/HealthComponent.tscn" id="3_vjkck"]
 [ext_resource type="PackedScene" uid="uid://clurdw1xfhx5s" path="res://Components/HitboxComponent.tscn" id="4_b7dwa"]
-[ext_resource type="AudioStream" uid="uid://8ml3kqab0xkm" path="res://Player/Audio/PlayerStep.mp3" id="5_6g8sp"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_udf64"]
 
@@ -18,9 +18,10 @@ collision_mask = 15
 safe_margin = 0.01
 script = ExtResource("1_nq1va")
 speed = 15
+fall_acceleration = null
 playerHitboxComponent = NodePath("HitboxComponent")
-step_sfx = ExtResource("5_6g8sp")
-jump_sfx = ExtResource("3_uexeo")
+sfx_jump = ExtResource("2_uexeo")
+sfx_steps = ExtResource("3_mbhvf")
 
 [node name="PlayerSprite3D" type="AnimatedSprite3D" parent="."]
 unique_name_in_owner = true
@@ -31,14 +32,14 @@ shaded = true
 alpha_cut = 2
 texture_filter = 0
 sprite_frames = ExtResource("1_07klf")
-animation = &"idle"
+animation = &"left to right"
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.9061307, 0.42299786, 0, -0.42299786, 0.9061307, 0, 7.740821, 13.814444)
 fov = 37.849285
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 5.627448, 0.6524997)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 5.627448, 0.58914566)
 light_color = Color(0.9790618, 0.7673883, 0.5856188, 1)
 light_energy = 10.0
 shadow_enabled = true
@@ -47,7 +48,7 @@ spot_range = 12.578659
 spot_angle = 75.82859
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.06, 0, 0, 0, 1, 0, 0.08046764, 0)
+transform = Transform3D(1, 0, 0, 0, 0.06, 0, 0, 0, 1, 0, 0.29027689, 0)
 layers = 512
 cast_shadow = 3
 gi_mode = 2
@@ -63,20 +64,9 @@ health_component = NodePath("../HealthComponent")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0538876, 0)
 shape = SubResource("CapsuleShape3D_nq1va")
 
-[node name="footstep_player" type="AudioStreamPlayer3D" parent="."]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8747468, 0)
-stream = ExtResource("5_6g8sp")
-volume_db = 43.429
-bus = &"SFX"
-
-[node name="jump_player" type="AudioStreamPlayer3D" parent="."]
-unique_name_in_owner = true
-
 [node name="sfx_player" type="AudioStreamPlayer3D" parent="."]
 unique_name_in_owner = true
-unit_size = 7.0
-max_polyphony = 5
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8747468, 0)
 bus = &"SFX"
 
 [connection signal="frame_changed" from="PlayerSprite3D" to="." method="_on_player_sprite_3d_frame_changed"]

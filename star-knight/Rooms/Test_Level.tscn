@@ -60,19 +60,16 @@ metadata/_edit_use_anchors_ = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 handle_input_locally = false
+audio_listener_enable_3d = true
 size = Vector2i(384, 216)
 render_target_update_mode = 4
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(-3.7855173e-08, -0.5, 0.8660254, -2.1855694e-08, 0.8660254, 0.5, -1, 0, -4.371139e-08, 33.456345, 28.838186, 0.32318878)
-shadow_enabled = true
-sky_mode = 1
 
 [node name="Player" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_54g3h")]
 unique_name_in_owner = true
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.5821695, 0.85667133, -0.7405126)
+sfx_jump = null
 
-[node name="GrobCat" parent="SubViewportContainer/SubViewport" groups=["Enemies"] instance=ExtResource("1_bue66")]
+[node name="GrobCat" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_bue66")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.427989, 0, 3.5406144)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="SubViewportContainer/SubViewport"]
@@ -168,10 +165,10 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 10.4
 [node name="Spikes" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("9_gq7we")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0.3220688, -8)
 
-[node name="Platform4" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("6_pgdpv")]
+[node name="Platform5" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("6_pgdpv")]
 transform = Transform3D(0.96860486, 0.23130362, -0.09112225, -0.24860536, 0.9011946, -0.35502636, 0, 0.36653373, 0.9304048, 12.613017, -3.6266303, -22.041124)
 
-[node name="GrobCat" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_bue66")]
-
 [node name="GrobCat2" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_bue66")]
+
+[node name="GrobCat3" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_bue66")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.495576)
