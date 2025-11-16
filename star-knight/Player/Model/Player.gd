@@ -6,6 +6,12 @@ class_name Player
 # The downward acceleration when in the air, in meters per second squared.
 @export var fall_acceleration = 75
 @export var playerHitboxComponent : HitboxComponent
+
+# Audio for player actions
+@export var sfx_jump: AudioStreamPlayer3D
+@export var sfx_footsteps: AudioStreamPlayer3D
+
+
 var target_velocity = Vector3.ZERO
 var last_animation = "idle"
 var health
@@ -86,3 +92,9 @@ func damage(attack_damage):
 	print(health)
 	if health <= 0:
 		print("YOU ARE DEAD")
+
+func load_sfx(sfx_to_load):
+	if %sfx_player.stream != sfx_to_load:
+		%sfx_player.stop()
+		%sfx_player.stream = sfx_to_load
+	
