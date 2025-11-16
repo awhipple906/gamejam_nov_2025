@@ -72,7 +72,7 @@ sky_mode = 1
 unique_name_in_owner = true
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.5821695, 0.85667133, -0.7405126)
 
-[node name="GrobCat" parent="SubViewportContainer/SubViewport" groups=["Enemies"] instance=ExtResource("1_bue66")]
+[node name="GrobCat" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_bue66")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.427989, 0, 3.5406144)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="SubViewportContainer/SubViewport"]
@@ -168,10 +168,10 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 10.4
 [node name="Spikes" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("9_gq7we")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0.3220688, -8)
 
-[node name="Platform4" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("6_pgdpv")]
+[node name="Platform5" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("6_pgdpv")]
 transform = Transform3D(0.96860486, 0.23130362, -0.09112225, -0.24860536, 0.9011946, -0.35502636, 0, 0.36653373, 0.9304048, 12.613017, -3.6266303, -22.041124)
 
-[node name="GrobCat" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_bue66")]
-
 [node name="GrobCat2" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_bue66")]
+
+[node name="GrobCat3" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_bue66")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.495576)
