@@ -1,0 +1,106 @@
+[gd_scene load_steps=9 format=3 uid="uid://b878hlw5qq1no"]
+
+[ext_resource type="Script" uid="uid://ixsdjpvabf2t" path="res://Rooms/dialogictest.gd" id="1_3xwsl"]
+[ext_resource type="PackedScene" uid="uid://c76or3qn4nag5" path="res://Player/Model/Player.tscn" id="1_qaxxx"]
+[ext_resource type="PackedScene" uid="uid://b3jujwoowmjrl" path="res://Art Assets/UI/HealthContainer.tscn" id="1_rfad5"]
+[ext_resource type="Texture2D" uid="uid://du3nal6tbelux" path="res://Art Assets/Environment/Textures/StoneFloorDiffuse.png" id="1_tyfgm"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_oebwd"]
+vertices = PackedVector3Array(-41.6358, 3.48345, 20.5106, -41.8858, 3.48345, -43.2394, -42.1358, 3.48345, -43.7394, -42.1358, 3.48345, 21.5106, -41.6358, 3.48345, 20.7606, 36.6142, 3.48345, -43.7394, 36.1142, 3.48345, -43.4894, 36.3642, 3.48345, 20.2606, 36.6142, 3.48345, 20.7606, -42.1358, 3.48345, -43.7394, -41.8858, 3.48345, -43.2394, 36.1142, 3.48345, -43.4894, 36.6142, 3.48345, -43.7394, 36.3642, 3.48345, 20.2606, -41.6358, 3.48345, 20.5106, -41.6358, 3.48345, 20.7606, 36.6142, 3.48345, 20.7606, -40.8858, 0.483448, -42.4894, -40.8858, 0.483448, 19.5106, 35.3642, 0.483448, 19.5106, 35.3642, 0.483448, -42.4894)
+polygons = [PackedInt32Array(4, 3, 0), PackedInt32Array(0, 3, 1), PackedInt32Array(1, 3, 2), PackedInt32Array(6, 5, 7), PackedInt32Array(7, 5, 8), PackedInt32Array(10, 9, 11), PackedInt32Array(11, 9, 12), PackedInt32Array(14, 13, 15), PackedInt32Array(15, 13, 16), PackedInt32Array(20, 19, 17), PackedInt32Array(17, 19, 18)]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tegom"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8gjw2"]
+specular_mode = 1
+albedo_texture = ExtResource("1_tyfgm")
+uv1_scale = Vector3(30, 30, 30)
+texture_filter = 0
+
+[sub_resource type="Environment" id="Environment_05ngv"]
+background_mode = 1
+ssr_enabled = true
+glow_enabled = true
+fog_density = 1.0
+fog_height_density = 4.4731
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.005
+volumetric_fog_sky_affect = 0.226
+adjustment_enabled = true
+adjustment_saturation = 1.5
+
+[node name="Dialogictest" type="Node3D"]
+script = ExtResource("1_3xwsl")
+
+[node name="HealthContainer" parent="." instance=ExtResource("1_rfad5")]
+offset_top = -2.0
+offset_bottom = -2.0
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_stretch_ratio = 0.0
+stretch = true
+stretch_shrink = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(384, 216)
+render_target_update_mode = 4
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(-3.78552e-08, -0.5, 0.866025, -2.18557e-08, 0.866025, 0.5, -1, 0, -4.37114e-08, 33.4563, 28.8382, 0.323189)
+shadow_enabled = true
+sky_mode = 1
+
+[node name="Player" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_qaxxx")]
+unique_name_in_owner = true
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.58217, 0.856671, -0.740513)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="SubViewportContainer/SubViewport"]
+unique_name_in_owner = true
+navigation_mesh = SubResource("NavigationMesh_oebwd")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="SubViewportContainer/SubViewport/NavigationRegion3D"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -41.9551, 1.28259, -10.7753)
+use_collision = true
+collision_mask = 2
+size = Vector3(3.46381, 1, 65.51)
+material = SubResource("StandardMaterial3D_tegom")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="SubViewportContainer/SubViewport/NavigationRegion3D"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 36.4098, 1.28259, -11.3771)
+use_collision = true
+collision_mask = 2
+size = Vector3(3.46381, 1, 65.1086)
+material = SubResource("StandardMaterial3D_tegom")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="SubViewportContainer/SubViewport/NavigationRegion3D"]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, -2.81556, 1.28259, -43.7394)
+use_collision = true
+collision_mask = 2
+size = Vector3(3.46381, 1, 79.6405)
+material = SubResource("StandardMaterial3D_tegom")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="SubViewportContainer/SubViewport/NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.23251, -0.516552, -10.7812)
+use_collision = true
+collision_mask = 2
+size = Vector3(78.1406, 1, 66.209)
+material = SubResource("StandardMaterial3D_8gjw2")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="SubViewportContainer/SubViewport/NavigationRegion3D"]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, -2.81556, 1.28259, 20.6018)
+use_collision = true
+collision_mask = 2
+size = Vector3(3.46381, 1, 79.6405)
+material = SubResource("StandardMaterial3D_tegom")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport/NavigationRegion3D"]
+environment = SubResource("Environment_05ngv")
