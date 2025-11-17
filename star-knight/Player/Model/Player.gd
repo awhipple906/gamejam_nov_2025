@@ -106,5 +106,5 @@ func _on_player_sprite_3d_frame_changed():
 	if %PlayerSprite3D.animation == 'idle': return
 	if %PlayerSprite3D.animation == 'jump': return
 	load_sfx(step_sfx)
-	if %PlayerSprite3D.frame in step_frames: %sfx_player.play()
+	if %PlayerSprite3D.frame in step_frames and is_on_floor(): %sfx_player.play()
 	
