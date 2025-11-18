@@ -62,6 +62,7 @@ sky_mode = 1
 [node name="Player" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_qaxxx")]
 unique_name_in_owner = true
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.58217, 0.856671, -0.740513)
+fall_acceleration = 75
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="SubViewportContainer/SubViewport"]
 unique_name_in_owner = true
