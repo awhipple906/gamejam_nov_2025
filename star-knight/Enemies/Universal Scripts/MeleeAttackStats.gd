@@ -1,5 +1,5 @@
 extends Area3D
-class_name AttackStats
+class_name MeleeAttackStats
 
 #@export_group("Attack")
 @export var speed := 200.0
@@ -11,7 +11,7 @@ class_name AttackStats
 @export var attack_hitbox : CollisionShape3D
 var isOnCoolDown = false
 
-func _check_can_attack(attack_stats : AttackStats):
+func _check_can_attack(attack_stats : MeleeAttackStats):
 	if(attack_stats.has_overlapping_bodies() and !target_out_of_range(%Player) and !attack_stats.isOnCoolDown):
 		return true
 	else:

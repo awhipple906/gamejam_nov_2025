@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://0cqk3uuhs4ij"]
+
+[ext_resource type="SpriteFrames" uid="uid://bbcqdisey8en2" path="res://Enemies/Thergg/Visuals/Thergg.tres" id="1_3hk3u"]
+[ext_resource type="Script" uid="uid://bxld7cxhpddgm" path="res://Enemies/Universal Scripts/RangedEnemyLogic.gd" id="1_dt0hm"]
+[ext_resource type="PackedScene" uid="uid://gk5hu7ibrphb" path="res://Components/HealthComponent.tscn" id="2_dt0hm"]
+[ext_resource type="PackedScene" uid="uid://clurdw1xfhx5s" path="res://Components/HitboxComponent.tscn" id="3_ub7q1"]
+[ext_resource type="PackedScene" uid="uid://c260nqlfcunl8" path="res://Enemies/Universal Scenes/RangedAttack.tscn" id="5_w2ly6"]
+[ext_resource type="Script" uid="uid://btmbiltc6d8tq" path="res://Enemies/Universal Scripts/RangedAttackStats.gd" id="6_jxwja"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3hk3u"]
+height = 2.7004395
+
+[node name="Thergg" type="CharacterBody3D" node_paths=PackedStringArray("EnemyHitboxComponent", "attack_stats", "animation")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+script = ExtResource("1_dt0hm")
+EnemyHitboxComponent = NodePath("HitboxComponent")
+attack_stats = NodePath("RangedAttack")
+animation = NodePath("AnimatedSprite3D")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 1.5177217, 0)
+sprite_frames = ExtResource("1_3hk3u")
+animation = &"attack"
+frame = 3
+frame_progress = 1.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3914795, 0)
+shape = SubResource("CapsuleShape3D_3hk3u")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="HealthComponent" parent="." instance=ExtResource("2_dt0hm")]
+
+[node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("3_ub7q1")]
+health_component = NodePath("../HealthComponent")
+
+[node name="RangedAttack" parent="." instance=ExtResource("5_w2ly6")]
+script = ExtResource("6_jxwja")
+attack_range = 10.0
