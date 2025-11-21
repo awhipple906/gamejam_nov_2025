@@ -1,6 +1,7 @@
 extends CharacterBody3D
 class_name Player
 
+@export var healthbox: AnimatedSprite2D
 # How fast the player moves in meters per second.
 @export var speed = 14
 # The downward acceleration when in the air, in meters per second squared.
@@ -18,7 +19,7 @@ var health
 
 func _ready() -> void:
 	var health = playerHitboxComponent.health_component.health
-
+	healthbox.set_frame(3)
 
 func _physics_process(delta):
 	const SPEED = 5.5
@@ -97,4 +98,8 @@ func load_sfx(sfx_to_load):
 	if %sfx_player.stream != sfx_to_load:
 		%sfx_player.stop()
 		%sfx_player.stream = sfx_to_load
+
+func losehealth():
+	var currentframe = healthbox.get_frame() 
+	healthbox.set_frame(currentframe - 1)
 	
