@@ -5,6 +5,7 @@ extends CharacterBody3D
 @export var EnemyHitboxComponent : HitboxComponent
 @export var attack_stats : RangedAttackStats
 @export var animation : AnimatedSprite3D
+@export var rangedBullet : PackedScene
 var animation_player
 var canCheckPhysics = true
 var stunned := false
@@ -22,6 +23,7 @@ func _ready() -> void:
 	animation_player = EnemyMovementAnimations.new()
 	animation_player.set_animation(animation)
 	print("Physics Num:" + str(physicsCheckNum))
+	attack_stats.isOnCoolDown =  false
 
 #This is the Enemy pathing to the player
 func _physics_process(delta: float) -> void:
@@ -40,7 +42,11 @@ func _physics_process(delta: float) -> void:
 			walking = false
 			velocity = Vector3.ZERO
 			animation_player.play_attack_animation()
-			attack_stats._fire_bullet(%Player.global_position)
+			if (!attack_stats.isOnCoolDown):
+				_shoot()
+				attack_stats.isOnCoolDown = true
+				await attack_stats.cooling_down()
+				attack_stats.isOnCoolDown = false
 		#if we aren't attacking, we are out of range and are moving instead
 
 		if(position.distance_to(%Player.global_position) < attack_stats.attack_range/2 and velocity == Vector3.ZERO):
@@ -48,7 +54,6 @@ func _physics_process(delta: float) -> void:
 			velocity = calculate_path()
 			if(velocity != Vector3.ZERO):
 				animation_player.play_movement_animations(velocity)
-				print("Resetting move animation")
 			walking = true
 			await get_tree().create_timer(1.0).timeout
 		
@@ -63,8 +68,8 @@ func update_target_location(target_location:Vector3):
 	#nav_agent.target_position = target_location * Vector3(randf_range(-1,TAU),1,randf_range(-1,TAU)).normalized()
 	if (!walking):
 		nav_agent.target_position = target_location
-		print("Walking at this speed: " + str(velocity))
-		print("Walking to this location: " + str(nav_agent.target_position))
+		#print("Walking at this speed: " + str(velocity))
+		#print("Walking to this location: " + str(nav_agent.target_position))
 	
 	#if velocity == Vector3.ZERO and canWalk:
 		#nav_agent.target_position = Vector3(randfn(0,1),1,randfn(0,1)).normalized()
@@ -80,18 +85,20 @@ func _move ():
 	if (velocity != Vector3.ZERO):
 		return false
 	else:
-		true
+		return true
 	
+func _shoot ():
+	var bullet = rangedBullet.instantiate()
+	get_parent().get_parent().add_sibling(bullet)
+	bullet.position = %SpawnBlock.global_position
+	var dir = bullet.position.direction_to(%Player.global_position)
+	#dir.x = (dir.x * 1.25)
+	bullet.global_rotation = %Player.global_position - bullet.position.normalized()
+	bullet.target_pos = dir
+	print("Where I am shootin" + str(bullet.target_pos))
+	print("Where I am at" + str(bullet.position))
+	attack_stats.isOnCoolDown = true
 	
-	
-#func _walk_till_stop(enemy_pos: Vector3, move_location_pos: Vector3):
-	#print(enemy_pos.distance_squared_to(move_location_pos))
-	#if(enemy_pos.distance_squared_to(move_location_pos) < 1.5):
-		#velocity = Vector3.ZERO
-		#canWalk = false
-	
-		#print("Enemy Current Position: " + str(enemy_pos))
-		#print("Enemy Current Destination: " + str(move_location_pos))
-
+	print()
 	
 	

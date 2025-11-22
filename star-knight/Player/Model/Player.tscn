@@ -12,6 +12,7 @@ radius = 0.30517578
 height = 2.0968018
 
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("playerHitboxComponent")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9937761, 0)
 collision_mask = 15
 safe_margin = 0.01
 script = ExtResource("1_nq1va")
@@ -21,7 +22,7 @@ playerHitboxComponent = NodePath("HitboxComponent")
 
 [node name="PlayerSprite3D" type="AnimatedSprite3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 1.2064235, 0)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0.20269227, 0)
 layers = 2
 gi_mode = 2
 shaded = true
@@ -31,11 +32,11 @@ sprite_frames = ExtResource("1_07klf")
 animation = &"left to right"
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.9061307, 0.42299786, 0, -0.42299786, 0.9061307, 0, 7.740821, 13.814444)
+transform = Transform3D(1, 0, 0, 0, 0.9061307, 0.42299786, 0, -0.42299786, 0.9061307, 0, 6.7370896, 13.814444)
 fov = 37.849285
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 5.627448, 0.58914566)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 4.623717, 0.58914566)
 light_color = Color(0.9790618, 0.7673883, 0.5856188, 1)
 light_energy = 10.0
 shadow_enabled = true
@@ -44,22 +45,24 @@ spot_range = 12.578659
 spot_angle = 75.82859
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.06, 0, 0, 0, 1, 0, 0.29027689, 0)
+transform = Transform3D(1, 0, 0, 0, 0.06, 0, 0, 0, 1, 0, -0.71345437, 0)
 layers = 512
 cast_shadow = 3
 gi_mode = 2
 mesh = SubResource("CylinderMesh_udf64")
 
 [node name="HealthComponent" parent="." instance=ExtResource("3_vjkck")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0037313, 0)
 MAX_HEALTH = 100
 
 [node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_b7dwa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0037313, 0)
 health_component = NodePath("../HealthComponent")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0538876, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.050156355, 0)
 shape = SubResource("CapsuleShape3D_nq1va")
 
 [node name="sfx_player" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8747468, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.12898445, 0)
 bus = &"SFX"
