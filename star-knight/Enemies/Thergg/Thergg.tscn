@@ -42,7 +42,7 @@ health_component = NodePath("../HealthComponent")
 [node name="RangedAttack" parent="." instance=ExtResource("5_w2ly6")]
 transform = Transform3D(-0.7489848, -0.05788108, 0.6600542, -0.07704966, 0.9970273, -3.3679475e-09, -0.658092, -0.050856955, -0.75121796, 3.2056133e-09, 1.3754313, -0.073335886)
 script = ExtResource("6_jxwja")
-attack_cooldown = 2.5
+attack_cooldown = 0.5
 attack_range = 10.0
 
 [node name="SpawnBlock" type="CSGBox3D" parent="RangedAttack"]
