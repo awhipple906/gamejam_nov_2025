@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5v5stgynop6q"
-path="res://.godot/imported/EnemyThergg-Sheet.png-8b4563243d194b2e5b529ecb215ea13b.ctex"
+uid="uid://dd45ehucalgar"
+path="res://.godot/imported/EnemyGrobcatSpriteSheet.png-3733a53c8094619fba0a8f62daed3ec3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Assets/Sprites/Enemies/EnemyThergg-Sheet.png"
-dest_files=["res://.godot/imported/EnemyThergg-Sheet.png-8b4563243d194b2e5b529ecb215ea13b.ctex"]
+source_file="res://Enemies/GrobCat/Visuals/EnemyGrobcatSpriteSheet.png"
+dest_files=["res://.godot/imported/EnemyGrobcatSpriteSheet.png-3733a53c8094619fba0a8f62daed3ec3.ctex"]
 
 [params]
 
@@ -23,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -37,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

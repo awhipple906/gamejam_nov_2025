@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://c260nqlfcunl8"]
+
+[node name="RangedAttack" type="Area3D"]

@@ -22,13 +22,13 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={}
-directories/dtl_directory={}
+directories/dtl_directory={
+"timeline": "res://timeline.dtl"
+}
 layout/style_directory={}
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
 
 [dotnet]
@@ -96,6 +96,12 @@ dialogic_default_action={
 3d_render/layer_2="Player Layer"
 3d_render/layer_3="Lights"
 3d_render/layer_10="Player Drop Shadow"
+3d_physics/layer_1="Player"
+3d_physics/layer_2="Enemies"
+3d_physics/layer_3="World"
+avoidance/layer_1="Player"
+avoidance/layer_2="Enemies"
+avoidance/layer_3="World"
 
 [physics]
 
