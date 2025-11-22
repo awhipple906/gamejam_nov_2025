@@ -31,6 +31,10 @@ layout/style_directory={}
 
 window/stretch/mode="canvas_items"
 
+[dotnet]
+
+project/assembly_name="StarKnight"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
