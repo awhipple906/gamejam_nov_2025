@@ -43,7 +43,8 @@ func _physics_process(delta: float) -> void:
 		if(!attack_stats._check_can_attack(attack_stats) and !stunned and !animation.is_playing() and attack_stats.get_overlapping_bodies().count(%Player) == 0):
 			velocity = calculate_path()
 			animation_player.play_movement_animations(velocity)
-		move_and_slide()
+			if Dialogic.VAR.Ischatting == false:
+				move_and_slide()
 
 func update_target_location(target_location):
 	nav_agent.target_position = target_location
