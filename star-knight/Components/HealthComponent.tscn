@@ -1,6 +1,28 @@
-[gd_scene load_steps=2 format=3 uid="uid://gk5hu7ibrphb"]
+[gd_scene load_steps=6 format=3 uid="uid://gk5hu7ibrphb"]
 
 [ext_resource type="Script" uid="uid://ck5obk1fo08l4" path="res://Components/HealthComponent.gd" id="1_wqj2l"]
+[ext_resource type="Texture2D" uid="uid://snqhn201yadm" path="res://Art Assets/UI/health_bar_under.png" id="2_e6553"]
+[ext_resource type="Script" uid="uid://oi5fxtric0iu" path="res://Components/health_bar.gd" id="2_q8xte"]
+[ext_resource type="Texture2D" uid="uid://dmo5ipqv2eeps" path="res://Art Assets/UI/health_bar_progress.png" id="3_dc4ng"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_e6553"]
+viewport_path = NodePath("Sprite3D/SubViewport")
 
 [node name="HealthComponent" type="Node3D"]
 script = ExtResource("1_wqj2l")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(4.4888105, 0, 0, 0, 1.5645106, 0, 0, 0, 1, 0, 2.9215202, 0)
+texture = SubResource("ViewportTexture_e6553")
+
+[node name="SubViewport" type="SubViewport" parent="Sprite3D"]
+size = Vector2i(37, 4)
+
+[node name="health_bar" type="TextureProgressBar" parent="Sprite3D/SubViewport"]
+offset_right = 2816.0
+offset_bottom = 1536.0
+scale = Vector2(0.35999984, 0.120000064)
+value = 100.0
+texture_under = ExtResource("2_e6553")
+texture_progress = ExtResource("3_dc4ng")
+script = ExtResource("2_q8xte")

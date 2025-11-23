@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 
 @export var max_speed := 5.0
-@export var EnemyHitboxComponent : HitboxComponent
+@export var hitbox : HitboxComponent
 @export var attack_stats : RangedAttackStats
 @export var animation : AnimatedSprite3D
 @export var rangedBullet : PackedScene
@@ -14,7 +14,7 @@ var walking = false
 
 @onready var nav_agent = $NavigationAgent3D
 @onready var physicsCheckNum = int(randf_range(2,30))
-@onready var max_health = EnemyHitboxComponent.health_component.health
+@onready var max_health = hitbox.health_component.health
 
 
 func _ready() -> void:
@@ -89,16 +89,16 @@ func _move ():
 	
 func _shoot ():
 	var bullet = rangedBullet.instantiate()
+	print(get_parent().get_parent())
 	get_parent().get_parent().add_sibling(bullet)
 	bullet.position = %SpawnBlock.global_position
 	var dir = bullet.position.direction_to(%Player.global_position)
 	#dir.x = (dir.x * 1.25)
 	bullet.global_rotation = %Player.global_position - bullet.position.normalized()
 	bullet.target_pos = dir
-	print("Where I am shootin" + str(bullet.target_pos))
-	print("Where I am at" + str(bullet.position))
+	#print("Where I am shootin" + str(bullet.target_pos))
+	#print("Where I am at" + str(bullet.position))
 	attack_stats.isOnCoolDown = true
-	
 	print()
 	
 	

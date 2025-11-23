@@ -13,11 +13,11 @@ height = 1.7836914
 [sub_resource type="SphereShape3D" id="SphereShape3D_8582v"]
 radius = 0.86406904
 
-[node name="GrobCat" type="CharacterBody3D" node_paths=PackedStringArray("EnemyHitboxComponent", "attack_stats", "animation") groups=["Enemies"]]
+[node name="GrobCat" type="CharacterBody3D" node_paths=PackedStringArray("hitbox", "attack_stats", "animation") groups=["Enemies"]]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_iahmm")
-EnemyHitboxComponent = NodePath("HitboxComponent")
+hitbox = NodePath("HitboxComponent")
 attack_stats = NodePath("MeleeAttack")
 animation = NodePath("GrobCatSprite3d")
 
@@ -45,6 +45,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3727051, 0)
 shape = SubResource("SphereShape3D_8582v")
 
 [node name="HealthComponent" parent="." instance=ExtResource("5_8582v")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 MAX_HEALTH = 5
 
 [node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("6_pjoyd")]
