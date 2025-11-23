@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=3 uid="uid://rpad0js4gije"]
 
 [ext_resource type="PackedScene" uid="uid://c76or3qn4nag5" path="res://Player/Model/Player.tscn" id="1_54g3h"]
-[ext_resource type="Script" path="res://Rooms/test_level.gd" id="1_afh5i"]
+[ext_resource type="Script" uid="uid://ro7q8a72qh5l" path="res://Rooms/test_level.gd" id="1_afh5i"]
 [ext_resource type="PackedScene" uid="uid://demm2645wfky3" path="res://Enemies/GrobCat/GrobCat.tscn" id="1_bue66"]
 [ext_resource type="Texture2D" uid="uid://du3nal6tbelux" path="res://Art Assets/Environment/Textures/StoneFloorDiffuse.png" id="1_ma2j8"]
 [ext_resource type="PackedScene" uid="uid://b3jujwoowmjrl" path="res://Art Assets/UI/HealthContainer.tscn" id="2_b3skl"]
@@ -180,7 +180,7 @@ transform = Transform3D(0.968605, 0.231304, -0.0911222, -0.248605, 0.901195, -0.
 [node name="GrobCat2" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_bue66")]
 
 [node name="GrobCat3" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_bue66")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.495576)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49737215, 4.495576)
 
 [node name="RaygunLaser" parent="SubViewportContainer/SubViewport" instance=ExtResource("14_t8cwk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.852095, 1.3277631, -15.074116)
