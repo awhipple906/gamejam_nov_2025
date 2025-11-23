@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dsqg0a7qvjmcw" path="res://Rooms/Traps/Spikes/Spikes.glb" id="1_gd3dw"]
 [ext_resource type="Script" uid="uid://dhsb1f0ll5adf" path="res://Rooms/Traps/Spikes/spikes.gd" id="2_hm3d8"]
-[ext_resource type="PackedScene" uid="uid://csxhdjx7y84og" path="res://Enemies/MeleeAttack.tscn" id="2_mqp8w"]
+[ext_resource type="PackedScene" uid="uid://csxhdjx7y84og" path="res://Enemies/Universal Scenes/MeleeAttack.tscn" id="2_mqp8w"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mqp8w"]
 albedo_color = Color(0.66, 0.55132, 0.5346, 1)

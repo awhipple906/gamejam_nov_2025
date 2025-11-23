@@ -4,7 +4,7 @@ extends CharacterBody3D
 @export var max_speed := 5.0
 @export var attack_range := 1.0
 @export var EnemyHitboxComponent : HitboxComponent
-@export var attack_stats : AttackStats
+@export var attack_stats : MeleeAttackStats
 @export var animation : AnimatedSprite3D
 var animation_player
 var canCheckPhysics = true
