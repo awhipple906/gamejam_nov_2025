@@ -1,0 +1,64 @@
+[gd_scene load_steps=10 format=3 uid="uid://y4u4u344sjdx"]
+
+[ext_resource type="Script" uid="uid://qnqn4g4b4e87" path="res://Enemies/Universal Scripts/MeleeEnemyLogic.gd" id="1_o7ewi"]
+[ext_resource type="PackedScene" uid="uid://cgu4drpwlhhc6" path="res://Enemies/GrobCat/Visuals/GrobCatSprite3D.tscn" id="2_112wc"]
+[ext_resource type="SpriteFrames" uid="uid://dukgfr3adjec3" path="res://Enemies/Lizkin/Animations/LizkinSpriteFrames.tres" id="3_0nhrq"]
+[ext_resource type="PackedScene" uid="uid://csxhdjx7y84og" path="res://Enemies/MeleeAttack.tscn" id="4_xro7a"]
+[ext_resource type="PackedScene" uid="uid://gk5hu7ibrphb" path="res://Components/HealthComponent.tscn" id="5_btxnx"]
+[ext_resource type="PackedScene" uid="uid://clurdw1xfhx5s" path="res://Components/HitboxComponent.tscn" id="6_oqgo6"]
+[ext_resource type="AudioStream" uid="uid://dub1lrxj5uwje" path="res://Player/Audio/GrobcatAttack.mp3" id="7_0nhrq"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u8p50"]
+height = 1.7836914
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_8582v"]
+radius = 0.86406904
+
+[node name="Lizkin" type="CharacterBody3D" node_paths=PackedStringArray("EnemyHitboxComponent", "attack_stats", "animation") groups=["Enemies"]]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_o7ewi")
+EnemyHitboxComponent = NodePath("HitboxComponent")
+attack_stats = NodePath("MeleeAttack")
+animation = NodePath("LizkinSprite3d")
+
+[node name="LizkinSprite3d" parent="." instance=ExtResource("2_112wc")]
+unique_name_in_owner = true
+transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, 0, 0.9946672, 0)
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+sprite_frames = ExtResource("3_0nhrq")
+animation = &"move"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1246414, 0)
+shape = SubResource("CapsuleShape3D_u8p50")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." groups=["Enemies"]]
+
+[node name="MeleeAttack" parent="." instance=ExtResource("4_xro7a")]
+collision_layer = 2
+attack_cooldown = 1.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeleeAttack"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3727051, 0)
+shape = SubResource("SphereShape3D_8582v")
+
+[node name="HealthComponent" parent="." instance=ExtResource("5_btxnx")]
+MAX_HEALTH = 5
+
+[node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("6_oqgo6")]
+health_component = NodePath("../HealthComponent")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.2743051, 1.9219615, 0)
+spot_range = 2.6275136
+spot_angle = 54.884914
+
+[node name="GrobcatAttackAudio" type="AudioStreamPlayer3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.98622787, 0.38527632)
+stream = ExtResource("7_0nhrq")
+
+[connection signal="animation_finished" from="LizkinSprite3d" to="." method="_on_grob_cat_attack_loop_finished"]
