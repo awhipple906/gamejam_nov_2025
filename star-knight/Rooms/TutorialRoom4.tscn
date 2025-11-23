@@ -1,17 +1,20 @@
-[gd_scene load_steps=13 format=3 uid="uid://cj8x4yy8gxlrt"]
+[gd_scene load_steps=16 format=3 uid="uid://b41buegr7642"]
 
-[ext_resource type="Script" uid="uid://ro7q8a72qh5l" path="res://Rooms/test_level.gd" id="1_w8qfc"]
+[ext_resource type="Script" uid="uid://dypbdpttdix6j" path="res://Rooms/tutorial_room_4.gd" id="1_mgoex"]
 [ext_resource type="PackedScene" uid="uid://b3jujwoowmjrl" path="res://Art Assets/UI/HealthContainer.tscn" id="2_hqval"]
 [ext_resource type="PackedScene" uid="uid://c76or3qn4nag5" path="res://Player/Model/Player.tscn" id="3_su5tm"]
-[ext_resource type="PackedScene" uid="uid://chh2rk7rvthi5" path="res://Rooms/Traps/Spikes/spikes.tscn" id="4_hqval"]
 [ext_resource type="PackedScene" uid="uid://d27fvc1n8usxn" path="res://Art Assets/Environment/orb_light.tscn" id="4_tt43h"]
 [ext_resource type="Texture2D" uid="uid://du3nal6tbelux" path="res://Art Assets/Environment/Textures/StoneFloorDiffuse.png" id="5_mgoex"]
 [ext_resource type="PackedScene" uid="uid://dbeeyfnjo30ug" path="res://Art Assets/Environment/door_2.tscn" id="5_su5tm"]
+[ext_resource type="PackedScene" uid="uid://4qr7arofkogc" path="res://Art Assets/Environment/pillar_2.tscn" id="7_mlio8"]
 [ext_resource type="PackedScene" uid="uid://biv3bo2vdmxlo" path="res://Art Assets/Environment/item_pedestal.tscn" id="7_tt43h"]
+[ext_resource type="PackedScene" uid="uid://b8ee46qphe5mo" path="res://Art Assets/Environment/pillar_broken_2.tscn" id="8_3kvwe"]
+[ext_resource type="PackedScene" uid="uid://0cqk3uuhs4ij" path="res://Enemies/Thergg/Thergg.tscn" id="10_3kvwe"]
+[ext_resource type="PackedScene" uid="uid://demm2645wfky3" path="res://Enemies/GrobCat/GrobCat.tscn" id="11_irjjd"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_qo3sl"]
-vertices = PackedVector3Array(9.849951, 0.48344803, -35.931408, 9.349951, 0.733448, -36.431408, 9.099951, 0.48344803, -35.931408, 1.0999508, 0.48344803, -35.931408, 0.5999508, 0.733448, -36.431408, 0.3499508, 0.48344803, -35.931408, 13.599951, 0.48344803, -23.931408, 13.849951, 0.48344803, -22.681408, 14.099951, 0.48344803, -22.681408, 3.8499508, 0.48344803, -35.931408, 3.8499508, 0.48344803, -37.931408, 2.5999508, 0.48344803, -37.931408, 2.3499508, 0.48344803, -35.931408, 4.849951, 0.48344803, -35.181408, -0.6500492, 0.48344803, -35.931408, -3.6500492, 0.48344803, -22.681408, 11.349951, 0.48344803, -22.681408, 11.349951, 0.48344803, -23.681408, 8.099951, 0.48344803, -35.931408, 7.849951, 0.48344803, -37.931408, 6.599951, 0.48344803, -37.931408, 6.599951, 0.48344803, -35.681408, 12.099951, 0.48344803, -24.181408, 11.099951, 0.48344803, -35.931408, 14.099951, 0.48344803, -37.931408, 11.349951, 0.48344803, -37.931408, -0.9000492, 0.48344803, -37.931408, -3.6500492, 0.48344803, -37.931408, 13.599951, 0.48344803, -21.181408, 14.099951, 0.48344803, -15.431408, -3.6500492, 0.48344803, -17.431408, -2.1500492, 0.48344803, -17.431408, -1.4000492, 0.48344803, -15.431408, 11.349951, 0.48344803, -21.431408, 12.099951, 0.48344803, -20.931408, -3.6500492, 0.48344803, -13.931408, -3.6500492, 0.48344803, 0.31859207, -2.6500492, 0.48344803, 0.06859207, -1.9000492, 0.48344803, -14.181408, -1.4000492, 0.48344803, 2.568592, -2.4000492, 0.48344803, 3.818592, 12.599951, 0.48344803, 3.818592, 11.849951, 0.48344803, 3.318592, 12.849951, 0.48344803, 0.06859207, 14.099951, 0.48344803, 0.31859207, 11.599951, 0.48344803, 1.3185921, -1.4000492, 0.48344803, 1.3185921)
-polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(5, 4, 3), PackedInt32Array(8, 7, 6), PackedInt32Array(10, 9, 11), PackedInt32Array(11, 9, 12), PackedInt32Array(5, 13, 14), PackedInt32Array(14, 13, 15), PackedInt32Array(15, 13, 17), PackedInt32Array(15, 17, 16), PackedInt32Array(19, 18, 20), PackedInt32Array(20, 18, 21), PackedInt32Array(23, 6, 22), PackedInt32Array(21, 18, 2), PackedInt32Array(12, 9, 13), PackedInt32Array(21, 2, 0), PackedInt32Array(25, 24, 23), PackedInt32Array(23, 24, 6), PackedInt32Array(6, 24, 8), PackedInt32Array(26, 14, 27), PackedInt32Array(27, 14, 15), PackedInt32Array(3, 12, 13), PackedInt32Array(0, 23, 21), PackedInt32Array(21, 23, 13), PackedInt32Array(13, 23, 22), PackedInt32Array(13, 22, 17), PackedInt32Array(5, 3, 13), PackedInt32Array(7, 8, 28), PackedInt32Array(28, 8, 29), PackedInt32Array(31, 30, 15), PackedInt32Array(31, 15, 32), PackedInt32Array(32, 15, 33), PackedInt32Array(33, 15, 16), PackedInt32Array(34, 28, 29), PackedInt32Array(34, 29, 33), PackedInt32Array(33, 29, 32), PackedInt32Array(36, 35, 37), PackedInt32Array(37, 35, 38), PackedInt32Array(42, 41, 39), PackedInt32Array(39, 41, 40), PackedInt32Array(29, 44, 43), PackedInt32Array(46, 45, 39), PackedInt32Array(39, 45, 42), PackedInt32Array(45, 46, 37), PackedInt32Array(38, 32, 37), PackedInt32Array(37, 32, 45), PackedInt32Array(45, 32, 43), PackedInt32Array(43, 32, 29)]
+vertices = PackedVector3Array(-3.6500492, 0.48344803, -19.681408, -3.4000492, 0.48344803, -19.681408, -2.9000492, 0.48344803, -21.181408, 0.5999508, 0.48344803, -32.431408, -0.4000492, 0.48344803, -33.181408, -1.1500492, 0.48344803, -32.431408, 0.3499508, 0.48344803, -29.431408, -1.4000492, 0.48344803, -21.431408, -1.4000492, 0.48344803, -23.431408, -2.6500492, 0.48344803, -23.681408, -2.6500492, 0.48344803, -26.431408, 0.3499508, 0.48344803, -26.681408, -3.1500492, 0.48344803, -32.931408, 0.8499508, 0.48344803, -29.181408, -1.4000492, 0.48344803, -35.931408, -1.4000492, 0.48344803, -37.931408, -3.6500492, 0.48344803, -37.931408, -3.1500492, 0.48344803, -35.431408, -0.4000492, 0.48344803, -35.431408, 3.3499508, 0.48344803, -32.431408, 3.5999508, 0.48344803, -31.931408, 5.349951, 0.48344803, -35.931408, 4.849951, 0.48344803, -36.181408, 4.849951, 0.48344803, -37.931408, 8.099951, 0.48344803, -35.931408, 10.599951, 0.48344803, -31.181408, 10.849951, 0.48344803, -31.681408, 14.099951, 0.48344803, -37.931408, 8.349951, 0.48344803, -37.931408, 14.099951, 0.48344803, -31.431408, 6.849951, 0.48344803, -35.931408, 6.349951, 0.733448, -36.431408, 6.099951, 0.48344803, -35.931408, 11.099951, 0.48344803, -26.431408, 11.849951, 0.48344803, -27.431408, 10.599951, 0.48344803, -27.681408, 8.099951, 0.48344803, -26.681408, 3.3499508, 0.48344803, -29.181408, 12.099951, 0.48344803, -29.931408, 12.099951, 0.48344803, -29.181408, 12.599951, 0.48344803, -29.181408, 12.599951, 0.48344803, -29.931408, 3.8499508, 0.48344803, -19.181408, 5.099951, 0.48344803, -19.181408, 5.099951, 0.48344803, -19.931408, 3.5999508, 0.48344803, -20.681408, 0.5999508, 0.48344803, -23.681408, 7.849951, 0.48344803, -23.931408, -0.4000492, 0.48344803, -20.931408, 1.0999508, 0.48344803, -20.681408, 6.599951, 0.48344803, -20.681408, 11.349951, 0.48344803, -12.681408, 10.849951, 0.48344803, -12.431408, 11.349951, 0.48344803, -11.431408, 14.099951, 0.48344803, -11.431408, 11.099951, 0.48344803, -25.681408, 12.849951, 0.48344803, -26.181408, 14.099951, 0.48344803, -21.181408, 13.849951, 0.48344803, -23.431408, 13.349951, 0.48344803, -22.681408, 14.099951, 0.48344803, -27.681408, 13.849951, 0.48344803, -25.431408, 7.849951, 0.48344803, -18.431408, 7.099951, 0.48344803, -17.681408, 7.849951, 0.48344803, -16.181408, 11.349951, 0.48344803, -16.181408, 10.599951, 0.48344803, -17.431408, 11.599951, 0.48344803, -22.681408, 10.599951, 0.48344803, -21.181408, 14.099951, 0.48344803, -17.431408, 8.099951, 0.48344803, -23.431408, 11.099951, 0.48344803, -23.681408, 7.849951, 0.48344803, -19.681408, 0.3499508, 0.48344803, -11.181408, 0.8499508, 0.48344803, -11.431408, 0.09995079, 0.48344803, -12.181408, 0.5999508, 0.48344803, -20.431408, -0.15004921, 0.48344803, -19.181408, 0.8499508, 0.48344803, -17.431408, -3.6500492, 0.48344803, -5.431408, -3.1500492, 0.48344803, -5.431408, -2.9000492, 0.48344803, -6.931408, -3.1500492, 0.48344803, -12.431408, 0.09995079, 0.48344803, -6.681408, 0.5999508, 0.48344803, -7.431408, -0.9000492, 0.48344803, -17.931408, -0.4000492, 0.48344803, -16.431408, -3.1500492, 0.48344803, -16.181408, -2.6500492, 0.48344803, -17.931408, 12.099951, 0.48344803, -19.681408, 12.099951, 0.48344803, -18.931408, 12.599951, 0.48344803, -18.931408, 12.599951, 0.48344803, -19.681408, 0.3499508, 0.48344803, -16.181408, 3.5999508, 0.48344803, -17.431408, 5.599951, 0.48344803, -17.681408, 3.5999508, 0.48344803, -11.431408, 3.8499508, 0.48344803, -10.931408, 7.849951, 0.48344803, -12.931408, -1.6500492, 0.48344803, -14.681408, -1.6500492, 0.48344803, -13.931408, -1.1500492, 0.48344803, -13.931408, -1.1500492, 0.48344803, -14.681408, 10.599951, 0.48344803, -2.931408, 11.599951, 0.48344803, -0.9314079, 12.099951, 0.48344803, -1.6814079, 11.349951, 0.48344803, -3.181408, 11.099951, 0.48344803, -8.431408, 8.099951, 0.48344803, -6.931408, 11.349951, 0.48344803, -6.681408, 14.099951, 0.48344803, -8.181408, 14.099951, 0.48344803, -1.4314079, 8.099951, 0.48344803, -12.431408, 3.8499508, 0.48344803, -7.931408, 7.849951, 0.48344803, -6.431408, -0.15004921, 0.48344803, -3.681408, 0.09995079, 0.48344803, -2.181408, 1.8499508, 0.48344803, -1.4314079, 3.5999508, 0.48344803, -7.431408, 7.849951, 0.48344803, -3.181408, 8.349951, 0.48344803, -2.931408, -2.9000492, 0.48344803, -3.681408, -3.6500492, 0.48344803, 3.818592, -0.9000492, 0.48344803, -1.4314079, 0.5999508, 0.48344803, 3.818592, 0.5999508, 0.48344803, 1.5685921, -0.4000492, 0.48344803, 1.3185921, -1.1500492, 0.48344803, 0.06859207, 14.099951, 0.48344803, 3.818592, 14.099951, 0.48344803, 1.3185921, 13.349951, 0.48344803, 1.8185921, 11.849951, 0.48344803, 1.5685921, 1.8499508, 0.48344803, 0.8185921, 11.349951, 0.48344803, 0.5685921)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(4, 3, 5), PackedInt32Array(5, 3, 6), PackedInt32Array(8, 7, 9), PackedInt32Array(9, 7, 2), PackedInt32Array(11, 10, 6), PackedInt32Array(6, 10, 5), PackedInt32Array(5, 10, 12), PackedInt32Array(6, 13, 11), PackedInt32Array(14, 17, 15), PackedInt32Array(15, 17, 16), PackedInt32Array(16, 17, 12), PackedInt32Array(2, 0, 9), PackedInt32Array(9, 0, 10), PackedInt32Array(10, 0, 12), PackedInt32Array(12, 0, 16), PackedInt32Array(15, 18, 14), PackedInt32Array(4, 18, 3), PackedInt32Array(3, 18, 19), PackedInt32Array(22, 21, 19), PackedInt32Array(19, 21, 20), PackedInt32Array(22, 19, 23), PackedInt32Array(23, 19, 18), PackedInt32Array(23, 18, 15), PackedInt32Array(26, 25, 24), PackedInt32Array(24, 28, 26), PackedInt32Array(26, 28, 29), PackedInt32Array(29, 28, 27), PackedInt32Array(32, 31, 30), PackedInt32Array(34, 33, 35), PackedInt32Array(35, 33, 36), PackedInt32Array(30, 24, 20), PackedInt32Array(20, 24, 37), PackedInt32Array(37, 24, 25), PackedInt32Array(37, 25, 36), PackedInt32Array(20, 21, 32), PackedInt32Array(35, 36, 25), PackedInt32Array(20, 32, 30), PackedInt32Array(41, 40, 38), PackedInt32Array(38, 40, 39), PackedInt32Array(43, 42, 44), PackedInt32Array(44, 42, 45), PackedInt32Array(11, 37, 46), PackedInt32Array(46, 37, 45), PackedInt32Array(45, 37, 47), PackedInt32Array(47, 37, 36), PackedInt32Array(48, 7, 49), PackedInt32Array(49, 7, 8), PackedInt32Array(49, 8, 46), PackedInt32Array(49, 46, 45), PackedInt32Array(44, 45, 50), PackedInt32Array(50, 45, 47), PackedInt32Array(11, 13, 37), PackedInt32Array(52, 51, 53), PackedInt32Array(53, 51, 54), PackedInt32Array(33, 34, 55), PackedInt32Array(55, 34, 56), PackedInt32Array(59, 58, 57), PackedInt32Array(61, 56, 60), PackedInt32Array(60, 56, 34), PackedInt32Array(63, 62, 64), PackedInt32Array(64, 62, 66), PackedInt32Array(64, 66, 65), PackedInt32Array(59, 57, 67), PackedInt32Array(67, 57, 68), PackedInt32Array(65, 69, 51), PackedInt32Array(51, 69, 54), PackedInt32Array(70, 50, 47), PackedInt32Array(67, 68, 71), PackedInt32Array(71, 68, 70), PackedInt32Array(70, 68, 72), PackedInt32Array(70, 72, 50), PackedInt32Array(65, 66, 69), PackedInt32Array(62, 72, 66), PackedInt32Array(66, 72, 68), PackedInt32Array(58, 61, 57), PackedInt32Array(57, 61, 60), PackedInt32Array(75, 74, 73), PackedInt32Array(49, 76, 48), PackedInt32Array(48, 76, 77), PackedInt32Array(77, 76, 78), PackedInt32Array(80, 79, 81), PackedInt32Array(81, 79, 82), PackedInt32Array(83, 81, 84), PackedInt32Array(84, 81, 73), PackedInt32Array(73, 81, 75), PackedInt32Array(75, 81, 82), PackedInt32Array(86, 85, 78), PackedInt32Array(78, 85, 77), PackedInt32Array(87, 82, 0), PackedInt32Array(0, 82, 79), PackedInt32Array(1, 88, 0), PackedInt32Array(0, 88, 87), PackedInt32Array(85, 86, 88), PackedInt32Array(88, 86, 87), PackedInt32Array(92, 91, 89), PackedInt32Array(89, 91, 90), PackedInt32Array(86, 78, 93), PackedInt32Array(93, 78, 94), PackedInt32Array(43, 95, 42), PackedInt32Array(42, 95, 94), PackedInt32Array(98, 97, 96), PackedInt32Array(63, 64, 95), PackedInt32Array(95, 64, 94), PackedInt32Array(75, 93, 96), PackedInt32Array(96, 93, 94), PackedInt32Array(96, 94, 98), PackedInt32Array(98, 94, 64), PackedInt32Array(96, 74, 75), PackedInt32Array(102, 101, 99), PackedInt32Array(99, 101, 100), PackedInt32Array(106, 105, 103), PackedInt32Array(103, 105, 104), PackedInt32Array(110, 109, 107), PackedInt32Array(107, 109, 108), PackedInt32Array(105, 106, 111), PackedInt32Array(111, 106, 109), PackedInt32Array(111, 109, 110), PackedInt32Array(112, 52, 53), PackedInt32Array(108, 114, 113), PackedInt32Array(97, 98, 112), PackedInt32Array(53, 107, 112), PackedInt32Array(112, 107, 108), PackedInt32Array(112, 108, 97), PackedInt32Array(97, 108, 113), PackedInt32Array(117, 116, 115), PackedInt32Array(83, 84, 118), PackedInt32Array(118, 113, 114), PackedInt32Array(115, 83, 117), PackedInt32Array(117, 83, 118), PackedInt32Array(117, 118, 114), PackedInt32Array(117, 114, 119), PackedInt32Array(119, 120, 117), PackedInt32Array(80, 121, 79), PackedInt32Array(79, 121, 122), PackedInt32Array(116, 123, 115), PackedInt32Array(115, 123, 121), PackedInt32Array(126, 125, 124), PackedInt32Array(123, 127, 121), PackedInt32Array(121, 127, 122), PackedInt32Array(126, 124, 127), PackedInt32Array(127, 124, 122), PackedInt32Array(128, 130, 129), PackedInt32Array(130, 128, 131), PackedInt32Array(131, 128, 132), PackedInt32Array(132, 128, 125), PackedInt32Array(125, 128, 124), PackedInt32Array(133, 131, 120), PackedInt32Array(120, 131, 117), PackedInt32Array(117, 131, 132), PackedInt32Array(104, 133, 103), PackedInt32Array(103, 133, 120)]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_54g3h"]
 specular_mode = 1
@@ -35,8 +38,8 @@ adjustment_saturation = 1.5
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ytkqd"]
 albedo_color = Color(0, 0, 0, 1)
 
-[node name="test_level" type="Node3D"]
-script = ExtResource("1_w8qfc")
+[node name="TutorialRoom4" type="Node3D"]
+script = ExtResource("1_mgoex")
 
 [node name="HealthContainer" parent="." instance=ExtResource("2_hqval")]
 offset_top = -2.0
@@ -57,7 +60,7 @@ metadata/_edit_use_anchors_ = true
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 handle_input_locally = false
 audio_listener_enable_3d = true
-size = Vector2i(384, 216)
+size = Vector2i(230, 129)
 render_target_update_mode = 4
 
 [node name="Player" parent="SubViewportContainer/SubViewport" instance=ExtResource("3_su5tm")]
@@ -68,372 +71,6 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.58
 unique_name_in_owner = true
 transform = Transform3D(0.87610114, 0, 0, 0, 1, 0, 0, 0, 0.68692786, -0.0001411438, 9.536743e-07, -0.054275513)
 navigation_mesh = SubResource("NavigationMesh_qo3sl")
-
-[node name="Spikes" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 14.259495, 0.023336865, -3.70756)
-
-[node name="Spikes2" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 13.015061, 0.023336865, -3.7075603)
-
-[node name="Spikes3" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 11.77006, 0.023336865, -3.7075603)
-
-[node name="Spikes4" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 10.525626, 0.023336865, -3.7075603)
-
-[node name="Spikes5" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 9.281578, 0.023336865, -3.7075603)
-
-[node name="Spikes6" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 8.037144, 0.023336865, -3.7075603)
-
-[node name="Spikes7" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 6.792143, 0.023336865, -3.7075603)
-
-[node name="Spikes8" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 5.547709, 0.023336865, -3.7075603)
-
-[node name="Spikes9" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 4.3006973, 0.023336865, -3.7075603)
-
-[node name="Spikes10" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 3.0562627, 0.023336865, -3.7075603)
-
-[node name="Spikes11" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 1.8112614, 0.023336865, -3.7075603)
-
-[node name="Spikes12" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 0.56682754, 0.023336865, -3.7075603)
-
-[node name="Spikes13" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 14.259495, 0.023336865, -5.281087)
-
-[node name="Spikes14" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 13.015061, 0.023336865, -5.281087)
-
-[node name="Spikes15" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 11.77006, 0.023336865, -5.281087)
-
-[node name="Spikes16" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 10.525626, 0.023336865, -5.281087)
-
-[node name="Spikes17" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 9.281578, 0.023336865, -5.281087)
-
-[node name="Spikes18" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 8.037144, 0.023336865, -5.281087)
-
-[node name="Spikes19" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 6.792143, 0.023336865, -5.281087)
-
-[node name="Spikes20" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 5.547709, 0.023336865, -5.281087)
-
-[node name="Spikes21" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 4.3006973, 0.023336865, -5.281087)
-
-[node name="Spikes22" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 3.0562627, 0.023336865, -5.281087)
-
-[node name="Spikes23" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 1.8112612, 0.023336865, -5.281087)
-
-[node name="Spikes24" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 0.56682754, 0.023336865, -5.281087)
-
-[node name="Spikes25" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 10.025208, 0.023336865, -11.089626)
-
-[node name="Spikes26" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 8.780775, 0.023336865, -11.089626)
-
-[node name="Spikes27" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 7.5357738, 0.023336865, -11.089626)
-
-[node name="Spikes28" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 6.29134, 0.023336865, -11.089626)
-
-[node name="Spikes29" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 5.047292, 0.023336865, -11.089626)
-
-[node name="Spikes30" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 3.8028576, 0.023336865, -11.089626)
-
-[node name="Spikes31" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 2.5578568, 0.023336865, -11.089626)
-
-[node name="Spikes32" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 1.3134226, 0.023336865, -11.089626)
-
-[node name="Spikes33" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 0.06641123, 0.023336865, -11.089626)
-
-[node name="Spikes34" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, -1.1780236, 0.023336865, -11.089626)
-
-[node name="Spikes35" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, -2.423025, 0.023336865, -11.089626)
-
-[node name="Spikes36" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, -3.6674585, 0.023336865, -11.089626)
-
-[node name="Spikes37" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 10.025208, 0.023336865, -12.663152)
-
-[node name="Spikes38" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 8.780775, 0.023336865, -12.663152)
-
-[node name="Spikes39" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 7.5357738, 0.023336865, -12.663152)
-
-[node name="Spikes40" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 6.29134, 0.023336865, -12.663152)
-
-[node name="Spikes41" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 5.047292, 0.023336865, -12.663152)
-
-[node name="Spikes42" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 3.8028576, 0.023336865, -12.663152)
-
-[node name="Spikes43" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 2.5578568, 0.023336865, -12.663152)
-
-[node name="Spikes44" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 1.3134226, 0.023336865, -12.663152)
-
-[node name="Spikes45" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 0.06641123, 0.023336865, -12.663152)
-
-[node name="Spikes46" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, -1.1780236, 0.023336865, -12.663152)
-
-[node name="Spikes47" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, -2.423025, 0.023336865, -12.663152)
-
-[node name="Spikes48" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, -3.6674585, 0.023336865, -12.663152)
-
-[node name="Spikes49" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 14.292445, 0.023336865, -18.226568)
-
-[node name="Spikes50" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 13.048014, 0.023336865, -18.226568)
-
-[node name="Spikes51" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 11.803011, 0.023336865, -18.226568)
-
-[node name="Spikes52" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 10.558578, 0.023336865, -18.226568)
-
-[node name="Spikes53" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 9.31453, 0.023336865, -18.226568)
-
-[node name="Spikes54" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 8.070095, 0.023336865, -18.226568)
-
-[node name="Spikes55" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 6.8250947, 0.023336865, -18.226568)
-
-[node name="Spikes56" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 5.58066, 0.023336865, -18.226568)
-
-[node name="Spikes57" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 4.333649, 0.023336865, -18.226568)
-
-[node name="Spikes58" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 3.0892138, 0.023336865, -18.226568)
-
-[node name="Spikes59" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 1.8442122, 0.023336865, -18.226568)
-
-[node name="Spikes60" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 0.59977883, 0.023336865, -18.226568)
-
-[node name="Spikes61" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 14.292445, 0.023336865, -19.80009)
-
-[node name="Spikes62" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 13.048014, 0.023336865, -19.80009)
-
-[node name="Spikes63" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 11.803011, 0.023336865, -19.80009)
-
-[node name="Spikes64" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 10.558578, 0.023336865, -19.80009)
-
-[node name="Spikes65" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 9.31453, 0.023336865, -19.80009)
-
-[node name="Spikes66" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 8.070095, 0.023336865, -19.80009)
-
-[node name="Spikes67" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 6.8250947, 0.023336865, -19.80009)
-
-[node name="Spikes68" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 5.58066, 0.023336865, -19.80009)
-
-[node name="Spikes69" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 4.333649, 0.023336865, -19.80009)
-
-[node name="Spikes70" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 3.0892138, 0.023336865, -19.80009)
-
-[node name="Spikes71" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 1.8442122, 0.023336865, -19.80009)
-
-[node name="Spikes72" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 0.59977883, 0.023336865, -19.80009)
-
-[node name="Spikes73" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 10.012927, 0.023336865, -25.35291)
-
-[node name="Spikes74" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 8.768496, 0.023336865, -25.35291)
-
-[node name="Spikes75" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 7.5234942, 0.023336865, -25.35291)
-
-[node name="Spikes76" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 6.27906, 0.023336865, -25.35291)
-
-[node name="Spikes77" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 5.0350137, 0.023336865, -25.35291)
-
-[node name="Spikes78" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 3.790578, 0.023336865, -25.35291)
-
-[node name="Spikes79" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 2.5455773, 0.023336865, -25.35291)
-
-[node name="Spikes80" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 1.3011427, 0.023336865, -25.35291)
-
-[node name="Spikes81" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 0.054131776, 0.023336865, -25.35291)
-
-[node name="Spikes82" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, -1.1903034, 0.023336865, -25.35291)
-
-[node name="Spikes83" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, -2.4353054, 0.023336865, -25.35291)
-
-[node name="Spikes84" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, -3.6797383, 0.023336865, -25.35291)
-
-[node name="Spikes85" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 10.012927, 0.023336865, -26.926432)
-
-[node name="Spikes86" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 8.768496, 0.023336865, -26.926432)
-
-[node name="Spikes87" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 7.5234942, 0.023336865, -26.926432)
-
-[node name="Spikes88" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 6.27906, 0.023336865, -26.926432)
-
-[node name="Spikes89" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 5.0350137, 0.023336865, -26.926432)
-
-[node name="Spikes90" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 3.790578, 0.023336865, -26.926432)
-
-[node name="Spikes91" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 2.5455773, 0.023336865, -26.926432)
-
-[node name="Spikes92" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 1.3011427, 0.023336865, -26.926432)
-
-[node name="Spikes93" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 0.054131776, 0.023336865, -26.926432)
-
-[node name="Spikes94" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, -1.1903034, 0.023336865, -26.926432)
-
-[node name="Spikes95" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, -2.4353054, 0.023336865, -26.926432)
-
-[node name="Spikes96" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, -3.6797383, 0.023336865, -26.926432)
-
-[node name="Spikes97" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 14.263683, 0.023336865, -31.565369)
-
-[node name="Spikes98" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 13.019252, 0.023336865, -31.565369)
-
-[node name="Spikes99" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 11.77425, 0.023336865, -31.565369)
-
-[node name="Spikes100" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 10.529816, 0.023336865, -31.565369)
-
-[node name="Spikes101" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 9.285769, 0.023336865, -31.565369)
-
-[node name="Spikes102" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 8.041335, 0.023336865, -31.565369)
-
-[node name="Spikes103" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 6.796334, 0.023336865, -31.565369)
-
-[node name="Spikes104" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 5.551899, 0.023336865, -31.565369)
-
-[node name="Spikes105" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 4.3048882, 0.023336865, -31.565369)
-
-[node name="Spikes106" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 3.060453, 0.023336865, -31.565369)
-
-[node name="Spikes107" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 1.8154508, 0.023336865, -31.565369)
-
-[node name="Spikes108" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 0.5710183, 0.023336865, -31.565369)
-
-[node name="Spikes109" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 14.263683, 0.023336865, -33.13889)
-
-[node name="Spikes110" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 13.019252, 0.023336865, -33.13889)
-
-[node name="Spikes111" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 11.77425, 0.023336865, -33.13889)
-
-[node name="Spikes112" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 10.529816, 0.023336865, -33.13889)
-
-[node name="Spikes113" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 9.285769, 0.023336865, -33.13889)
-
-[node name="Spikes114" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 8.041335, 0.023336865, -33.13889)
-
-[node name="Spikes115" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 6.796334, 0.023336865, -33.13889)
-
-[node name="Spikes116" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 5.551899, 0.023336865, -33.13889)
-
-[node name="Spikes117" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 4.3048882, 0.023336865, -33.13889)
-
-[node name="Spikes118" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 3.060453, 0.023336865, -33.13889)
-
-[node name="Spikes119" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 1.8154508, 0.023336865, -33.13889)
-
-[node name="Spikes120" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_hqval")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 0.5710183, 0.023336865, -33.13889)
-
-[node name="Door2" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("5_su5tm")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 0.7159319, 0.39277974, -38.24097)
-
-[node name="Door3" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("5_su5tm")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 9.486925, 0.39277974, -38.24097)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="SubViewportContainer/SubViewport/NavigationRegion3D"]
 transform = Transform3D(0.24781537, 0, 0, 0, 1, 0, 0, 0, 0.64719784, 5.2266707, -0.516552, -17.022455)
@@ -451,6 +88,9 @@ use_collision = true
 collision_mask = 2
 size = Vector3(3.4638062, 1, 65.51001)
 material = SubResource("StandardMaterial3D_ytkqd")
+
+[node name="OrbLight" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_tt43h")]
+transform = Transform3D(0.9131366, 0, 0, 0, 0.8, 0, 0, 0, 1.1646056, 12.922208, -0.028924048, -0.0018964037)
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="SubViewportContainer/SubViewport/NavigationRegion3D"]
 transform = Transform3D(1.9106855e-15, -4.3711385e-08, -0.27898747, -1, -4.3711385e-08, 0, -4.371139e-08, 0.99999994, -1.21949295e-08, 4.209302, 1.282587, 4.836135)
@@ -475,26 +115,112 @@ size = Vector3(3.4638062, 1, 65.10864)
 material = SubResource("StandardMaterial3D_ytkqd")
 
 [node name="ItemPedestal" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("7_tt43h")]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 12.608925, -0.020633519, -22.54586)
+transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 6.434217, -0.021400332, -19.057335)
 
-[node name="OrbLight" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_tt43h")]
-transform = Transform3D(0.9131366, 0, 0, 0, 0.8, 0, 0, 0, 1.1646056, -2.998266, -0.021235466, -15.736428)
+[node name="Pillar3" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("7_mlio8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4982092, -0.030868053, -5.223176)
 
-[node name="OrbLight4" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_tt43h")]
-transform = Transform3D(0.9131366, 0, 0, 0, 0.8, 0, 0, 0, 1.1646056, 5.2734094, -0.021235466, -37.03207)
+[node name="Pillar4" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("7_mlio8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.606526, -0.030868053, -9.732241)
+
+[node name="Pillar7" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("7_mlio8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.39905, -0.030868053, -25.082743)
+
+[node name="Pillar5" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("7_mlio8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0173981, -0.030868053, -24.980452)
+
+[node name="Pillar6" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("7_mlio8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9924418, -0.030868053, -30.76867)
+
+[node name="Pillar2" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("7_mlio8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3064718, -0.015434027, -19.150536)
 
 [node name="OrbLight2" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_tt43h")]
-transform = Transform3D(0.9131366, 0, 0, 0, 0.8, 0, 0, 0, 1.1646056, -2.998266, -0.021235466, 1.9612672)
+transform = Transform3D(0.9131366, 0, 0, 0, 0.8, 0, 0, 0, 1.1646056, 0.47137097, -0.027503759, -0.3317601)
 
 [node name="OrbLight3" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_tt43h")]
-transform = Transform3D(0.9131366, 0, 0, 0, 0.8, 0, 0, 0, 1.1646056, 13.167897, -0.021235466, 1.9612674)
+transform = Transform3D(0.9131366, 0, 0, 0, 0.8, 0, 0, 0, 1.1646056, 12.39986, -0.023688763, -24.354143)
 
-[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="SubViewportContainer/SubViewport/NavigationRegion3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9006453, 3.1314516, 0)
-vertices = PackedVector3Array(10.15753, 0, 22.336153, -18.53885, 0, 15.938456, -17.3912, 0, -47.020634, 10.9585285, 0, -46.766415)
-affect_navigation_mesh = true
+[node name="OrbLight4" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_tt43h")]
+transform = Transform3D(0.9131366, 0, 0, 0, 0.8, 0, 0, 0, 1.1646056, -1.7819042, -0.027872682, -19.606728)
+
+[node name="OrbLight5" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_tt43h")]
+transform = Transform3D(0.9131366, 0, 0, 0, 0.8, 0, 0, 0, 1.1646056, -1.7819042, -0.027872682, -34.208527)
 
 [node name="NavigationObstacle3D2" type="NavigationObstacle3D" parent="SubViewportContainer/SubViewport/NavigationRegion3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.051776033, 0.9762635, -0.62049484)
-vertices = PackedVector3Array(12.148084, 0, -21.243214, 12.033539, 0, -22.65051, 13.217954, 0, -22.494688, 13.258264, 0, -21.20975)
+transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 1.6625863, 4.087496, -10.720766)
+vertices = PackedVector3Array(1.2656375, 0, -6.2805867, 1.1846001, 0, -5.3479023, -0.07056737, 0, -5.354124, 0.14101577, 0, -6.2689443)
 affect_navigation_mesh = true
+
+[node name="NavigationObstacle3D5" type="NavigationObstacle3D" parent="SubViewportContainer/SubViewport/NavigationRegion3D"]
+transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 1.4789269, 1.9209156, -0.96163243)
+vertices = PackedVector3Array(1.2656375, 0, -6.2805867, 1.1846001, 0, -5.3479023, -0.07056737, 0, -5.354124, 0.14101577, 0, -6.2689443)
+affect_navigation_mesh = true
+
+[node name="NavigationObstacle3D6" type="NavigationObstacle3D" parent="SubViewportContainer/SubViewport/NavigationRegion3D"]
+transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, -2.0382533, 1.9209156, -5.911839)
+vertices = PackedVector3Array(1.2656375, 0, -6.2805867, 1.1846001, 0, -5.3479023, -0.07056737, 0, -5.354124, 0.14101577, 0, -6.2689443)
+affect_navigation_mesh = true
+
+[node name="NavigationObstacle3D7" type="NavigationObstacle3D" parent="SubViewportContainer/SubViewport/NavigationRegion3D"]
+transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 8.539287, 1.9209156, -6.2192154)
+vertices = PackedVector3Array(1.2656375, 0, -6.2805867, 1.1846001, 0, -5.3479023, -0.07056737, 0, -5.354124, 0.14101577, 0, -6.2689443)
+affect_navigation_mesh = true
+
+[node name="NavigationObstacle3D8" type="NavigationObstacle3D" parent="SubViewportContainer/SubViewport/NavigationRegion3D"]
+transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 8.539287, 1.9209156, 3.5771182)
+vertices = PackedVector3Array(1.2656375, 0, -6.2805867, 1.1846001, 0, -5.3479023, -0.07056737, 0, -5.354124, 0.14101577, 0, -6.2689443)
+affect_navigation_mesh = true
+
+[node name="NavigationObstacle3D9" type="NavigationObstacle3D" parent="SubViewportContainer/SubViewport/NavigationRegion3D"]
+transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 11.458036, 1.9209156, -10.82524)
+vertices = PackedVector3Array(1.2656375, 0, -6.2805867, 1.1846001, 0, -5.3479023, -0.07056737, 0, -5.354124, 0.14101577, 0, -6.2689443)
+affect_navigation_mesh = true
+
+[node name="NavigationObstacle3D10" type="NavigationObstacle3D" parent="SubViewportContainer/SubViewport/NavigationRegion3D"]
+transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 11.5004, 1.9209156, -21.09302)
+vertices = PackedVector3Array(1.2656375, 0, -6.2805867, 1.1846001, 0, -5.3479023, -0.07056737, 0, -5.354124, 0.14101577, 0, -6.2689443)
+affect_navigation_mesh = true
+
+[node name="NavigationObstacle3D3" type="NavigationObstacle3D" parent="SubViewportContainer/SubViewport/NavigationRegion3D"]
+transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 5.66826, 1.2443638, -10.602957)
+vertices = PackedVector3Array(1.2656375, 0, -6.2805867, 1.1846001, 0, -5.3479023, -0.07056737, 0, -5.354124, 0.14101577, 0, -6.2689443)
+affect_navigation_mesh = true
+
+[node name="NavigationObstacle3D4" type="NavigationObstacle3D" parent="SubViewportContainer/SubViewport/NavigationRegion3D"]
+transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 4.2165184, 3.2201128, -9.019379)
+vertices = PackedVector3Array(10.057471, 0, -23.915686, 9.960041, 0, 20.682205, -9.450363, 0, 10.811981, -8.47732, 0, -22.29008)
+affect_navigation_mesh = true
+
+[node name="PillarBroken2" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("8_3kvwe")]
+transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 2.1589885, -0.016552925, -9.378801)
+
+[node name="PillarBroken3" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("8_3kvwe")]
+transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 9.484659, -0.016552925, -4.8924384)
+
+[node name="PillarBroken5" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("8_3kvwe")]
+transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 9.484659, -0.016552925, -14.474278)
+
+[node name="PillarBroken6" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("8_3kvwe")]
+transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 12.363464, -0.016552925, -19.354338)
+
+[node name="PillarBroken7" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("8_3kvwe")]
+transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 12.363464, -0.016552925, -29.61288)
+
+[node name="PillarBroken4" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("8_3kvwe")]
+transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, -1.4257495, -0.016552925, -14.306495)
+
+[node name="Door3" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("5_su5tm")]
+transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 6.476606, 0.39278117, -38.188515)
+
+[node name="Thergg" parent="." instance=ExtResource("10_3kvwe")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.665818, 0.065727234, -9.95449)
+
+[node name="GrobCat" parent="." instance=ExtResource("11_irjjd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.768514, 0.6890012, -13.095724)
+
+[node name="GrobCat2" parent="." instance=ExtResource("11_irjjd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7982635, 0.6890011, -16.725212)
+
+[node name="GrobCat3" parent="." instance=ExtResource("11_irjjd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0932217, 0.6890012, -6.614342)

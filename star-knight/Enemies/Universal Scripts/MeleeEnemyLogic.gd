@@ -10,6 +10,7 @@ var animation_player
 var canCheckPhysics = true
 var stunned := false
 var current_speed := 0.0
+var Is_chatting = false
 
 @onready var nav_agent = $NavigationAgent3D
 @onready var physicsCheckNum = int(randf_range(2,30))
@@ -22,6 +23,7 @@ func _ready() -> void:
 	animation_player = EnemyMovementAnimations.new()
 	animation_player.set_animation(animation)
 	print("Physics Num:" + str(physicsCheckNum))
+	Dialogic.signal_event.connect(_on_dialogic_signal)
 
 #This is the Enemy pathing to the player
 func _physics_process(delta: float) -> void:
@@ -43,7 +45,7 @@ func _physics_process(delta: float) -> void:
 		if(!attack_stats._check_can_attack(attack_stats) and !stunned and !animation.is_playing() and attack_stats.get_overlapping_bodies().count(%Player) == 0):
 			velocity = calculate_path()
 			animation_player.play_movement_animations(velocity)
-			if Dialogic.VAR.Ischatting == false:
+			if Is_chatting == false:
 				move_and_slide()
 
 func update_target_location(target_location):
@@ -56,3 +58,8 @@ func calculate_path() -> Vector3:
 	var new_velocity = (next_location - current_position).normalized() * max_speed
 	return new_velocity
 	
+func _on_dialogic_signal(argument:String):
+	if argument == "Ischatting":
+		Is_chatting = true
+	elif argument == "Notchatting":
+		Is_chatting = false

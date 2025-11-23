@@ -16,10 +16,14 @@ var step_frames : Array = [0,4]
 var target_velocity = Vector3.ZERO
 var last_animation = "idle"
 var health
+var Is_chatting = false
+
 
 
 func _ready() -> void:
 	var health = playerHitboxComponent.health_component.health
+	Dialogic.signal_event.connect(_on_dialogic_signal)
+
 
 
 func _physics_process(delta):
@@ -34,9 +38,9 @@ func _physics_process(delta):
 
 	var direction = transform.basis * input_direction_3D
 	#print(direction)
-	if Dialogic.VAR.Ischatting == false:
+	if Is_chatting == false:
 		play_animation(direction)
-	
+
 	
 	velocity.x = direction.x * SPEED
 	velocity.z = direction.z * SPEED
@@ -65,7 +69,7 @@ func _physics_process(delta):
 		velocity.y = 0.0
 	elif Input.is_action_just_pressed("primary_attack"):
 		swing(direction)
-	if Dialogic.VAR.Ischatting == false:
+	if Is_chatting == false:
 		move_and_slide()
 	
 	
@@ -110,4 +114,10 @@ func _on_player_sprite_3d_frame_changed():
 	if %PlayerSprite3D.animation == 'jump': return
 	load_sfx(step_sfx)
 	if %PlayerSprite3D.frame in step_frames and is_on_floor(): %sfx_player.play()
+
+func _on_dialogic_signal(argument:String):
+	if argument == "Ischatting":
+		Is_chatting = true
+	elif argument == "Notchatting":
+		Is_chatting = false
 	
