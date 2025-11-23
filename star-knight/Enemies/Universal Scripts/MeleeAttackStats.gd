@@ -12,6 +12,8 @@ class_name MeleeAttackStats
 var isOnCoolDown = false
 
 func _check_can_attack(attack_stats : MeleeAttackStats):
+	if(!%Player):
+		return
 	if(attack_stats.has_overlapping_bodies() and !target_out_of_range(%Player) and !attack_stats.isOnCoolDown):
 		return true
 	else:

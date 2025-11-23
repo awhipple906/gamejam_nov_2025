@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="StarKnight"
-run/main_scene="uid://rpad0js4gije"
+run/main_scene="res://Rooms/Test_Level.tscn"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -21,11 +21,21 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
-directories/dch_directory={}
+directories/dch_directory={
+"PrinceThar": "res://addons/dialogic/Resources/Characters/PrinceThar.dch"
+}
 directories/dtl_directory={
-"timeline": "res://timeline.dtl"
+"TutorialRoom1": "res://addons/dialogic/Resources/Timelines/TutorialRoom1.dtl",
+"timeline": "res://timeline.dtl",
+"timelinetest": "res://addons/dialogic/Resources/Timelines/timelinetest.dtl"
 }
 layout/style_directory={}
+glossary/default_case_sensitive=true
+variables={
+"Ischatting": false
+}
+layout/style_list=[]
+layout/default_style="Default"
 
 [display]
 
