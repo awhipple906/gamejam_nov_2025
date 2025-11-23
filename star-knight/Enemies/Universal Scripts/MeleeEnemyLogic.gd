@@ -6,6 +6,7 @@ extends CharacterBody3D
 @export var EnemyHitboxComponent : HitboxComponent
 @export var attack_stats : AttackStats
 @export var animation : AnimatedSprite3D
+@export var enemyType := 1
 var animation_player
 var canCheckPhysics = true
 var stunned := false
@@ -37,7 +38,9 @@ func _physics_process(delta: float) -> void:
 		if(attack_stats._check_can_attack(attack_stats) and attack_stats.get_overlapping_bodies().count(%Player) > 0):
 			velocity = Vector3(0,0,0)
 			animation_player.play_attack_animation()
+			%GrobcatAttackAudio.play()
 			attack_stats._do_attack(%Player)
+			
 		#if we aren't attacking, we are out of range and are moving instead
 
 		if(!attack_stats._check_can_attack(attack_stats) and !stunned and !animation.is_playing() and attack_stats.get_overlapping_bodies().count(%Player) == 0):
