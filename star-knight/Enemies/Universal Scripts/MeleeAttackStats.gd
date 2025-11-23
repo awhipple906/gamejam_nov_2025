@@ -1,7 +1,6 @@
 extends Area3D
 class_name MeleeAttackStats
 
-#@export_group("Attack")
 @export var speed := 200.0
 @export var damage := 5.0
 @export var max_peirce:= 1
