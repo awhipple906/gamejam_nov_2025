@@ -11,7 +11,7 @@ func _ready():
 func damage(attack: Attack):
 	healthChanged.emit()
 	health -= attack.attack_damage
-	
+	print("New health value of my parent: " + str(health))
 	if health <= 0: 
 		print("DEAD")
 		get_parent().queue_free()

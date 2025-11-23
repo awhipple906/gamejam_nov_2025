@@ -46,7 +46,7 @@ shape = SubResource("SphereShape3D_8582v")
 
 [node name="HealthComponent" parent="." instance=ExtResource("5_8582v")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
-MAX_HEALTH = 5
+MAX_HEALTH = 20
 
 [node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("6_pjoyd")]
 health_component = NodePath("../HealthComponent")
