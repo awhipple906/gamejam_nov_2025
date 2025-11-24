@@ -18,7 +18,7 @@ polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Arr
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_54g3h"]
 specular_mode = 1
 albedo_texture = ExtResource("4_u05gc")
-uv1_scale = Vector3(30, 30, 30)
+uv1_scale = Vector3(11.705, 8.465, 11.705)
 texture_filter = 0
 
 [sub_resource type="Environment" id="Environment_nkk0n"]
