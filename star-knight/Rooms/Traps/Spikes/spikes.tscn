@@ -32,7 +32,7 @@ shape = SubResource("BoxShape3D_gd3dw")
 [node name="SpikeMeleeAttack" parent="." index="1" node_paths=PackedStringArray("attack_hitbox") instance=ExtResource("2_mqp8w")]
 collision_layer = 4
 collision_mask = 3
-damage = 1.0
+damage = 15.0
 attack_cooldown = 1.0
 attack_hitbox = NodePath("CollisionShape3D")
 
