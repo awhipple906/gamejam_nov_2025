@@ -26,6 +26,9 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "TutorialRoom1": "res://addons/dialogic/Resources/Timelines/TutorialRoom1.dtl",
+"TutorialRoom2": "res://addons/dialogic/Resources/Timelines/TutorialRoom2.dtl",
+"TutorialRoom3": "res://addons/dialogic/Resources/Timelines/TutorialRoom3.dtl",
+"TutorialRoom4": "res://addons/dialogic/Resources/Timelines/TutorialRoom4.dtl",
 "timeline": "res://timeline.dtl",
 "timelinetest": "res://addons/dialogic/Resources/Timelines/timelinetest.dtl"
 }
