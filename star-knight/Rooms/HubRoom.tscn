@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://bayisn62wil33"]
 
-[ext_resource type="Script" uid="uid://ro7q8a72qh5l" path="res://Rooms/test_level.gd" id="1_cmjkl"]
+[ext_resource type="Script" uid="uid://caktrk4kl4ekf" path="res://Rooms/hub_room.gd" id="1_7hyac"]
 [ext_resource type="PackedScene" uid="uid://b3jujwoowmjrl" path="res://Art Assets/UI/HealthContainer.tscn" id="2_ql32b"]
 [ext_resource type="PackedScene" uid="uid://c76or3qn4nag5" path="res://Player/Model/Player.tscn" id="3_q45mx"]
 [ext_resource type="PackedScene" uid="uid://d27fvc1n8usxn" path="res://Art Assets/Environment/orb_light.tscn" id="4_wcegg"]
@@ -36,8 +36,8 @@ adjustment_saturation = 1.5
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ytkqd"]
 albedo_color = Color(0, 0, 0, 1)
 
-[node name="test_level" type="Node3D"]
-script = ExtResource("1_cmjkl")
+[node name="HubRoom" type="Node3D"]
+script = ExtResource("1_7hyac")
 
 [node name="HealthContainer" parent="." instance=ExtResource("2_ql32b")]
 offset_top = -2.0
@@ -58,7 +58,7 @@ metadata/_edit_use_anchors_ = true
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 handle_input_locally = false
 audio_listener_enable_3d = true
-size = Vector2i(230, 129)
+size = Vector2i(384, 216)
 render_target_update_mode = 4
 
 [node name="Player" parent="SubViewportContainer/SubViewport" instance=ExtResource("3_q45mx")]

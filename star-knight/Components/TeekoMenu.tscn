@@ -1,0 +1,236 @@
+[gd_scene load_steps=13 format=3 uid="uid://jcdtkwvi2dus"]
+
+[ext_resource type="FontFile" uid="uid://cxet8cevqsfvf" path="res://Art Assets/UI/Star Knight.ttf" id="1_qhukd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o8p0q"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.3)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ntduy"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5jb4k"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.225, 0.225, 0.225, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rk0up"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_420j1"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="Image" id="Image_67ayq"]
+data = {
+"data": PackedByteArray(255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255),
+"format": "RGBA8",
+"height": 2,
+"mipmaps": false,
+"width": 2
+}
+
+[sub_resource type="ImageTexture" id="ImageTexture_px3il"]
+image = SubResource("Image_67ayq")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l3122"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+
+[sub_resource type="Theme" id="Theme_1tob0"]
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/align_to_largest_stylebox = 0
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 62
+Button/fonts/font = ExtResource("1_qhukd")
+Button/styles/disabled = SubResource("StyleBoxFlat_o8p0q")
+Button/styles/focus = SubResource("StyleBoxFlat_ntduy")
+Button/styles/hover = SubResource("StyleBoxFlat_5jb4k")
+Button/styles/normal = SubResource("StyleBoxFlat_rk0up")
+Button/styles/pressed = SubResource("StyleBoxFlat_420j1")
+RichTextLabel/colors/default_color = Color(1, 1, 1, 1)
+RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 1)
+RichTextLabel/colors/font_selected_color = Color(0, 0, 0, 0)
+RichTextLabel/colors/font_shadow_color = Color(0, 0, 0, 0)
+RichTextLabel/colors/selection_color = Color(0.1, 0.1, 1, 0.8)
+RichTextLabel/colors/table_border = Color(0, 0, 0, 0)
+RichTextLabel/colors/table_even_row_bg = Color(0, 0, 0, 0)
+RichTextLabel/colors/table_odd_row_bg = Color(0, 0, 0, 0)
+RichTextLabel/constants/line_separation = 0
+RichTextLabel/constants/outline_size = 0
+RichTextLabel/constants/paragraph_separation = 0
+RichTextLabel/constants/shadow_offset_x = 1
+RichTextLabel/constants/shadow_offset_y = 1
+RichTextLabel/constants/shadow_outline_size = 1
+RichTextLabel/constants/strikethrough_alpha = 50
+RichTextLabel/constants/table_h_separation = 3
+RichTextLabel/constants/table_v_separation = 3
+RichTextLabel/constants/text_highlight_h_padding = 3
+RichTextLabel/constants/text_highlight_v_padding = 3
+RichTextLabel/constants/underline_alpha = 50
+RichTextLabel/font_sizes/bold_font_size = 16
+RichTextLabel/font_sizes/bold_italics_font_size = 16
+RichTextLabel/font_sizes/italics_font_size = 16
+RichTextLabel/font_sizes/mono_font_size = 16
+RichTextLabel/font_sizes/normal_font_size = 106
+RichTextLabel/fonts/mono_font = ExtResource("1_qhukd")
+RichTextLabel/fonts/normal_font = ExtResource("1_qhukd")
+RichTextLabel/icons/horizontal_rule = SubResource("ImageTexture_px3il")
+RichTextLabel/styles/focus = SubResource("StyleBoxFlat_ntduy")
+RichTextLabel/styles/normal = SubResource("StyleBoxEmpty_l3122")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tlal7"]
+bg_color = Color(0.18000486, 0.1800049, 0.18000478, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_blend = true
+shadow_color = Color(0.11858138, 0.11858138, 0.11858138, 0.6)
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qhukd"]
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.986173, 0.9916946, 0.11262085, 1)
+border_blend = true
+
+[node name="TeekoMenu" type="Window"]
+oversampling_override = 1.0
+initial_position = 1
+size = Vector2i(1500, 900)
+theme = SubResource("Theme_1tob0")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchors_preset = -1
+anchor_right = 0.119
+anchor_bottom = 0.245
+offset_left = 511.0
+offset_top = -100.0
+offset_right = 827.5
+offset_bottom = -131.5
+theme_override_font_sizes/normal_font_size = 200
+text = "Teeko's Shop"
+scroll_active = false
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+anchors_preset = -1
+anchor_right = 0.119
+anchor_bottom = 0.245
+offset_left = 1017.0
+offset_top = 154.0
+offset_right = 1123.5
+offset_bottom = 78.5
+theme_override_font_sizes/normal_font_size = 150
+text = "50 Chits"
+scroll_active = false
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 471.0
+offset_top = 513.0
+offset_right = 1001.0
+offset_bottom = 639.0
+theme_override_colors/font_hover_color = Color(0.986173, 0.9916946, 0.11262085, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.986173, 0.9916946, 0.11262085, 1)
+theme_override_colors/icon_hover_color = Color(0.986173, 0.9916946, 0.11262085, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.986173, 0.9916946, 0.11262085, 1)
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_tlal7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qhukd")
+text = "Increase Health"
+
+[node name="Button4" type="Button" parent="."]
+offset_left = 471.0
+offset_top = 355.0
+offset_right = 1001.0
+offset_bottom = 481.0
+theme_override_colors/font_hover_color = Color(0.986173, 0.9916946, 0.11262085, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.986173, 0.9916946, 0.11262085, 1)
+theme_override_colors/icon_hover_color = Color(0.986173, 0.9916946, 0.11262085, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.986173, 0.9916946, 0.11262085, 1)
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_tlal7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qhukd")
+text = "Increase Mindwave Speed"
+
+[node name="Button5" type="Button" parent="."]
+offset_left = 471.0
+offset_top = 206.0
+offset_right = 1001.0
+offset_bottom = 332.0
+theme_override_colors/font_hover_color = Color(0.986173, 0.9916946, 0.11262085, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.986173, 0.9916946, 0.11262085, 1)
+theme_override_colors/icon_hover_color = Color(0.986173, 0.9916946, 0.11262085, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.986173, 0.9916946, 0.11262085, 1)
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_tlal7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qhukd")
+text = "Increase Mindwave Damage"

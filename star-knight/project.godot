@@ -22,9 +22,12 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
-"PrinceThar": "res://addons/dialogic/Resources/Characters/PrinceThar.dch"
+"Cloaked Stranger": "res://addons/dialogic/Resources/Characters/Cloaked Stranger.dch",
+"PrinceThar": "res://addons/dialogic/Resources/Characters/PrinceThar.dch",
+"Teeko": "res://addons/dialogic/Resources/Characters/Teeko.dch"
 }
 directories/dtl_directory={
+"HubFirstConvo": "res://addons/dialogic/Resources/Timelines/HubFirstConvo.dtl",
 "TutorialRoom1": "res://addons/dialogic/Resources/Timelines/TutorialRoom1.dtl",
 "TutorialRoom2": "res://addons/dialogic/Resources/Timelines/TutorialRoom2.dtl",
 "TutorialRoom3": "res://addons/dialogic/Resources/Timelines/TutorialRoom3.dtl",
@@ -35,6 +38,7 @@ directories/dtl_directory={
 layout/style_directory={}
 glossary/default_case_sensitive=true
 variables={
+"HasSeen": false,
 "Ischatting": false
 }
 layout/style_list=[]
