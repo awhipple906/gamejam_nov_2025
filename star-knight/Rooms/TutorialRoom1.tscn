@@ -1,11 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://bdumuelaq0rtx"]
+[gd_scene load_steps=14 format=3 uid="uid://bdumuelaq0rtx"]
 
 [ext_resource type="Script" uid="uid://ro7q8a72qh5l" path="res://Rooms/test_level.gd" id="1_d3mkw"]
 [ext_resource type="PackedScene" uid="uid://b3jujwoowmjrl" path="res://Art Assets/UI/HealthContainer.tscn" id="2_cqn0n"]
 [ext_resource type="PackedScene" uid="uid://c76or3qn4nag5" path="res://Player/Model/Player.tscn" id="3_qh541"]
-[ext_resource type="PackedScene" uid="uid://bpa1kdf165p6r" path="res://Art Assets/Environment/PillarBroken.glb" id="6_aoi70"]
 [ext_resource type="Texture2D" uid="uid://du3nal6tbelux" path="res://Art Assets/Environment/Textures/StoneFloorDiffuse.png" id="6_bxl6b"]
-[ext_resource type="PackedScene" uid="uid://blfm7wwkdfmut" path="res://Art Assets/Environment/Pillar.glb" id="8_7aasw"]
+[ext_resource type="PackedScene" uid="uid://b8ee46qphe5mo" path="res://Art Assets/Environment/pillar_broken_2.tscn" id="8_7aasw"]
 [ext_resource type="PackedScene" uid="uid://4qr7arofkogc" path="res://Art Assets/Environment/pillar_2.tscn" id="8_61x4w"]
 [ext_resource type="PackedScene" uid="uid://d27fvc1n8usxn" path="res://Art Assets/Environment/orb_light.tscn" id="9_f8kwc"]
 [ext_resource type="PackedScene" uid="uid://biv3bo2vdmxlo" path="res://Art Assets/Environment/item_pedestal.tscn" id="11_g035i"]
@@ -116,18 +115,6 @@ material = SubResource("StandardMaterial3D_ytkqd")
 [node name="ItemPedestal" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("11_g035i")]
 transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 4.86548, -0.02085632, -17.38602)
 
-[node name="PillarBroken3" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("6_aoi70")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.2946825, 0, -8.097563)
-
-[node name="PillarBroken2" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("6_aoi70")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8.426756)
-
-[node name="Pillar2" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("8_61x4w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.015434027, -25.065886)
-
-[node name="Pillar3" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("8_7aasw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.413612, 0, -24.940279)
-
 [node name="OrbLight2" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("9_f8kwc")]
 transform = Transform3D(0.9131366, 0, 0, 0, 0.8, 0, 0, 0, 1.1646056, 0.47137097, -0.03860855, -0.3317601)
 
@@ -172,3 +159,15 @@ affect_navigation_mesh = true
 
 [node name="Door3" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("12_hx1pi")]
 transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 8.975112, 0.39278117, -38.188515)
+
+[node name="PillarBroken2" parent="." instance=ExtResource("8_7aasw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8912086, -0.01655054, -5.420599)
+
+[node name="PillarBroken3" parent="." instance=ExtResource("8_7aasw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5464411, -0.016551495, -5.7161255)
+
+[node name="Pillar2" parent="." instance=ExtResource("8_61x4w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.213828, -0.016493857, -17.28975)
+
+[node name="Pillar3" parent="." instance=ExtResource("8_61x4w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08599305, -0.016494095, -17.418144)
