@@ -4,7 +4,6 @@ class_name EnemyMovementAnimations
 var animation
 var last_animation = "move"
 var current_face = "L"
-var attacking = true
 
 func set_animation(animated_sprite):
 	animation = animated_sprite
@@ -27,7 +26,6 @@ func play_movement_animations(velocity):
 		animation.play(last_animation)
 
 func play_attack_animation():
-	print("Playing Attack Animations -------")
 	if current_face == "R":
 		animation.flip_h = true
 	else:

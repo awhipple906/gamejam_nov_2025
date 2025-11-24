@@ -2,20 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dd45ehucalgar"
-path="res://.godot/imported/EnemyGrobcatSpriteSheet.png-437180db20cad0eeaafbbe7fcf397964.ctex"
+uid="uid://5v5stgynop6q"
+path.s3tc="res://.godot/imported/EnemyThergg-Sheet.png-1fe888cd3de30578a6b3aeb0fe97b35a.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://Enemies/GrobCat/Visuals/Animations/EnemyGrobcatSpriteSheet.png"
-dest_files=["res://.godot/imported/EnemyGrobcatSpriteSheet.png-437180db20cad0eeaafbbe7fcf397964.ctex"]
+source_file="res://Enemies/Thergg/Visuals/EnemyThergg-Sheet.png"
+dest_files=["res://.godot/imported/EnemyThergg-Sheet.png-1fe888cd3de30578a6b3aeb0fe97b35a.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

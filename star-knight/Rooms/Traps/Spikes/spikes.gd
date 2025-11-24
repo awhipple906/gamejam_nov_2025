@@ -1,6 +1,6 @@
 extends Node3D
 class_name MeleeTrap
-@export var attack_stats : AttackStats
+@export var attack_stats : MeleeAttackStats
 @onready var player = %Player
 
 # Called when the node enters the scene tree for the first time.

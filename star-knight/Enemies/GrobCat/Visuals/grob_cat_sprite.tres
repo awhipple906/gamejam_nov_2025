@@ -1,6 +1,6 @@
 [gd_resource type="SpriteFrames" load_steps=13 format=3 uid="uid://b8bhdylkk1je6"]
 
-[ext_resource type="Texture2D" uid="uid://dd45ehucalgar" path="res://Enemies/GrobCat/Visuals/Animations/EnemyGrobcatSpriteSheet.png" id="1_wl2am"]
+[ext_resource type="Texture2D" uid="uid://dd45ehucalgar" path="res://Enemies/GrobCat/Visuals/EnemyGrobcatSpriteSheet.png" id="1_wl2am"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bwv56"]
 atlas = ExtResource("1_wl2am")

@@ -17,6 +17,7 @@ var target_velocity = Vector3.ZERO
 var last_animation = "idle"
 var health
 
+
 func _ready() -> void:
 	var health = playerHitboxComponent.health_component.health
 
@@ -30,9 +31,11 @@ func _physics_process(delta):
 	var input_direction_3D = Vector3(
 		input_direction_2D.x, 0.0, input_direction_2D.y
 	)
+
 	var direction = transform.basis * input_direction_3D
 	#print(direction)
-	play_animation(direction)
+	if Dialogic.VAR.Ischatting == false:
+		play_animation(direction)
 	
 	
 	velocity.x = direction.x * SPEED
@@ -62,8 +65,8 @@ func _physics_process(delta):
 		velocity.y = 0.0
 	elif Input.is_action_just_pressed("primary_attack"):
 		swing(direction)
-	
-	move_and_slide()
+	if Dialogic.VAR.Ischatting == false:
+		move_and_slide()
 	
 	
 func play_animation(direction):
