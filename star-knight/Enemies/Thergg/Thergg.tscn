@@ -11,12 +11,12 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3hk3u"]
 height = 2.7004395
 
-[node name="Thergg" type="CharacterBody3D" node_paths=PackedStringArray("EnemyHitboxComponent", "attack_stats", "animation")]
+[node name="Thergg" type="CharacterBody3D" node_paths=PackedStringArray("hitbox", "attack_stats", "animation")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_dt0hm")
-EnemyHitboxComponent = NodePath("HitboxComponent")
+hitbox = NodePath("HitboxComponent")
 attack_stats = NodePath("RangedAttack")
 animation = NodePath("AnimatedSprite3D")
 rangedBullet = ExtResource("2_jxwja")
