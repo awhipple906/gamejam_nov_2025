@@ -25,6 +25,10 @@ func _ready() -> void:
 
 #This is the Enemy pathing to the player
 func _physics_process(delta: float) -> void:
+	#If character is talking stop moving and leave physics process method and do nothing else.
+	if Dialogic.VAR.Ischatting == true:
+		velocity = Vector3.ZERO
+		return
 	#Small if statement to ensure we aren't checking physics every single second and tanking our machines
 	#also ensure when the enemy spawns they are set to random interval so they aren't checking the same second
 	#as all other enemies.
