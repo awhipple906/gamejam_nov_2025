@@ -58,7 +58,7 @@ collision_mask = 15
 safe_margin = 0.01
 script = ExtResource("1_nq1va")
 speed = 15
-playerHitboxComponent = NodePath("HitboxComponent")
+hitbox = NodePath("HitboxComponent")
 step_sfx = ExtResource("5_6g8sp")
 jump_sfx = ExtResource("3_uexeo")
 

@@ -5,7 +5,7 @@ class_name Player
 @export var speed = 14
 # The downward acceleration when in the air, in meters per second squared.
 @export var fall_acceleration = 75
-@export var playerHitboxComponent : HitboxComponent
+@export var hitbox : HitboxComponent
 
 # Audio for player actions
 @export var step_sfx : AudioStream
@@ -19,7 +19,7 @@ var health
 
 
 func _ready() -> void:
-	var health = playerHitboxComponent.health_component.health
+	health = hitbox.health_component.health
 
 
 func _physics_process(delta):
@@ -27,7 +27,6 @@ func _physics_process(delta):
 	var input_direction_2D = Input.get_vector(
 		"Left", "Right", "Forward", "Back"
 	)
-	#print(input_direction_2D)
 	var input_direction_3D = Vector3(
 		input_direction_2D.x, 0.0, input_direction_2D.y
 	)
@@ -40,22 +39,7 @@ func _physics_process(delta):
 	
 	velocity.x = direction.x * SPEED
 	velocity.z = direction.z * SPEED
-	
-	#var direction = Vector3.ZERO
-	#
-	#if Input.is_action_pressed("Right"):
-		#print("I am pushing: RIGHT")
 
-	#if Input.is_action_pressed("Left"):
-		#print("I am pushing: LEFT")
-		#direction.x -= 1
-	#if Input.is_action_pressed("Back"):
-		#print("I am pushing: BACK")
-		#direction.z += 1
-	#if Input.is_action_pressed("Forward"):
-		#print("I am pushing: FORWARD")
-		#direction.z -= 1
-	
 	velocity.y -= 20.0 * delta
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = 10.0
@@ -94,11 +78,12 @@ func swing(direction):
 		else:
 			print("Attacking Left")
 			
-func damage(attack_damage):
-	health =- attack_damage
-	print(health)
-	if health <= 0:
-		print("YOU ARE DEAD")
+#func damage(attack_damage):
+	#health =- attack_damage
+	#print(health)
+	#healthChanged.emit()
+	#if health <= 0:
+		#print("YOU ARE DEAD")
 		
 func load_sfx(sfx_to_load):
 	if %sfx_player.stream != sfx_to_load:

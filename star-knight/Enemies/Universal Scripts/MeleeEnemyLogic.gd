@@ -3,7 +3,7 @@ extends CharacterBody3D
 
 @export var max_speed := 5.0
 @export var attack_range := 1.0
-@export var EnemyHitboxComponent : HitboxComponent
+@export var hitbox : HitboxComponent
 @export var attack_stats : MeleeAttackStats
 @export var animation : AnimatedSprite3D
 @export var enemyType := 1
@@ -14,7 +14,7 @@ var current_speed := 0.0
 
 @onready var nav_agent = $NavigationAgent3D
 @onready var physicsCheckNum = int(randf_range(2,30))
-@onready var max_health = EnemyHitboxComponent.health_component.health
+@onready var max_health = hitbox.health_component.health
 
 
 func _ready() -> void:
@@ -39,7 +39,7 @@ func _physics_process(delta: float) -> void:
 		canCheckPhysics = false
 	if(canCheckPhysics):
 		#if we are touching the player start to attack and stop moving
-		if(attack_stats._check_can_attack(attack_stats) and attack_stats.get_overlapping_bodies().count(%Player) > 0):
+		if(attack_stats._check_can_attack(attack_stats, %Player) and attack_stats.get_overlapping_bodies().count(%Player) > 0):
 			velocity = Vector3(0,0,0)
 			animation_player.play_attack_animation()
 			%GrobcatAttackAudio.play()
@@ -47,7 +47,7 @@ func _physics_process(delta: float) -> void:
 			
 		#if we aren't attacking, we are out of range and are moving instead
 
-		if(!attack_stats._check_can_attack(attack_stats) and !stunned and !animation.is_playing() and attack_stats.get_overlapping_bodies().count(%Player) == 0):
+		if(!attack_stats._check_can_attack(attack_stats, %Player) and !stunned and !animation.is_playing() and attack_stats.get_overlapping_bodies().count(%Player) == 0):
 			velocity = calculate_path()
 			animation_player.play_movement_animations(velocity)
 		move_and_slide()
