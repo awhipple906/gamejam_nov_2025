@@ -4,7 +4,7 @@ extends TextureProgressBar
 # Called when the node enters the scene tree for the first time.
 var body
 func _ready() -> void:
-	body = get_parent().get_parent().get_parent()
+	body = get_parent().get_parent().get_parent().get_parent()
 	print(body.hitbox)
 	body.hitbox.health_component.healthChanged.connect(update)
 	max_value = body.hitbox.health_component.MAX_HEALTH

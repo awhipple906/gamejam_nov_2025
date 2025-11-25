@@ -15,7 +15,8 @@ radius = 0.30517578
 height = 2.0968018
 
 [sub_resource type="Animation" id="Animation_3680f"]
-length = 0.001
+length = 0.035
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -23,10 +24,10 @@ tracks/0/path = NodePath("PlayerSprite3D:material_override:shader_parameter/inte
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.033333335),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0]
+"values": [0.0, 1.0]
 }
 
 [sub_resource type="Animation" id="Animation_mbhvf"]
@@ -117,9 +118,11 @@ bus = &"SFX"
 
 [node name="jump_player" type="AudioStreamPlayer3D" parent="."]
 unique_name_in_owner = true
+stream = ExtResource("3_uexeo")
 
 [node name="sfx_player" type="AudioStreamPlayer3D" parent="."]
 unique_name_in_owner = true
+stream = ExtResource("3_uexeo")
 unit_size = 7.0
 max_polyphony = 5
 bus = &"SFX"

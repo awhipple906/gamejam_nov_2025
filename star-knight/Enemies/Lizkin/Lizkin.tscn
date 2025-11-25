@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://qnqn4g4b4e87" path="res://Enemies/Universal Scripts/MeleeEnemyLogic.gd" id="1_o7ewi"]
 [ext_resource type="PackedScene" uid="uid://cgu4drpwlhhc6" path="res://Enemies/GrobCat/Visuals/GrobCatSprite3D.tscn" id="2_112wc"]
 [ext_resource type="SpriteFrames" uid="uid://dukgfr3adjec3" path="res://Enemies/Lizkin/Animations/LizkinSpriteFrames.tres" id="3_0nhrq"]
-[ext_resource type="PackedScene" uid="uid://csxhdjx7y84og" path="res://Enemies/MeleeAttack.tscn" id="4_xro7a"]
+[ext_resource type="PackedScene" uid="uid://csxhdjx7y84og" path="res://Enemies/Universal Scenes/MeleeAttack.tscn" id="4_xro7a"]
 [ext_resource type="PackedScene" uid="uid://gk5hu7ibrphb" path="res://Components/HealthComponent.tscn" id="5_btxnx"]
 [ext_resource type="PackedScene" uid="uid://clurdw1xfhx5s" path="res://Components/HitboxComponent.tscn" id="6_oqgo6"]
 [ext_resource type="AudioStream" uid="uid://dub1lrxj5uwje" path="res://Player/Audio/GrobcatAttack.mp3" id="7_0nhrq"]
@@ -14,17 +14,17 @@ height = 1.7836914
 [sub_resource type="SphereShape3D" id="SphereShape3D_8582v"]
 radius = 0.86406904
 
-[node name="Lizkin" type="CharacterBody3D" node_paths=PackedStringArray("EnemyHitboxComponent", "attack_stats", "animation") groups=["Enemies"]]
+[node name="Lizkin" type="CharacterBody3D" node_paths=PackedStringArray("hitbox", "attack_stats", "animation") groups=["Enemies"]]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_o7ewi")
-EnemyHitboxComponent = NodePath("HitboxComponent")
+hitbox = NodePath("HitboxComponent")
 attack_stats = NodePath("MeleeAttack")
 animation = NodePath("LizkinSprite3d")
 
 [node name="LizkinSprite3d" parent="." instance=ExtResource("2_112wc")]
 unique_name_in_owner = true
-transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, 0, 0.9946672, 0)
+transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, 0, 0.8055631, 0)
 shaded = true
 alpha_cut = 2
 texture_filter = 0
@@ -46,6 +46,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3727051, 0)
 shape = SubResource("SphereShape3D_8582v")
 
 [node name="HealthComponent" parent="." instance=ExtResource("5_btxnx")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 MAX_HEALTH = 5
 
 [node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("6_oqgo6")]

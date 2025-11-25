@@ -93,6 +93,7 @@ func _shoot ():
 	get_parent().get_parent().add_sibling(bullet)
 	bullet.position = %SpawnBlock.global_position
 	var dir = bullet.position.direction_to(%Player.global_position)
+	%TherggAttackAudio.play()
 	#dir.x = (dir.x * 1.25)
 	bullet.global_rotation = %Player.global_position - bullet.position.normalized()
 	bullet.target_pos = dir
