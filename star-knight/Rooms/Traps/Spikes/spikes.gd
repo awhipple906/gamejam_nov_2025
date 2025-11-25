@@ -9,7 +9,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if(attack_stats.has_overlapping_bodies()):
 		if (attack_stats._check_can_attack(attack_stats, attack_stats.get_overlapping_bodies()[0])):
 			print("Spike sees you")

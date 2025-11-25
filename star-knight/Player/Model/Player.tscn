@@ -82,13 +82,13 @@ transform = Transform3D(1, 0, 0, 0, 0.9061307, 0.42299786, 0, -0.42299786, 0.906
 fov = 37.849285
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 5.627448, 0.6524997)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 5.2671537, 0.6524997)
 light_color = Color(0.9790618, 0.7673883, 0.5856188, 1)
 light_energy = 10.0
 shadow_enabled = true
 shadow_caster_mask = 4294966784
-spot_range = 12.578659
-spot_angle = 75.82859
+spot_range = 9.791233
+spot_angle = 77.93637
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.06, 0, 0, 0, 1, 0, 0.08046764, 0)
