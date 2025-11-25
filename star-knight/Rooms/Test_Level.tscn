@@ -184,5 +184,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.852095, 1.3277631, -15.074
 [node name="Thergg" parent="SubViewportContainer/SubViewport" instance=ExtResource("13_fw8lx")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.9066067, 0.06572437, -6.1517763)
 
-[node name="Lizkin" parent="." instance=ExtResource("16_laefg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.318007, 2.114244, -3.6331215)
+[node name="Lizkin" parent="SubViewportContainer/SubViewport" instance=ExtResource("16_laefg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.318007, 0.6513877, -3.6331215)
