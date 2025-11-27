@@ -46,6 +46,7 @@ health_component = NodePath("../HealthComponent")
 unique_name_in_owner = true
 transform = Transform3D(1, 2.2230278e-09, -7.351371e-08, -2.223028e-09, 1, -2.944371e-09, 7.351371e-08, 2.9443712e-09, 1, 0, 0.1366849, 0)
 stream = ExtResource("6_spghp")
+max_db = 1.0
 
 [node name="SpotLight3D" type="SpotLight3D" parent="TherggAttackAudio"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.2743051, 3.1849525, 0.55992657)

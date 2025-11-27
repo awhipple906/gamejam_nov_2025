@@ -84,7 +84,7 @@ fov = 37.849285
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 5.2671537, 0.6524997)
 light_color = Color(0.9790618, 0.7673883, 0.5856188, 1)
-light_energy = 10.0
+light_energy = 6.0
 shadow_enabled = true
 shadow_caster_mask = 4294966784
 spot_range = 9.791233
@@ -131,5 +131,8 @@ bus = &"SFX"
 libraries = {
 &"": SubResource("AnimationLibrary_3680f")
 }
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.38429534, -0.9232102, 0, 0.9232102, 0.38429534, 0, 6.7370896, 13.814444)
 
 [connection signal="frame_changed" from="PlayerSprite3D" to="." method="_on_player_sprite_3d_frame_changed"]
