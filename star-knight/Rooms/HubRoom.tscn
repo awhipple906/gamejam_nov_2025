@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://bayisn62wil33"]
+[gd_scene load_steps=15 format=3 uid="uid://bayisn62wil33"]
 
 [ext_resource type="Script" uid="uid://caktrk4kl4ekf" path="res://Rooms/hub_room.gd" id="1_7hyac"]
 [ext_resource type="PackedScene" uid="uid://b3jujwoowmjrl" path="res://Art Assets/UI/HealthContainer.tscn" id="2_ql32b"]
 [ext_resource type="PackedScene" uid="uid://c76or3qn4nag5" path="res://Player/Model/Player.tscn" id="3_q45mx"]
+[ext_resource type="PackedScene" uid="uid://jcdtkwvi2dus" path="res://Components/TeekoMenu.tscn" id="3_ujprb"]
 [ext_resource type="PackedScene" uid="uid://d27fvc1n8usxn" path="res://Art Assets/Environment/orb_light.tscn" id="4_wcegg"]
 [ext_resource type="Texture2D" uid="uid://du3nal6tbelux" path="res://Art Assets/Environment/Textures/StoneFloorDiffuse.png" id="5_7hyac"]
 [ext_resource type="PackedScene" uid="uid://4qr7arofkogc" path="res://Art Assets/Environment/pillar_2.tscn" id="6_wcegg"]
@@ -38,6 +39,9 @@ albedo_color = Color(0, 0, 0, 1)
 
 [node name="HubRoom" type="Node3D"]
 script = ExtResource("1_7hyac")
+
+[node name="TeekoMenu" parent="." instance=ExtResource("3_ujprb")]
+visible = false
 
 [node name="HealthContainer" parent="." instance=ExtResource("2_ql32b")]
 offset_top = -2.0
@@ -121,8 +125,9 @@ transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 9.860104, -0.0
 [node name="Door2" parent="SubViewportContainer/SubViewport" instance=ExtResource("8_ujprb")]
 transform = Transform3D(-0.015148819, 0, 0.99988526, 0, 1, 0, -0.99988526, 0, -0.015148819, -3.664576, 0.39278165, -9.381329)
 
-[node name="MarketStall" parent="." instance=ExtResource("8_wcegg")]
+[node name="MarketStall" parent="." node_paths=PackedStringArray("teekomenu") instance=ExtResource("8_wcegg")]
 transform = Transform3D(-0.00541045, 0, 0.99998534, 0, 1, 0, -0.99998534, 0, -0.00541045, 1.9292116, 1.7311223, -0.5384731)
+teekomenu = NodePath("../TeekoMenu")
 
 [node name="Door2" parent="." instance=ExtResource("9_7hyac")]
 transform = Transform3D(-0.9999824, 0, -0.005934116, 0, 1, 0, 0.005934116, 0, -0.9999824, 6.2267737, 0.4459505, 3.2386322)
