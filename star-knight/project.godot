@@ -22,16 +22,23 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
-"PrinceThar": "res://addons/dialogic/Resources/Characters/PrinceThar.dch"
+"Cloaked Stranger": "res://addons/dialogic/Resources/Characters/Cloaked Stranger.dch",
+"PrinceThar": "res://addons/dialogic/Resources/Characters/PrinceThar.dch",
+"Teeko": "res://addons/dialogic/Resources/Characters/Teeko.dch"
 }
 directories/dtl_directory={
+"HubFirstConvo": "res://addons/dialogic/Resources/Timelines/HubFirstConvo.dtl",
 "TutorialRoom1": "res://addons/dialogic/Resources/Timelines/TutorialRoom1.dtl",
+"TutorialRoom2": "res://addons/dialogic/Resources/Timelines/TutorialRoom2.dtl",
+"TutorialRoom3": "res://addons/dialogic/Resources/Timelines/TutorialRoom3.dtl",
+"TutorialRoom4": "res://addons/dialogic/Resources/Timelines/TutorialRoom4.dtl",
 "timeline": "res://timeline.dtl",
 "timelinetest": "res://addons/dialogic/Resources/Timelines/timelinetest.dtl"
 }
 layout/style_directory={}
 glossary/default_case_sensitive=true
 variables={
+"HasSeen": false,
 "Ischatting": false
 }
 layout/style_list=[]
@@ -100,6 +107,11 @@ dialogic_default_action={
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":32,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":88,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
+]
+}
+e={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }
 
