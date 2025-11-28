@@ -1,13 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://bdumuelaq0rtx"]
+[gd_scene load_steps=13 format=3 uid="uid://bdumuelaq0rtx"]
 
 [ext_resource type="Script" uid="uid://dssv8v7s1cvpl" path="res://Rooms/tutorial_room_1.gd" id="1_kjsb8"]
 [ext_resource type="PackedScene" uid="uid://b3jujwoowmjrl" path="res://Art Assets/UI/HealthContainer.tscn" id="2_cqn0n"]
 [ext_resource type="PackedScene" uid="uid://c76or3qn4nag5" path="res://Player/Model/Player.tscn" id="3_qh541"]
-[ext_resource type="PackedScene" uid="uid://bpa1kdf165p6r" path="res://Art Assets/Environment/PillarBroken.glb" id="6_aoi70"]
-[ext_resource type="Texture2D" uid="uid://du3nal6tbelux" path="res://Art Assets/Environment/Textures/StoneFloorDiffuse.png" id="6_bxl6b"]
-[ext_resource type="PackedScene" uid="uid://blfm7wwkdfmut" path="res://Art Assets/Environment/Pillar.glb" id="8_7aasw"]
+[ext_resource type="Material" uid="uid://cxflf76lktjvb" path="res://Art Assets/Environment/Materials/tilefloor.tres" id="4_kjsb8"]
+[ext_resource type="PackedScene" uid="uid://b8ee46qphe5mo" path="res://Art Assets/Environment/pillar_broken_2.tscn" id="8_7aasw"]
 [ext_resource type="PackedScene" uid="uid://4qr7arofkogc" path="res://Art Assets/Environment/pillar_2.tscn" id="8_61x4w"]
 [ext_resource type="PackedScene" uid="uid://d27fvc1n8usxn" path="res://Art Assets/Environment/orb_light.tscn" id="9_f8kwc"]
+[ext_resource type="Material" uid="uid://b6sa4nxd5h0s7" path="res://Art Assets/Environment/Materials/tilewall.tres" id="10_8ogih"]
 [ext_resource type="PackedScene" uid="uid://biv3bo2vdmxlo" path="res://Art Assets/Environment/item_pedestal.tscn" id="11_g035i"]
 [ext_resource type="PackedScene" uid="uid://dbeeyfnjo30ug" path="res://Art Assets/Environment/door_2.tscn" id="12_hx1pi"]
 
@@ -33,9 +33,6 @@ volumetric_fog_density = 0.005
 volumetric_fog_sky_affect = 0.226
 adjustment_enabled = true
 adjustment_saturation = 1.5
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ytkqd"]
-albedo_color = Color(0, 0, 0, 1)
 
 [node name="TutorialRoom1" type="Node3D"]
 script = ExtResource("1_kjsb8")
@@ -72,7 +69,7 @@ transform = Transform3D(0.87610114, 0, 0, 0, 1, 0, 0, 0, 0.68692786, -0.00014114
 navigation_mesh = SubResource("NavigationMesh_qo3sl")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="SubViewportContainer/SubViewport/NavigationRegion3D"]
-transform = Transform3D(0.24781537, 0, 0, 0, 1, 0, 0, 0, 0.64719784, 5.2266707, -0.516552, -17.022455)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2284956, -0.516552, -17.086603)
 use_collision = true
 collision_mask = 2
 size = Vector3(78.140625, 1, 66.208984)
@@ -141,31 +138,27 @@ transform = Transform3D(0.9131366, 0, 0, 0, 0.8, 0, 0, 0, 1.1646056, 0.51820856,
 transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 6.514946, 0.39277974, -38.276093)
 
 [node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="SubViewportContainer/SubViewport/NavigationRegion3D"]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, -0.801815, 1.9118431, 0.07901196)
-vertices = PackedVector3Array(1.2656375, 0, -6.2805867, 1.1846001, 0, -5.3479023, -0.07056737, 0, -5.354124, 0.14101577, 0, -6.2689443)
+height = 5.11
+vertices = PackedVector3Array(-0.11740243, 0, -9.749095, -0.1241086, 0, -6.751709, 2.3111813, 0, -6.729836, 2.2768834, 0, -9.74829)
 affect_navigation_mesh = true
+carve_navigation_mesh = true
 
 [node name="NavigationObstacle3D2" type="NavigationObstacle3D" parent="SubViewportContainer/SubViewport/NavigationRegion3D"]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 8.490101, 1.9118431, 0.3054036)
-vertices = PackedVector3Array(1.2656375, 0, -6.2805867, 1.1846001, 0, -5.3479023, -0.07056737, 0, -5.354124, 0.14101577, 0, -6.2689443)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.606824, 0, 0)
+height = 5.11
+vertices = PackedVector3Array(-0.11740243, 0, -9.749095, -0.1241086, 0, -6.751709, 2.3111813, 0, -6.729836, 2.2768834, 0, -9.74829)
 affect_navigation_mesh = true
+carve_navigation_mesh = true
 
 [node name="NavigationObstacle3D3" type="NavigationObstacle3D" parent="SubViewportContainer/SubViewport/NavigationRegion3D"]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 4.2165184, 1.2430067, -9.01938)
-vertices = PackedVector3Array(1.2656375, 0, -6.2805867, 1.1846001, 0, -5.3479023, -0.07056737, 0, -5.354124, 0.14101577, 0, -6.2689443)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.98783, 0, -16.903528)
+height = 5.11
+vertices = PackedVector3Array(-0.11740243, 0, -9.749095, -0.1241086, 0, -6.751709, 2.3111813, 0, -6.729836, 2.2768834, 0, -9.74829)
 affect_navigation_mesh = true
-
-[node name="NavigationObstacle3D3" type="NavigationObstacle3D" parent="SubViewportContainer/SubViewport/NavigationRegion3D/NavigationObstacle3D3"]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 3.8530226, 2.5886867, -2.5711575)
-vertices = PackedVector3Array(1.2656375, 0, -6.2805867, 1.1846001, 0, -5.3479023, -0.07056737, 0, -5.354124, 0.14101577, 0, -6.2689443)
-affect_navigation_mesh = true
-
-[node name="NavigationObstacle3D3" type="NavigationObstacle3D" parent="SubViewportContainer/SubViewport/NavigationRegion3D/NavigationObstacle3D3/NavigationObstacle3D3"]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.4557571, -7.5095844, -0.5222287, 2.6559153)
-vertices = PackedVector3Array(1.2656375, 0, -6.2805867, 1.1846001, 0, -5.3479023, -0.07056737, 0, -5.354124, 0.14101577, 0, -6.2689443)
-affect_navigation_mesh = true
+carve_navigation_mesh = true
 
 [node name="NavigationObstacle3D4" type="NavigationObstacle3D" parent="SubViewportContainer/SubViewport/NavigationRegion3D"]
-transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 4.2165184, 3.2201128, -9.019379)
-vertices = PackedVector3Array(10.057471, 0, -23.915686, 9.960041, 0, 20.682205, -9.450363, 0, 10.811981, -8.47732, 0, -22.29008)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.48986316, 0, -17.111788)
+height = 5.11
+vertices = PackedVector3Array(-0.11740243, 0, -9.749095, -0.1241086, 0, -6.751709, 2.3111813, 0, -6.729836, 2.2768834, 0, -9.74829)
 affect_navigation_mesh = true

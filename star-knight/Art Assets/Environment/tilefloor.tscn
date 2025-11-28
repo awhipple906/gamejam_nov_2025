@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cuopbyytdxkf8"]
+
+[ext_resource type="PackedScene" uid="uid://c0qdott8nqwre" path="res://Art Assets/Environment/Tile.glb" id="1_ola66"]
+[ext_resource type="Material" uid="uid://cxflf76lktjvb" path="res://Art Assets/Environment/Materials/tilefloor.tres" id="2_ola66"]
+
+[node name="Tile" instance=ExtResource("1_ola66")]
+
+[node name="Cube_008" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+surface_material_override/0 = ExtResource("2_ola66")

@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bt25u86532wts"]
+
+[ext_resource type="Texture2D" uid="uid://c3028mqu2774" path="res://Art Assets/Environment/Textures/metal1.png" id="1_mdfum"]
+
+[resource]
+specular_mode = 1
+albedo_color = Color(0.31, 0.23146667, 0.0744, 1)
+albedo_texture = ExtResource("1_mdfum")
+metallic = 0.75
+metallic_specular = 1.0
+roughness = 0.5
+uv1_scale = Vector3(-0.325, -0.325, -0.325)
+texture_filter = 0

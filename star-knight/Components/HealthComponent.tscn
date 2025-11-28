@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://gk5hu7ibrphb"]
+[gd_scene load_steps=7 format=3 uid="uid://gk5hu7ibrphb"]
 
 [ext_resource type="Script" uid="uid://ck5obk1fo08l4" path="res://Components/HealthComponent.gd" id="1_wqj2l"]
-[ext_resource type="Texture2D" uid="uid://snqhn201yadm" path="res://Art Assets/UI/health_bar_under.png" id="2_e6553"]
+[ext_resource type="Texture2D" uid="uid://u4bxe1jjxpen" path="res://Art Assets/UI/HPbackground.png" id="2_e6553"]
 [ext_resource type="Script" uid="uid://oi5fxtric0iu" path="res://Components/health_bar.gd" id="2_q8xte"]
-[ext_resource type="Texture2D" uid="uid://dmo5ipqv2eeps" path="res://Art Assets/UI/health_bar_progress.png" id="3_dc4ng"]
+[ext_resource type="Texture2D" uid="uid://d3arlsm1spp32" path="res://Art Assets/UI/HPover.png" id="3_2pr11"]
+[ext_resource type="Texture2D" uid="uid://dgpil5cfjwnvd" path="res://Art Assets/UI/HPprogress.png" id="3_dc4ng"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_e6553"]
 viewport_path = NodePath("Sprite3D/SubViewport")
@@ -12,17 +13,24 @@ viewport_path = NodePath("Sprite3D/SubViewport")
 script = ExtResource("1_wqj2l")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(4.4888105, 0, 0, 0, 1.5645106, 0, 0, 0, 1, 0, 2.9215202, 0)
+transform = Transform3D(1.905, 0, 0, 0, 0.64, 0, 0, 0, 1, 0, 2.9705384, 0)
+texture_filter = 0
 texture = SubResource("ViewportTexture_e6553")
 
 [node name="SubViewport" type="SubViewport" parent="Sprite3D"]
-size = Vector2i(37, 4)
+transparent_bg = true
+mesh_lod_threshold = 0.0
+canvas_item_default_texture_filter = 0
+size = Vector2i(128, 32)
+size_2d_override_stretch = true
 
 [node name="health_bar" type="TextureProgressBar" parent="Sprite3D/SubViewport"]
-offset_right = 2816.0
-offset_bottom = 1536.0
-scale = Vector2(0.35999984, 0.120000064)
-value = 100.0
+texture_filter = 1
+offset_right = 128.0
+offset_bottom = 32.0
+max_value = 7.965
+value = 7.965
 texture_under = ExtResource("2_e6553")
+texture_over = ExtResource("3_2pr11")
 texture_progress = ExtResource("3_dc4ng")
 script = ExtResource("2_q8xte")

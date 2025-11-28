@@ -13,6 +13,45 @@
 radius = 0.30517578
 height = 2.0968018
 
+[sub_resource type="Animation" id="Animation_3680f"]
+length = 0.035
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite3D:material_override:shader_parameter/intensity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_mbhvf"]
+resource_name = "hit"
+length = 0.2
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite3D:material_override:shader_parameter/intensity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3680f"]
+_data = {
+&"RESET": SubResource("Animation_3680f"),
+&"hit": SubResource("Animation_mbhvf")
+}
+
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("hitbox")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9937761, 0)
 collision_mask = 15
@@ -39,13 +78,13 @@ transform = Transform3D(1, 0, 0, 0, 0.9061307, 0.42299786, 0, -0.42299786, 0.906
 fov = 37.849285
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 5.627448, 0.6524997)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 5.2671537, 0.6524997)
 light_color = Color(0.9790618, 0.7673883, 0.5856188, 1)
-light_energy = 10.0
+light_energy = 6.0
 shadow_enabled = true
 shadow_caster_mask = 4294966784
-spot_range = 12.578659
-spot_angle = 75.82859
+spot_range = 9.791233
+spot_angle = 77.93637
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.06, 0, 0, 0, 1, 0, 0.08046764, 0)
@@ -75,11 +114,21 @@ bus = &"SFX"
 
 [node name="jump_player" type="AudioStreamPlayer3D" parent="."]
 unique_name_in_owner = true
+stream = ExtResource("3_uexeo")
 
 [node name="sfx_player" type="AudioStreamPlayer3D" parent="."]
 unique_name_in_owner = true
+stream = ExtResource("3_uexeo")
 unit_size = 7.0
 max_polyphony = 5
 bus = &"SFX"
+
+[node name="hitflashanimation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_3680f")
+}
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.38429534, -0.9232102, 0, 0.9232102, 0.38429534, 0, 6.7370896, 13.814444)
 
 [connection signal="frame_changed" from="PlayerSprite3D" to="." method="_on_player_sprite_3d_frame_changed"]
