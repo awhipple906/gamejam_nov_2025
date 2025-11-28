@@ -1,0 +1,25 @@
+extends Node3D
+
+
+@export var teekomenu: Window
+var player_in_area = false
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	if player_in_area == true:
+		if Input.is_action_just_pressed("e"):
+			teekomenu.show()
+
+
+func _on_area_3d_body_exited(body: Node3D) -> void:
+	if body.has_method("swing"):
+		player_in_area = false
+
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	if body.has_method("swing"):
+		player_in_area = true

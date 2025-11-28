@@ -1,0 +1,133 @@
+[gd_scene load_steps=15 format=3 uid="uid://bayisn62wil33"]
+
+[ext_resource type="Script" uid="uid://caktrk4kl4ekf" path="res://Rooms/hub_room.gd" id="1_7hyac"]
+[ext_resource type="PackedScene" uid="uid://b3jujwoowmjrl" path="res://Art Assets/UI/HealthContainer.tscn" id="2_ql32b"]
+[ext_resource type="PackedScene" uid="uid://c76or3qn4nag5" path="res://Player/Model/Player.tscn" id="3_q45mx"]
+[ext_resource type="PackedScene" uid="uid://jcdtkwvi2dus" path="res://Components/TeekoMenu.tscn" id="3_ujprb"]
+[ext_resource type="PackedScene" uid="uid://d27fvc1n8usxn" path="res://Art Assets/Environment/orb_light.tscn" id="4_wcegg"]
+[ext_resource type="Texture2D" uid="uid://du3nal6tbelux" path="res://Art Assets/Environment/Textures/StoneFloorDiffuse.png" id="5_7hyac"]
+[ext_resource type="PackedScene" uid="uid://4qr7arofkogc" path="res://Art Assets/Environment/pillar_2.tscn" id="6_wcegg"]
+[ext_resource type="PackedScene" uid="uid://dbeeyfnjo30ug" path="res://Art Assets/Environment/door_2.tscn" id="8_ujprb"]
+[ext_resource type="PackedScene" uid="uid://dfk1a067nntmw" path="res://Art Assets/Environment/market_stall.tscn" id="8_wcegg"]
+[ext_resource type="PackedScene" uid="uid://dxitcdayy1o5m" path="res://Art Assets/Environment/Door.glb" id="9_7hyac"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_qo3sl"]
+vertices = PackedVector3Array(-4.900049, 3.483448, 4.568592, -6.400049, 3.483448, 5.068592, -5.150049, 3.483448, 5.068592, -4.400049, 3.483448, -24.681408, -4.900049, 3.483448, -40.431408, -4.900049, 3.483448, -24.931408, -4.900049, 3.483448, 5.818592, -4.400049, 3.483448, 5.068592, 15.099951, 3.483448, 4.568592, 14.849951, 3.483448, 5.068592, 15.349951, 3.483448, 20.568592, -6.400049, 3.483448, -24.681408, -4.900049, 3.483448, -24.181408, -4.650049, 3.483448, -24.181408, 15.349951, 3.483448, -43.431408, 15.099951, 3.483448, -24.181408, -4.650049, 3.483448, 4.568592, 14.849951, 3.483448, -24.681408, -0.9000492, 0.48344803, -20.931408, 0.8499508, 0.48344803, -21.181408, 0.8499508, 0.48344803, -23.431408, -3.6500492, 0.48344803, -23.431408, 4.849951, 0.48344803, -8.931408, 4.849951, 0.48344803, -9.931408, 2.3499508, 0.48344803, -16.931408, -0.9000492, 0.48344803, -17.181408, -3.6500492, 0.48344803, -8.931408, 5.599951, 0.48344803, -10.431408, 2.5999508, 0.48344803, -17.431408, 2.5999508, 0.48344803, -20.931408, 14.099951, 0.48344803, -23.431408, 7.099951, 0.48344803, -10.431408, 7.599951, 0.48344803, -9.181408, 14.099951, 0.48344803, -9.181408, 0.09995079, 4.233448, -20.181408, 0.09995079, 4.233448, -17.931408, 1.5999508, 4.233448, -17.931408, 1.5999508, 4.233448, -20.181408, 7.099951, 0.48344803, -7.681408, 5.599951, 0.48344803, 3.818592, 14.099951, 0.48344803, 3.818592, 5.599951, 0.48344803, -7.681408, 4.849951, 0.48344803, -8.181408, -3.6500492, 0.48344803, 3.818592)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(5, 4, 3), PackedInt32Array(0, 7, 2), PackedInt32Array(2, 7, 6), PackedInt32Array(10, 9, 8), PackedInt32Array(13, 12, 3), PackedInt32Array(3, 12, 5), PackedInt32Array(5, 12, 11), PackedInt32Array(8, 15, 10), PackedInt32Array(10, 15, 14), PackedInt32Array(0, 12, 16), PackedInt32Array(16, 12, 13), PackedInt32Array(17, 15, 3), PackedInt32Array(3, 15, 13), PackedInt32Array(9, 16, 8), PackedInt32Array(15, 17, 14), PackedInt32Array(0, 16, 7), PackedInt32Array(7, 16, 9), PackedInt32Array(19, 18, 20), PackedInt32Array(20, 18, 21), PackedInt32Array(23, 22, 24), PackedInt32Array(24, 22, 25), PackedInt32Array(25, 22, 26), PackedInt32Array(18, 25, 21), PackedInt32Array(21, 25, 26), PackedInt32Array(28, 27, 24), PackedInt32Array(24, 27, 23), PackedInt32Array(19, 20, 29), PackedInt32Array(29, 20, 30), PackedInt32Array(32, 31, 33), PackedInt32Array(31, 27, 28), PackedInt32Array(28, 29, 31), PackedInt32Array(31, 29, 33), PackedInt32Array(33, 29, 30), PackedInt32Array(37, 36, 34), PackedInt32Array(34, 36, 35), PackedInt32Array(32, 33, 38), PackedInt32Array(38, 33, 40), PackedInt32Array(38, 40, 39), PackedInt32Array(39, 41, 38), PackedInt32Array(26, 22, 42), PackedInt32Array(42, 41, 26), PackedInt32Array(26, 41, 39), PackedInt32Array(26, 39, 43)]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_54g3h"]
+specular_mode = 1
+albedo_texture = ExtResource("5_7hyac")
+uv1_scale = Vector3(30, 30, 30)
+texture_filter = 0
+
+[sub_resource type="Environment" id="Environment_nkk0n"]
+background_mode = 1
+ssr_enabled = true
+glow_enabled = true
+fog_mode = 1
+fog_density = 1.0
+fog_height_density = 4.4731
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.005
+volumetric_fog_sky_affect = 0.226
+adjustment_enabled = true
+adjustment_saturation = 1.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ytkqd"]
+albedo_color = Color(0, 0, 0, 1)
+
+[node name="HubRoom" type="Node3D"]
+script = ExtResource("1_7hyac")
+
+[node name="TeekoMenu" parent="." instance=ExtResource("3_ujprb")]
+visible = false
+
+[node name="HealthContainer" parent="." instance=ExtResource("2_ql32b")]
+offset_top = -2.0
+offset_bottom = -2.0
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_stretch_ratio = 0.0
+stretch = true
+stretch_shrink = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+audio_listener_enable_3d = true
+size = Vector2i(384, 216)
+render_target_update_mode = 4
+
+[node name="Player" parent="SubViewportContainer/SubViewport" instance=ExtResource("3_q45mx")]
+unique_name_in_owner = true
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.5821695, 0.85667133, -0.7405126)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="SubViewportContainer/SubViewport"]
+unique_name_in_owner = true
+transform = Transform3D(0.87610114, 0, 0, 0, 1, 0, 0, 0, 0.68692786, -0.0001411438, 9.536743e-07, -0.054275513)
+navigation_mesh = SubResource("NavigationMesh_qo3sl")
+
+[node name="OrbLight" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("4_wcegg")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8000001, 6.18845, -0.10170376, -9.05284)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="SubViewportContainer/SubViewport/NavigationRegion3D"]
+transform = Transform3D(0.24781537, 0, 0, 0, 1, 0, 0, 0, 0.42514122, 5.2266707, -0.516552, -9.961958)
+use_collision = true
+collision_mask = 2
+size = Vector3(78.140625, 1, 66.208984)
+material = SubResource("StandardMaterial3D_54g3h")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport/NavigationRegion3D"]
+environment = SubResource("Environment_nkk0n")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="SubViewportContainer/SubViewport/NavigationRegion3D"]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 0.7177492, -4.7880883, 1.282587, -17.269337)
+use_collision = true
+collision_mask = 2
+size = Vector3(3.4638062, 1, 65.51001)
+material = SubResource("StandardMaterial3D_ytkqd")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="SubViewportContainer/SubViewport/NavigationRegion3D"]
+transform = Transform3D(1.9106855e-15, -4.3711385e-08, -0.27898747, -1, -4.3711385e-08, 0, -4.371139e-08, 0.99999994, -1.21949295e-08, 4.209302, 1.282587, 4.836135)
+use_collision = true
+collision_mask = 2
+size = Vector3(3.4638062, 1, 79.6405)
+material = SubResource("StandardMaterial3D_ytkqd")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="SubViewportContainer/SubViewport/NavigationRegion3D"]
+transform = Transform3D(1.9106855e-15, -4.371138e-08, -0.27898747, -1, -4.3711385e-08, 0, -4.371139e-08, 0.99999994, -1.2194931e-08, 4.209302, 1.282587, -24.443775)
+use_collision = true
+collision_mask = 2
+size = Vector3(3.4638062, 1, 79.6405)
+material = SubResource("StandardMaterial3D_ytkqd")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="SubViewportContainer/SubViewport/NavigationRegion3D"]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 15.286423, 1.282587, -11.377087)
+visible = false
+use_collision = true
+collision_mask = 2
+size = Vector3(3.4638062, 1, 65.10864)
+material = SubResource("StandardMaterial3D_ytkqd")
+
+[node name="Pillar2" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("6_wcegg")]
+transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 0.9086553, -0.016495287, -18.994562)
+
+[node name="Pillar3" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("6_wcegg")]
+transform = Transform3D(1.1414207, 0, 0, 0, 1, 0, 0, 0, 1.455757, 9.860104, -0.016495287, -8.635839)
+
+[node name="Door2" parent="SubViewportContainer/SubViewport" instance=ExtResource("8_ujprb")]
+transform = Transform3D(-0.015148819, 0, 0.99988526, 0, 1, 0, -0.99988526, 0, -0.015148819, -3.664576, 0.39278165, -9.381329)
+
+[node name="MarketStall" parent="." node_paths=PackedStringArray("teekomenu") instance=ExtResource("8_wcegg")]
+transform = Transform3D(-0.00541045, 0, 0.99998534, 0, 1, 0, -0.99998534, 0, -0.00541045, 1.9292116, 1.7311223, -0.5384731)
+teekomenu = NodePath("../TeekoMenu")
+
+[node name="Door2" parent="." instance=ExtResource("9_7hyac")]
+transform = Transform3D(-0.9999824, 0, -0.005934116, 0, 1, 0, 0.005934116, 0, -0.9999824, 6.2267737, 0.4459505, 3.2386322)
