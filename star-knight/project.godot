@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="StarKnight"
-run/main_scene="uid://dv7y24hx0r1fc"
+run/main_scene="uid://cqhk71axtbtv4"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
