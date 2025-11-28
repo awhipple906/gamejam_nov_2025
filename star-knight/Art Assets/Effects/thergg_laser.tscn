@@ -11,7 +11,7 @@ emission_energy_multiplier = 16.67
 [node name="TherggLaser" instance=ExtResource("1_66bfd")]
 
 [node name="Cylinder" parent="." index="0"]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+transform = Transform3D(6.355, 0, 0, 0, 6.355, 0, 0, 0, 0.807, 0, 0, 0)
 cast_shadow = 0
 surface_material_override/0 = SubResource("StandardMaterial3D_66bfd")
 
