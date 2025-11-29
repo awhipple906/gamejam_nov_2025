@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c76or3qn4nag5"]
+[gd_scene load_steps=12 format=3 uid="uid://c76or3qn4nag5"]
 
 [ext_resource type="SpriteFrames" uid="uid://dla6duj6yja06" path="res://Player/Animations/player.tres" id="1_07klf"]
 [ext_resource type="Script" uid="uid://rvhup4o0a6sb" path="res://Player/Model/Player.gd" id="1_nq1va"]
@@ -78,7 +78,7 @@ transform = Transform3D(1, 0, 0, 0, 0.9061307, 0.42299786, 0, -0.42299786, 0.906
 fov = 37.849285
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 5.2671537, 0.6524997)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 5.2671537, 0.6693473)
 light_color = Color(0.9790618, 0.7673883, 0.5856188, 1)
 light_energy = 6.0
 shadow_enabled = true
@@ -87,7 +87,7 @@ spot_range = 9.791233
 spot_angle = 77.93637
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.06, 0, 0, 0, 1, 0, 0.08046764, 0)
+transform = Transform3D(1, 0, 0, 0, 0.06, 0, 0, 0, 1, 0, -0.8032678, 0)
 layers = 512
 cast_shadow = 3
 gi_mode = 2

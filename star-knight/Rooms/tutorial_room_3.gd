@@ -11,7 +11,7 @@ func run_dialogue(dialogue_string):
 	Dialogic.start(dialogue_string)
 
 #Called logic in every room so the enemies can know where the player is.
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if(!player):
 		print("NO PLAYER DETECTED")
 		return

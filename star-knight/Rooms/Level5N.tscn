@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://ghsm5fmys7lq"]
+[gd_scene load_steps=20 format=3 uid="uid://ghsm5fmys7lq"]
 
 [ext_resource type="Material" uid="uid://cxflf76lktjvb" path="res://Art Assets/Environment/Materials/tilefloor.tres" id="1_gdaop"]
 [ext_resource type="Script" uid="uid://ro7q8a72qh5l" path="res://Rooms/test_level.gd" id="1_ij7l5"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://0cqk3uuhs4ij" path="res://Enemies/Thergg/Thergg.tscn" id="11_w1oxu"]
 [ext_resource type="PackedScene" uid="uid://demm2645wfky3" path="res://Enemies/GrobCat/GrobCat.tscn" id="13_0gpwg"]
 [ext_resource type="PackedScene" uid="uid://y4u4u344sjdx" path="res://Enemies/Lizkin/Lizkin.tscn" id="14_rk3ud"]
+[ext_resource type="PackedScene" uid="uid://ck54j8jubj4cy" path="res://Rooms/Traps/kill_floor.tscn" id="15_2ynbp"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_wesfj"]
 vertices = PackedVector3Array(0.30834675, 5.75, -22.33247, 0.30834675, 5.75, -20.58247, 4.0583467, 5.75, -20.58247, 4.0583467, 5.75, -22.58247, 5.8083467, 5.75, -22.58247, 5.8083467, 5.75, -28.08247, -0.69165325, 5.75, -22.58247, -0.94165325, 5.75, -27.83247, -1.1916533, 1, 8.16753, -1.1916533, 1, 8.91753, 0.30834675, 1, 8.91753, 0.30834675, 1, 5.16753, -0.94165325, 1, 5.41753, 0.30834675, 1, 9.91753, 2.0583467, 1, 10.16753, 4.0583467, 1, 10.16753, 4.0583467, 1, 9.16753, 5.8083467, 1, 8.91753, 5.8083467, 1, 5.41753, 4.0583467, 1, 5.41753, 4.0583467, 1, 3.41753, 0.30834675, 1, 3.41753)
@@ -105,7 +106,7 @@ carve_navigation_mesh = true
 
 [node name="Player" parent="SubViewportContainer/SubViewport" instance=ExtResource("2_ij7l5")]
 unique_name_in_owner = true
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.608561, 1.8487661, 8.566274)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.2465591, 1.8487663, 9.167339)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport"]
 environment = SubResource("Environment_gdxxq")
@@ -374,3 +375,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.697873, 6.1675043, -23.5057
 
 [node name="Lizkin" parent="SubViewportContainer/SubViewport" instance=ExtResource("14_rk3ud")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7041798, 1.2055522, 4.3563623)
+
+[node name="KillFloor" parent="SubViewportContainer/SubViewport" instance=ExtResource("15_2ynbp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8544674, 0)

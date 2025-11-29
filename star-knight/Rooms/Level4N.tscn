@@ -508,5 +508,5 @@ light_energy = 10.943
 omni_range = 21.534
 omni_attenuation = 2.0
 
-[node name="GrobCat" parent="." instance=ExtResource("12_ovray")]
+[node name="GrobCat" parent="SubViewportContainer/SubViewport" instance=ExtResource("12_ovray")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013922691, 1.2055522, 16.034847)

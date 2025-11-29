@@ -133,7 +133,7 @@ environment = SubResource("Environment_fqh2c")
 
 [node name="Player" parent="SubViewportContainer/SubViewport" instance=ExtResource("2_7v2o2")]
 unique_name_in_owner = true
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.19976187, 1.6597031, -5.1042223)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.1344924, 1.6597027, -4.004936)
 
 [node name="Ground" type="CSGBox3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.373167, -10.523744, 5.5197964)
