@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dnhl4uviagc3e"]
+
+[ext_resource type="Shader" uid="uid://b4xhdr5mitwc3" path="res://Art Assets/Environment/Materials/shaders/HitFlash.gdshader" id="1_r0efn"]
+[ext_resource type="Texture2D" uid="uid://dd45ehucalgar" path="res://Enemies/GrobCat/Visuals/EnemyGrobcatSpriteSheet.png" id="2_s5k2s"]
+
+[resource]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("1_r0efn")
+shader_parameter/tex = ExtResource("2_s5k2s")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/intensity = 0.0

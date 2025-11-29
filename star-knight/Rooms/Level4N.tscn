@@ -131,6 +131,21 @@ vertices = PackedVector3Array(-0.61066246, 0, -1.2152913, -0.6373348, 0, 2.00677
 affect_navigation_mesh = true
 carve_navigation_mesh = true
 
+[node name="GrobCat" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("12_ovray")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5230718, 1.2055521, 15.222539)
+
+[node name="GrobCat2" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("12_ovray")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7974582, 1.2055522, 13.490077)
+
+[node name="GrobCat3" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("12_ovray")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.880841, 5.9719563, -0.88857794)
+
+[node name="GrobCat4" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("12_ovray")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.296379, 5.9719567, 2.163129)
+
+[node name="GrobCat5" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("12_ovray")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.832216, 5.9719563, 3.2792957)
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport"]
 environment = SubResource("Environment_fqh2c")
 

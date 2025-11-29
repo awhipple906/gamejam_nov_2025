@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://4wtb6dcy7ika"]
+[gd_scene load_steps=16 format=3 uid="uid://4wtb6dcy7ika"]
 
 [ext_resource type="Script" uid="uid://ro7q8a72qh5l" path="res://Rooms/test_level.gd" id="1_oh2mq"]
 [ext_resource type="Material" uid="uid://cxflf76lktjvb" path="res://Art Assets/Environment/Materials/tilefloor.tres" id="1_yievl"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ck54j8jubj4cy" path="res://Rooms/Traps/kill_floor.tscn" id="3_qcvuq"]
 [ext_resource type="Material" uid="uid://b6sa4nxd5h0s7" path="res://Art Assets/Environment/Materials/tilewall.tres" id="4_qcvuq"]
 [ext_resource type="PackedScene" uid="uid://dbeeyfnjo30ug" path="res://Art Assets/Environment/door_2.tscn" id="5_e6o42"]
+[ext_resource type="PackedScene" uid="uid://y4u4u344sjdx" path="res://Enemies/Lizkin/Lizkin.tscn" id="5_msd3x"]
 [ext_resource type="PackedScene" uid="uid://chh2rk7rvthi5" path="res://Rooms/Traps/Spikes/spikes.tscn" id="6_msd3x"]
 [ext_resource type="PackedScene" uid="uid://4qr7arofkogc" path="res://Art Assets/Environment/pillar_2.tscn" id="7_6velc"]
 [ext_resource type="PackedScene" uid="uid://d27fvc1n8usxn" path="res://Art Assets/Environment/orb_light.tscn" id="8_pvthj"]
@@ -109,6 +110,30 @@ environment = SubResource("Environment_fqh2c")
 
 [node name="KillFloor" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("3_qcvuq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.573376, 3.729848, -4.0107155)
+
+[node name="GrobCat" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("9_eqm5x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1827593, 0.6542026, -18.676062)
+
+[node name="GrobCat2" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("9_eqm5x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.557127, 0.654204, -19.411652)
+
+[node name="Lizkin" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("5_msd3x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.085186, 0.654202, -17.72026)
+
+[node name="Lizkin2" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("5_msd3x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4910479, 0.65420353, -17.789005)
+
+[node name="Lizkin3" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("5_msd3x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7134075, 0.65420294, -2.623715)
+
+[node name="Lizkin4" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("5_msd3x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4560938, 0.65420353, 1.323559)
+
+[node name="Lizkin5" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("5_msd3x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2284255, 0.65420353, 1.0934346)
+
+[node name="Lizkin6" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("5_msd3x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2894664, 0.654204, -2.2775235)
 
 [node name="Player" parent="SubViewportContainer/SubViewport" instance=ExtResource("2_eqm5x")]
 unique_name_in_owner = true

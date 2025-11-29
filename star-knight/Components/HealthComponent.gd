@@ -11,6 +11,8 @@ func _ready():
 func damage(attack: Attack):
 	healthChanged.emit()
 	health -= attack.attack_damage
+	%hitflashanimation.play("hit")
+	
 	print("New health value of my parent: " + str(health))
 	if health <= 0: 
 		print("DEAD")

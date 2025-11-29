@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://y4u4u344sjdx"]
+[gd_scene load_steps=11 format=3 uid="uid://y4u4u344sjdx"]
 
 [ext_resource type="Script" uid="uid://qnqn4g4b4e87" path="res://Enemies/Universal Scripts/MeleeEnemyLogic.gd" id="1_o7ewi"]
 [ext_resource type="PackedScene" uid="uid://cgu4drpwlhhc6" path="res://Enemies/GrobCat/Visuals/GrobCatSprite3D.tscn" id="2_112wc"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://gk5hu7ibrphb" path="res://Components/HealthComponent.tscn" id="5_btxnx"]
 [ext_resource type="PackedScene" uid="uid://clurdw1xfhx5s" path="res://Components/HitboxComponent.tscn" id="6_oqgo6"]
 [ext_resource type="AudioStream" uid="uid://dub1lrxj5uwje" path="res://Player/Audio/GrobcatAttack.mp3" id="7_0nhrq"]
+[ext_resource type="PackedScene" uid="uid://dk1oymk1i2vh5" path="res://Art Assets/Effects/hitflashanimation.tscn" id="8_pcqm1"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u8p50"]
 height = 1.7836914
@@ -70,5 +71,8 @@ spot_angle = 54.884914
 unique_name_in_owner = true
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0.8055631, 0)
 stream = ExtResource("7_0nhrq")
+
+[node name="hitflashanimation" parent="." instance=ExtResource("8_pcqm1")]
+unique_name_in_owner = true
 
 [connection signal="animation_finished" from="LizkinSprite3d" to="." method="_on_grob_cat_attack_loop_finished"]

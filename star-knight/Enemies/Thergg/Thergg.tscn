@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://0cqk3uuhs4ij"]
+[gd_scene load_steps=11 format=3 uid="uid://0cqk3uuhs4ij"]
 
 [ext_resource type="SpriteFrames" uid="uid://bbcqdisey8en2" path="res://Enemies/Thergg/Visuals/Thergg.tres" id="1_3hk3u"]
 [ext_resource type="Script" uid="uid://bxld7cxhpddgm" path="res://Enemies/Universal Scripts/RangedEnemyLogic.gd" id="1_dt0hm"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c260nqlfcunl8" path="res://Enemies/Universal Scenes/RangedAttack.tscn" id="5_w2ly6"]
 [ext_resource type="Script" uid="uid://btmbiltc6d8tq" path="res://Enemies/Universal Scripts/RangedAttackStats.gd" id="6_jxwja"]
 [ext_resource type="AudioStream" uid="uid://crj2an8ps1bmm" path="res://Player/Audio/TherggAttack.mp3" id="6_spghp"]
+[ext_resource type="PackedScene" uid="uid://dk1oymk1i2vh5" path="res://Art Assets/Effects/hitflashanimation.tscn" id="9_jy7fw"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3hk3u"]
 height = 2.7004395
@@ -38,6 +39,7 @@ shape = SubResource("CapsuleShape3D_3hk3u")
 
 [node name="HealthComponent" parent="." instance=ExtResource("2_dt0hm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1366849, 0)
+MAX_HEALTH = 15
 
 [node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("3_ub7q1")]
 health_component = NodePath("../HealthComponent")
@@ -65,3 +67,6 @@ transform = Transform3D(1, -7.450581e-09, -2.3841858e-07, 0, 1, 8.493662e-07, 2.
 layers = 512
 transparency = 1.0
 size = Vector3(0.36157227, 0.62402344, 0.64453125)
+
+[node name="hitflashanimation" parent="." instance=ExtResource("9_jy7fw")]
+unique_name_in_owner = true

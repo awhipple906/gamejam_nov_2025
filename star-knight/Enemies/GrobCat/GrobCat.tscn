@@ -1,12 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://demm2645wfky3"]
+[gd_scene load_steps=12 format=3 uid="uid://demm2645wfky3"]
 
 [ext_resource type="Script" uid="uid://qnqn4g4b4e87" path="res://Enemies/Universal Scripts/MeleeEnemyLogic.gd" id="1_iahmm"]
 [ext_resource type="PackedScene" uid="uid://cgu4drpwlhhc6" path="res://Enemies/GrobCat/Visuals/GrobCatSprite3D.tscn" id="1_l4lsv"]
 [ext_resource type="SpriteFrames" uid="uid://b8bhdylkk1je6" path="res://Enemies/GrobCat/Visuals/grob_cat_sprite.tres" id="2_iahmm"]
+[ext_resource type="Material" uid="uid://dnhl4uviagc3e" path="res://Art Assets/Environment/Materials/shaders/GrobCatHitFlash.tres" id="3_ry8wr"]
 [ext_resource type="PackedScene" uid="uid://csxhdjx7y84og" path="res://Enemies/Universal Scenes/MeleeAttack.tscn" id="4_u8p50"]
 [ext_resource type="PackedScene" uid="uid://gk5hu7ibrphb" path="res://Components/HealthComponent.tscn" id="5_8582v"]
 [ext_resource type="PackedScene" uid="uid://clurdw1xfhx5s" path="res://Components/HitboxComponent.tscn" id="6_pjoyd"]
 [ext_resource type="AudioStream" uid="uid://dub1lrxj5uwje" path="res://Player/Audio/GrobcatAttack.mp3" id="7_pjoyd"]
+[ext_resource type="PackedScene" uid="uid://dk1oymk1i2vh5" path="res://Art Assets/Effects/hitflashanimation.tscn" id="8_v2iq5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u8p50"]
 height = 1.7836914
@@ -26,6 +28,7 @@ animation = NodePath("GrobCatSprite3d")
 [node name="GrobCatSprite3d" parent="." instance=ExtResource("1_l4lsv")]
 unique_name_in_owner = true
 transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, 0, 0.9946672, 0)
+material_override = ExtResource("3_ry8wr")
 shaded = true
 alpha_cut = 2
 texture_filter = 0
@@ -54,7 +57,6 @@ shape = SubResource("SphereShape3D_8582v")
 
 [node name="HealthComponent" parent="." instance=ExtResource("5_8582v")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
-MAX_HEALTH = 5
 
 [node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("6_pjoyd")]
 health_component = NodePath("../HealthComponent")
@@ -67,5 +69,8 @@ spot_angle = 54.884914
 [node name="AttackSound" type="AudioStreamPlayer3D" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("7_pjoyd")
+
+[node name="hitflashanimation" parent="." instance=ExtResource("8_v2iq5")]
+unique_name_in_owner = true
 
 [connection signal="animation_finished" from="GrobCatSprite3d" to="." method="_on_grob_cat_attack_loop_finished"]
