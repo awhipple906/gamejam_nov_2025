@@ -23,6 +23,8 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 directories/dch_directory={
 "Cloaked Stranger": "res://addons/dialogic/Resources/Characters/Cloaked Stranger.dch",
+"FourArmedStranger": "res://addons/dialogic/Resources/Characters/FourArmedStranger.dch",
+"Graan": "res://addons/dialogic/Resources/Characters/Graan.dch",
 "PrinceThar": "res://addons/dialogic/Resources/Characters/PrinceThar.dch",
 "Teeko": "res://addons/dialogic/Resources/Characters/Teeko.dch"
 }

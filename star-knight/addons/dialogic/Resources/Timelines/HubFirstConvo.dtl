@@ -8,17 +8,41 @@ PrinceThar: You've been to my ship?
 "Cloaked Stranger": I wanted to see if there was anything worth selling-
 "Cloaked Stranger": *And aid any survivors of course*
 PrinceThar: Are you a merchant?
-"Cloaked Stranger": Ah! Quick on the uptake! I can accomodate any and all needs *for a modest fee*
+"Cloaked Stranger": Ah! Quick on the uptake! I can accomodate any and all needs [i]{for a modest fee of course}[/b]
 "Cloaked Stranger": But we're getting ahead of ourselves, what is your name, outworlder?
 PrinceThar: Ah! Introductions, of course!
-PrinceThar:  I am Thar Sa Vel, Prince of the royal house of Sa and heir to the kingdom of Sha.
+PrinceThar: I am Thar Sa Vel, Prince of the royal house of Sa and heir to the kingdom of Sha.
 "Cloaked Stranger": OH! Not just an outworlder, but royalty as well!
 "Cloaked Stranger": Forgive the mess your grace, I would have cleaned up if I’d known I’d be entertaining such a distinguished customer!
 PrinceThar: That’s really not necessary.. Might I trouble you for your name sir?
-Teeko:  I am known as Teeko, purveyor of wares and wonders both mind-boggling and miraculous.
-Teeko:  If it exists in the great red wastes of Quar, I can sell it to you!
+Teeko: I am known as Teeko, purveyor of wares and wonders both mind-boggling and miraculous.
+Teeko: If it exists in the great red wastes of Quar, I can sell it to you!
 PrinceThar: Do you have any clothes? I’m rather… exposed at the moment.
 Teeko: You’re in luck, Prince Thar, I have just the outfit for you!
-PrinceThar:  How interesting, they look just like my clothes.
+PrinceThar: How interesting, they look just like my clothes.
 Teeko: A fortuitious coincidence.
-Teeko:  Now as a first time customer I’ll offer you a two percent discou-
+Teeko: Now as a first time customer I’ll offer you a two percent discou-
+FourArmedStranger: Those clothes are yours, the tiny one is attempting to cheat you.
+Teeko: [b]{DAMMIT GRAAN I'M TRYING TO CLOSE A DEAL HERE!!!}[/b]
+PrinceThar: I [i]{was}[/i] wondering why this shirt is embroidered with the symbol of my house.
+Teeko: They must have fallen off during the crash. I was wondering where they came from actually, Haha!
+Teeko: [i]{ I certainly didn’t strip your belongings or anything untoward like that.}[/i]
+PrinceThar:  I can’t say I’ve ever heard of someone losing their clothing during a starship crash, but I am on another planet after all…
+Teeko:  (Audible sigh of relief)
+Teeko:  Here you majesty, seeing as these are yours, how about you take them o- [b]{ECK}[/b]
+Teeko: on th- [b]{AGH!}[/b]
+Graan: Say it.
+Teeko: On..
+Teeko: The...
+Teeko: House....
+PrinceThar: Blessings of the Moon upon you Teeko!
+Teeko: I think I'm going to be sick...
+PrinceThar: Could you perhaps introduce me to your friend Teeko?
+Teeko: That's Graan. In case you couldn't tell from his brutish demeanor and blatant disrespect for legitimate commerce, He's an uncultured barbarian. Not a person someone of your status should associate with.
+Graan: At least I'm not a double-dealing cheat like you.
+Teeko: Also, we are most certianly [b]{NOT}[/b] friends.
+Graan: Agreed.
+PrinceThar: Hail and well met, sir Graan.
+Graan: Mhm
+Teeko: Pay him no mind prince, he's not much for conversation anyway. Take a look around, once you're ready we can discuss your.. [i]{predicament}[/b] further.
+[signal arg="Notchatting"]
