@@ -41,6 +41,7 @@ func _physics_process(delta: float) -> void:
 		if(attack_stats._check_can_attack(attack_stats, %Player) and attack_stats.get_overlapping_bodies().count(%Player) > 0):
 			velocity = Vector3(0,0,0)
 			animation_player.play_attack_animation()
+			%AttackSound.play()
 			attack_stats._do_attack(%Player)
 		#if we aren't attacking, we are out of range and are moving instead
 

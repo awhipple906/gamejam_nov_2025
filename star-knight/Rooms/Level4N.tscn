@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cw2r1xe5qekgb"]
+[gd_scene load_steps=17 format=3 uid="uid://cw2r1xe5qekgb"]
 
 [ext_resource type="Script" uid="uid://ro7q8a72qh5l" path="res://Rooms/test_level.gd" id="1_fppyd"]
 [ext_resource type="PackedScene" uid="uid://c76or3qn4nag5" path="res://Player/Model/Player.tscn" id="1_u3ydm"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://b8ee46qphe5mo" path="res://Art Assets/Environment/pillar_broken_2.tscn" id="8_ay757"]
 [ext_resource type="PackedScene" uid="uid://d27fvc1n8usxn" path="res://Art Assets/Environment/orb_light.tscn" id="8_jrdlj"]
 [ext_resource type="PackedScene" uid="uid://demm2645wfky3" path="res://Enemies/GrobCat/GrobCat.tscn" id="12_ovray"]
+[ext_resource type="PackedScene" uid="uid://oaisdwglo6sw" path="res://Rooms/bgm_player.tscn" id="13_iphi7"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_yc8g3"]
 vertices = PackedVector3Array(-7.993389, 5.75, -5.4401903, -7.993389, 5.75, -4.4401903, -6.993389, 5.75, -4.1901903, -6.993389, 5.75, -7.9401903, -12.493389, 5.75, -4.1901903, -10.493389, 5.75, -4.1901903, -10.493389, 5.75, -5.4401903, -12.493389, 5.75, -7.9401903, 3.2566109, 1, -0.44019032, 3.2566109, 1, 0.059809685, 4.256611, 1, 0.059809685, -1.4933891, 1, -0.6901903, -1.7433891, 1, 0.059809685, 0.0066108704, 1, 0.059809685, 0.0066108704, 1, -0.44019032, -3.9933891, 1, -0.6901903, 3.0066109, 1, -5.9401903, 4.256611, 1, -7.9401903, -6.493389, 1, -7.9401903, 4.256611, 1, -5.9401903, -6.493389, 1, 0.059809685, -3.9933891, 1, 0.059809685, 4.256611, 1, -4.6901903, 3.0066109, 1, -4.6901903, -8.243389, 5.75, -2.9401903, -8.993389, 5.75, -0.44019032, -8.993389, 5.75, 0.30980968, -6.993389, 5.75, 0.30980968, -10.493389, 5.75, -3.1901903, -12.493389, 5.75, 0.30980968, -10.243389, 5.75, 0.30980968, -10.243389, 5.75, -0.44019032, 3.2566109, 1, 11.05981, 3.2566109, 1, 11.80981, 4.256611, 1, 11.80981, 3.2566109, 1, 0.8098097, -1.7433891, 1, 11.30981, 0.0066108704, 1, 11.55981, 0.0066108704, 1, 11.05981, 0.0066108704, 1, 0.5598097, 1.2566109, 1, 0.8098097, -8.993389, 5.75, 10.55981, -8.993389, 5.75, 11.05981, -6.993389, 5.75, 11.05981, -8.993389, 5.75, 0.8098097, -12.493389, 5.75, 11.05981, -10.243389, 5.75, 11.05981, -10.243389, 5.75, 10.55981, -10.243389, 5.75, 0.8098097, -3.2433891, 1, 19.05981, -3.2433891, 1, 17.55981, -5.493389, 1, 17.55981, -6.493389, 1, 19.05981, -5.493389, 1, 15.30981, -6.493389, 1, 10.55981, -3.9933891, 1, 12.05981, -4.243389, 1, 10.55981, -4.493389, 1, 15.30981, -8.993389, 5.75, 11.80981, -6.993389, 5.75, 19.05981, -10.243389, 5.75, 11.80981, -12.493389, 5.75, 19.05981, 3.2566109, 1, 12.30981, -1.7433891, 1, 12.05981, 0.0066108704, 1, 12.05981, -2.9933891, 1, 15.30981, 4.256611, 1, 19.05981, 3.0066109, 1, 17.05981, 4.256611, 1, 17.05981, 3.0066109, 1, 15.80981, 1.7566109, 1, 12.30981, 4.256611, 1, 15.80981)
@@ -130,6 +131,21 @@ height = 5.11
 vertices = PackedVector3Array(-0.61066246, 0, -1.2152913, -0.6373348, 0, 2.006773, 0.51917076, 0, 2.0196228, 0.53202057, 0, -1.1671925)
 affect_navigation_mesh = true
 carve_navigation_mesh = true
+
+[node name="GrobCat" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("12_ovray")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5230718, 1.2055521, 15.222539)
+
+[node name="GrobCat2" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("12_ovray")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7974582, 1.2055522, 13.490077)
+
+[node name="GrobCat3" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("12_ovray")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.880841, 5.9719563, -0.88857794)
+
+[node name="GrobCat4" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("12_ovray")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.296379, 5.9719567, 2.163129)
+
+[node name="GrobCat5" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("12_ovray")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.832216, 5.9719563, 3.2792957)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport"]
 environment = SubResource("Environment_fqh2c")
@@ -508,5 +524,7 @@ light_energy = 10.943
 omni_range = 21.534
 omni_attenuation = 2.0
 
-[node name="GrobCat" parent="." instance=ExtResource("12_ovray")]
+[node name="GrobCat" parent="SubViewportContainer/SubViewport" instance=ExtResource("12_ovray")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013922691, 1.2055522, 16.034847)
+
+[node name="BGMplayer" parent="SubViewportContainer" instance=ExtResource("13_iphi7")]
