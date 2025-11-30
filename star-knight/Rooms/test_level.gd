@@ -1,6 +1,5 @@
 extends Node
 
-
 @onready var player = %Player
 @onready var mesh = %NavigationRegion3D
 var roomConstants = RoomConstants.new()

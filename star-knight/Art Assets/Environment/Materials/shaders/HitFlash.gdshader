@@ -1,5 +1,4 @@
 shader_type spatial;
-render_mode unshaded;
 
 uniform sampler2D tex : source_color, filter_nearest, repeat_disable;
 uniform vec3 flash_color : source_color = vec3(1.0);

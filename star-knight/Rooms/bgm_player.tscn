@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://oaisdwglo6sw"]
+
+[ext_resource type="AudioStream" uid="uid://b8egihl0d14h4" path="res://Player/Audio/StarKnightBGM.mp3" id="1_g3cb7"]
+
+[node name="BGMplayer" type="AudioStreamPlayer3D"]
+stream = ExtResource("1_g3cb7")
+volume_db = -1.0
+autoplay = true
+parameters/looping = true

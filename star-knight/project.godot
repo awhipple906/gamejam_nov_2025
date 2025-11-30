@@ -8,10 +8,14 @@
 
 config_version=5
 
+[animation]
+
+warnings/check_invalid_track_paths=false
+
 [application]
 
 config/name="StarKnight"
-run/main_scene="uid://cqhk71axtbtv4"
+run/main_scene="uid://b41buegr7642"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 

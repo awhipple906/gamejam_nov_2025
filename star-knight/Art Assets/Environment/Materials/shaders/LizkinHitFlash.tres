@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://ca1kv7lvehk46"]
+
+[ext_resource type="Shader" uid="uid://b4xhdr5mitwc3" path="res://Art Assets/Environment/Materials/shaders/HitFlash.gdshader" id="1_vx0bf"]
+[ext_resource type="Texture2D" uid="uid://cvn42o3tm8jq4" path="res://Art Assets/Sprites/Enemies/EnemyLizardSpritesheet.png" id="2_4hxak"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_vx0bf")
+shader_parameter/tex = ExtResource("2_4hxak")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/intensity = 0.0
