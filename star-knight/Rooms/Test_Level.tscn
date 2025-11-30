@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://d27fvc1n8usxn" path="res://Art Assets/Environment/orb_light.tscn" id="5_pgdpv"]
 [ext_resource type="PackedScene" uid="uid://xibr25nsnhu1" path="res://Art Assets/Environment/platform_1.tscn" id="6_pgdpv"]
 [ext_resource type="PackedScene" uid="uid://biv3bo2vdmxlo" path="res://Art Assets/Environment/item_pedestal.tscn" id="7_3jybe"]
-[ext_resource type="PackedScene" uid="uid://dbeeyfnjo30ug" path="res://Art Assets/Environment/door_2.tscn" id="8_kmmdh"]
+[ext_resource type="PackedScene" uid="uid://dbeeyfnjo30ug" path="res://Art Assets/Environment/Door.tscn" id="8_kmmdh"]
 [ext_resource type="PackedScene" uid="uid://chh2rk7rvthi5" path="res://Rooms/Traps/Spikes/spikes.tscn" id="9_gq7we"]
 [ext_resource type="PackedScene" uid="uid://0cqk3uuhs4ij" path="res://Enemies/Thergg/Thergg.tscn" id="13_fw8lx"]
 [ext_resource type="PackedScene" uid="uid://c2tbp7cxuyff4" path="res://Art Assets/Effects/raygun_laser.tscn" id="14_t8cwk"]

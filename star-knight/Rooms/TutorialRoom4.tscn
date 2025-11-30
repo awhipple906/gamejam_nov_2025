@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://chh2rk7rvthi5" path="res://Rooms/Traps/Spikes/spikes.tscn" id="4_hqval"]
 [ext_resource type="PackedScene" uid="uid://d27fvc1n8usxn" path="res://Art Assets/Environment/orb_light.tscn" id="4_tt43h"]
 [ext_resource type="Texture2D" uid="uid://du3nal6tbelux" path="res://Art Assets/Environment/Textures/StoneFloorDiffuse.png" id="5_mgoex"]
-[ext_resource type="PackedScene" uid="uid://dbeeyfnjo30ug" path="res://Art Assets/Environment/door_2.tscn" id="5_su5tm"]
+[ext_resource type="PackedScene" uid="uid://dbeeyfnjo30ug" path="res://Art Assets/Environment/Door.tscn" id="5_su5tm"]
 [ext_resource type="PackedScene" uid="uid://biv3bo2vdmxlo" path="res://Art Assets/Environment/item_pedestal.tscn" id="7_tt43h"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_qo3sl"]

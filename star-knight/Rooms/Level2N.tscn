@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d27fvc1n8usxn" path="res://Art Assets/Environment/orb_light.tscn" id="5_hwkrn"]
 [ext_resource type="PackedScene" uid="uid://4qr7arofkogc" path="res://Art Assets/Environment/pillar_2.tscn" id="6_63upp"]
 [ext_resource type="PackedScene" uid="uid://b8ee46qphe5mo" path="res://Art Assets/Environment/pillar_broken_2.tscn" id="7_ywnud"]
-[ext_resource type="PackedScene" uid="uid://dbeeyfnjo30ug" path="res://Art Assets/Environment/door_2.tscn" id="8_lb5bj"]
+[ext_resource type="PackedScene" uid="uid://dbeeyfnjo30ug" path="res://Art Assets/Environment/Door.tscn" id="8_lb5bj"]
 [ext_resource type="Material" uid="uid://dbdvic37qtow5" path="res://Art Assets/Environment/Materials/Basic.tres" id="9_omwis"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_wesfj"]

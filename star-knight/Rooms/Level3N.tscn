@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://xibr25nsnhu1" path="res://Art Assets/Environment/platform_1.tscn" id="7_3um5j"]
 [ext_resource type="PackedScene" uid="uid://d27fvc1n8usxn" path="res://Art Assets/Environment/orb_light.tscn" id="8_fe2cj"]
 [ext_resource type="Material" uid="uid://bt25u86532wts" path="res://Art Assets/Environment/Materials/BrownMetal.tres" id="9_expul"]
-[ext_resource type="PackedScene" uid="uid://dbeeyfnjo30ug" path="res://Art Assets/Environment/door_2.tscn" id="9_ga6ah"]
+[ext_resource type="PackedScene" uid="uid://dbeeyfnjo30ug" path="res://Art Assets/Environment/Door.tscn" id="9_ga6ah"]
 [ext_resource type="Material" uid="uid://dmdjoyd1lp1ww" path="res://Art Assets/Environment/Materials/Dark.tres" id="10_a7lny"]
 [ext_resource type="PackedScene" uid="uid://chh2rk7rvthi5" path="res://Rooms/Traps/Spikes/spikes.tscn" id="12_kg2hb"]
 

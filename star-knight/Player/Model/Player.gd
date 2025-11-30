@@ -10,7 +10,7 @@ class_name Player
 # Audio for player actions
 @export var step_sfx : AudioStream
 @export var jump_sfx : AudioStream
-
+signal pressingInteract
 var step_frames : Array = [0,4]
 
 var target_velocity = Vector3.ZERO
@@ -41,6 +41,8 @@ func _physics_process(delta):
 	velocity.z = direction.z * SPEED
 
 	velocity.y -= 20.0 * delta
+	if Input.is_action_just_pressed("Interact"):
+		pressingInteract.emit()
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = 10.0 
 		%jump_player.play()
@@ -77,13 +79,7 @@ func swing(direction):
 		else:
 			print("Attacking Left")
 			
-#func damage(attack_damage):
-	#health =- attack_damage
-	#print(health)
-	#healthChanged.emit()
-	#if health <= 0:
-		#print("YOU ARE DEAD")
-		
+
 func load_sfx(sfx_to_load):
 	if %sfx_player.stream != sfx_to_load:
 		%sfx_player.stop()

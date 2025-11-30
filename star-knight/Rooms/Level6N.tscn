@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b8ee46qphe5mo" path="res://Art Assets/Environment/pillar_broken_2.tscn" id="5_qpwqn"]
 [ext_resource type="Material" uid="uid://bt25u86532wts" path="res://Art Assets/Environment/Materials/BrownMetal.tres" id="6_o47t7"]
 [ext_resource type="Material" uid="uid://b6sa4nxd5h0s7" path="res://Art Assets/Environment/Materials/tilewall.tres" id="7_aolmg"]
-[ext_resource type="PackedScene" uid="uid://dbeeyfnjo30ug" path="res://Art Assets/Environment/door_2.tscn" id="8_tih2t"]
+[ext_resource type="PackedScene" uid="uid://dbeeyfnjo30ug" path="res://Art Assets/Environment/Door.tscn" id="8_tih2t"]
 [ext_resource type="PackedScene" uid="uid://chh2rk7rvthi5" path="res://Rooms/Traps/Spikes/spikes.tscn" id="9_gc2in"]
 [ext_resource type="PackedScene" uid="uid://d27fvc1n8usxn" path="res://Art Assets/Environment/orb_light.tscn" id="10_sbp0x"]
 
