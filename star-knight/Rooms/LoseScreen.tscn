@@ -1,0 +1,70 @@
+[gd_scene load_steps=5 format=3 uid="uid://debw48lqnuwgu"]
+
+[ext_resource type="Script" uid="uid://d3gs8mojmlo4n" path="res://Rooms/lose_screen.gd" id="1_j3jtr"]
+[ext_resource type="FontFile" uid="uid://cxet8cevqsfvf" path="res://Art Assets/UI/Star Knight.ttf" id="2_mxa23"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aoysj"]
+bg_color = Color(0.18000486, 0.1800049, 0.18000478, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_blend = true
+shadow_color = Color(0.11858138, 0.11858138, 0.11858138, 0.6)
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ovmk2"]
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.986173, 0.9916946, 0.11262085, 1)
+border_blend = true
+
+[node name="LoseScreen" type="Node2D"]
+script = ExtResource("1_j3jtr")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 623.0
+offset_top = 35.0
+offset_right = 1394.0
+offset_bottom = 282.0
+theme_override_fonts/normal_font = ExtResource("2_mxa23")
+theme_override_font_sizes/normal_font_size = 200
+text = "You have Fallen!"
+horizontal_alignment = 1
+
+[node name="HubButton" type="Button" parent="."]
+offset_left = 776.0
+offset_top = 402.0
+offset_right = 1240.0
+offset_bottom = 565.0
+theme_override_colors/font_hover_color = Color(0.986173, 0.9916946, 0.11262085, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.986173, 0.9916946, 0.11262085, 1)
+theme_override_colors/icon_hover_color = Color(0.986173, 0.9916946, 0.11262085, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.986173, 0.9916946, 0.11262085, 1)
+theme_override_fonts/font = ExtResource("2_mxa23")
+theme_override_font_sizes/font_size = 150
+theme_override_styles/normal = SubResource("StyleBoxFlat_aoysj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ovmk2")
+text = "Return to Hub"
+
+[node name="MenuButton" type="Button" parent="."]
+offset_left = 776.0
+offset_top = 648.0
+offset_right = 1238.0
+offset_bottom = 811.0
+theme_override_colors/font_hover_color = Color(0.986173, 0.9916946, 0.11262085, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.986173, 0.9916946, 0.11262085, 1)
+theme_override_colors/icon_hover_color = Color(0.986173, 0.9916946, 0.11262085, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.986173, 0.9916946, 0.11262085, 1)
+theme_override_fonts/font = ExtResource("2_mxa23")
+theme_override_font_sizes/font_size = 150
+theme_override_styles/normal = SubResource("StyleBoxFlat_aoysj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ovmk2")
+text = "Main Menu"
+
+[connection signal="pressed" from="HubButton" to="." method="_on_hub_button_pressed"]
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]
