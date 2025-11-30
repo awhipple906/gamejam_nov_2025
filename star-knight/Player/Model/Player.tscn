@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c76or3qn4nag5"]
+[gd_scene load_steps=13 format=3 uid="uid://c76or3qn4nag5"]
 
 [ext_resource type="SpriteFrames" uid="uid://dla6duj6yja06" path="res://Player/Animations/player.tres" id="1_07klf"]
 [ext_resource type="Script" uid="uid://rvhup4o0a6sb" path="res://Player/Model/Player.gd" id="1_nq1va"]
@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://8ml3kqab0xkm" path="res://Player/Audio/PlayerStep.mp3" id="5_6g8sp"]
 [ext_resource type="PackedScene" uid="uid://dk1oymk1i2vh5" path="res://Art Assets/Effects/hitflashanimation.tscn" id="7_mbhvf"]
 [ext_resource type="AudioStream" uid="uid://ct3wcnxuf5re5" path="res://Player/Audio/PlayerDamage.mp3" id="8_bwk5w"]
+[ext_resource type="PackedScene" uid="uid://bnikcfrbgmvpv" path="res://Player/Audio/sfx_hit.tscn" id="9_gmce5"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_udf64"]
 
@@ -91,6 +92,12 @@ bus = &"SFX"
 [node name="dmg_player" type="AudioStreamPlayer3D" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("8_bwk5w")
+volume_db = 3.721
+
+[node name="sfx_hit" parent="." instance=ExtResource("9_gmce5")]
+unique_name_in_owner = true
+max_polyphony = 5
+bus = &"SFX"
 
 [node name="hitflashanimation" parent="." instance=ExtResource("7_mbhvf")]
 unique_name_in_owner = true

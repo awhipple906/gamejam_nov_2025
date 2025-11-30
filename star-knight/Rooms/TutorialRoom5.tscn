@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://6cd4jugkqk6g"]
+[gd_scene load_steps=11 format=3 uid="uid://6cd4jugkqk6g"]
 
 [ext_resource type="Script" uid="uid://ro7q8a72qh5l" path="res://Rooms/test_level.gd" id="1_xom2u"]
 [ext_resource type="PackedScene" uid="uid://c76or3qn4nag5" path="res://Player/Model/Player.tscn" id="3_li8q6"]
@@ -6,6 +6,7 @@
 [ext_resource type="Material" uid="uid://b6sa4nxd5h0s7" path="res://Art Assets/Environment/Materials/tilewall.tres" id="5_o3va5"]
 [ext_resource type="Material" uid="uid://cxflf76lktjvb" path="res://Art Assets/Environment/Materials/tilefloor.tres" id="5_xom2u"]
 [ext_resource type="PackedScene" uid="uid://4qr7arofkogc" path="res://Art Assets/Environment/pillar_2.tscn" id="6_p51md"]
+[ext_resource type="PackedScene" uid="uid://oaisdwglo6sw" path="res://Rooms/bgm_player.tscn" id="7_p51md"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_xom2u"]
 vertices = PackedVector3Array(-1.3364487, 1.9970479, -14.868002, -0.08644867, 1.9970479, -14.868002, -0.08644867, 0.9970479, -16.868002, -1.3364487, 0.9970479, -16.868002, 1.4135513, 0.7470479, -24.618002, -4.8364487, 0.7470479, -13.368002, -2.3364487, 0.7470479, -13.368002, -2.3364487, 0.7470479, -16.868002, -4.8364487, 0.7470479, -24.618002, 0.91355133, 0.7470479, -16.618002, 0.91355133, 0.7470479, -14.868002, 8.913551, 0.7470479, -14.868002, 8.913551, 0.7470479, -24.618002, -1.5864487, 2.997048, -12.368002, -1.3364487, 2.997048, -10.618002, -0.08644867, 0.9970479, -6.368002, -0.08644867, 2.997048, -10.618002, -0.08644867, 2.747048, -13.451335, -4.8364487, 2.997048, -12.368002, -4.8364487, 2.997048, -10.868002, -1.3364487, 0.9970479, -6.368002, 0.66355133, 0.7470479, 1.1319981, -2.3364487, 0.7470479, -6.368002, -2.3364487, 0.7470479, -9.868002, -4.8364487, 0.7470479, -9.868002, -4.8364487, 0.7470479, 1.1319981, 0.66355133, 0.7470479, -6.368002, 0.91355133, 0.7470479, -8.368002, 8.913551, 0.7470479, -8.368002, -4.8364487, 0.7470479, -12.118002, -4.8364487, 0.7470479, -11.118002, -0.08644867, 0.7470479, -11.118002, -0.08644867, 0.7470479, -12.118002, 8.913551, 0.7470479, 1.1319981)
@@ -23,6 +24,9 @@ volumetric_fog_density = 0.005
 volumetric_fog_sky_affect = 0.226
 adjustment_enabled = true
 adjustment_saturation = 1.5
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p51md"]
+size = Vector3(1, 10.295044, 28.955444)
 
 [node name="TutorialRoom5" type="Node3D"]
 script = ExtResource("1_xom2u")
@@ -158,3 +162,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9690638, 0.30049145, -14.0
 
 [node name="Pillar4" parent="SubViewportContainer/SubViewport/Pillar7" instance=ExtResource("6_p51md")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.9870214, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.503164, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.647522, -12.085754)
+shape = SubResource("BoxShape3D_p51md")
+
+[node name="BGMplayer" parent="SubViewportContainer" instance=ExtResource("7_p51md")]

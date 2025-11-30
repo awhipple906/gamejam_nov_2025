@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://0cqk3uuhs4ij"]
+[gd_scene load_steps=12 format=3 uid="uid://0cqk3uuhs4ij"]
 
 [ext_resource type="SpriteFrames" uid="uid://bbcqdisey8en2" path="res://Enemies/Thergg/Visuals/Thergg.tres" id="1_3hk3u"]
 [ext_resource type="Script" uid="uid://bxld7cxhpddgm" path="res://Enemies/Universal Scripts/RangedEnemyLogic.gd" id="1_dt0hm"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://btmbiltc6d8tq" path="res://Enemies/Universal Scripts/RangedAttackStats.gd" id="6_jxwja"]
 [ext_resource type="AudioStream" uid="uid://crj2an8ps1bmm" path="res://Player/Audio/TherggAttack.mp3" id="6_spghp"]
 [ext_resource type="PackedScene" uid="uid://dk1oymk1i2vh5" path="res://Art Assets/Effects/hitflashanimation.tscn" id="9_jy7fw"]
+[ext_resource type="PackedScene" uid="uid://bnikcfrbgmvpv" path="res://Player/Audio/sfx_hit.tscn" id="10_pck7l"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3hk3u"]
 height = 2.7004395
@@ -54,6 +55,7 @@ unique_name_in_owner = true
 transform = Transform3D(1, 2.2230278e-09, -7.351371e-08, -2.223028e-09, 1, -2.944371e-09, 7.351371e-08, 2.9443712e-09, 1, 0, 0.1366849, 0)
 stream = ExtResource("6_spghp")
 max_db = 1.0
+pitch_scale = 1.3
 
 [node name="RangedAttack" parent="." instance=ExtResource("5_w2ly6")]
 transform = Transform3D(-0.7489848, -0.05788108, 0.6600542, -0.07704966, 0.9970273, -3.3679475e-09, -0.658092, -0.050856955, -0.75121796, 3.2056133e-09, 1.3754313, -0.073335886)
@@ -70,3 +72,5 @@ size = Vector3(0.36157227, 0.62402344, 0.64453125)
 
 [node name="hitflashanimation" parent="." instance=ExtResource("9_jy7fw")]
 unique_name_in_owner = true
+
+[node name="sfx_hit" parent="." instance=ExtResource("10_pck7l")]

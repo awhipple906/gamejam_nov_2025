@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://demm2645wfky3"]
+[gd_scene load_steps=15 format=3 uid="uid://demm2645wfky3"]
 
 [ext_resource type="Script" uid="uid://qnqn4g4b4e87" path="res://Enemies/Universal Scripts/MeleeEnemyLogic.gd" id="1_iahmm"]
 [ext_resource type="PackedScene" uid="uid://cgu4drpwlhhc6" path="res://Enemies/GrobCat/Visuals/GrobCatSprite3D.tscn" id="1_l4lsv"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://clurdw1xfhx5s" path="res://Components/HitboxComponent.tscn" id="6_pjoyd"]
 [ext_resource type="AudioStream" uid="uid://dub1lrxj5uwje" path="res://Player/Audio/GrobcatAttack.mp3" id="7_pjoyd"]
 [ext_resource type="PackedScene" uid="uid://dk1oymk1i2vh5" path="res://Art Assets/Effects/hitflashanimation.tscn" id="8_v2iq5"]
+[ext_resource type="PackedScene" uid="uid://bnikcfrbgmvpv" path="res://Player/Audio/sfx_hit.tscn" id="11_n2vd5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p2578"]
 resource_local_to_scene = true
@@ -82,5 +83,7 @@ stream = ExtResource("7_pjoyd")
 [node name="hitflashanimation" parent="." instance=ExtResource("8_v2iq5")]
 unique_name_in_owner = true
 speed_scale = 2.0
+
+[node name="sfx_hit" parent="." instance=ExtResource("11_n2vd5")]
 
 [connection signal="animation_finished" from="GrobCatSprite3d" to="." method="_on_grob_cat_attack_loop_finished"]
