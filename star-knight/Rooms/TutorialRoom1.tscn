@@ -157,7 +157,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 11.9
 environment = SubResource("Environment_nkk0n")
 
 [node name="Door4" parent="SubViewportContainer/SubViewport" instance=ExtResource("12_hx1pi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4310007, 0.39278212, -26.28703)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4310007, 0.03208664, -26.28703)
 
 [node name="PillarBroken2" parent="SubViewportContainer/SubViewport" instance=ExtResource("8_7aasw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.371148, -0.01655054, -5.706714)

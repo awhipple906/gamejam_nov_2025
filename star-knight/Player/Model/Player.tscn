@@ -94,6 +94,7 @@ stream = ExtResource("8_bwk5w")
 
 [node name="hitflashanimation" parent="." instance=ExtResource("7_mbhvf")]
 unique_name_in_owner = true
+speed_scale = 2.0
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.38429534, -0.9232102, 0, 0.9232102, 0.38429534, 0, 6.7370896, 13.814444)
