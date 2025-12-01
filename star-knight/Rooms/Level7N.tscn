@@ -6,7 +6,7 @@
 [ext_resource type="Material" uid="uid://dbdvic37qtow5" path="res://Art Assets/Environment/Materials/Basic.tres" id="3_fn06s"]
 [ext_resource type="Material" uid="uid://b6sa4nxd5h0s7" path="res://Art Assets/Environment/Materials/tilewall.tres" id="4_hl85j"]
 [ext_resource type="PackedScene" uid="uid://4qr7arofkogc" path="res://Art Assets/Environment/pillar_2.tscn" id="5_btlqb"]
-[ext_resource type="PackedScene" uid="uid://dbeeyfnjo30ug" path="res://Art Assets/Environment/door_2.tscn" id="6_hl85j"]
+[ext_resource type="PackedScene" uid="uid://dbeeyfnjo30ug" path="res://Art Assets/Environment/Door.tscn" id="6_hl85j"]
 [ext_resource type="PackedScene" uid="uid://demm2645wfky3" path="res://Enemies/GrobCat/GrobCat.tscn" id="7_btlqb"]
 [ext_resource type="PackedScene" uid="uid://ck54j8jubj4cy" path="res://Rooms/Traps/kill_floor.tscn" id="7_j3yg6"]
 [ext_resource type="PackedScene" uid="uid://oaisdwglo6sw" path="res://Rooms/bgm_player.tscn" id="10_v34m5"]
@@ -27,7 +27,7 @@ volumetric_fog_sky_affect = 0.226
 adjustment_enabled = true
 adjustment_saturation = 1.5
 
-[node name="Node3D" type="Node3D"]
+[node name="Level7N" type="Node3D"]
 script = ExtResource("1_bpfyw")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
@@ -191,7 +191,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.886166, 1.7250395, 25.368
 [node name="Door2" parent="SubViewportContainer" instance=ExtResource("6_hl85j")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.66628635, 0.5281259, 9.817801)
 
-[node name="Door3" parent="SubViewportContainer" instance=ExtResource("6_hl85j")]
+[node name="Door" parent="SubViewportContainer" instance=ExtResource("6_hl85j")]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.66628635, 0.5281259, -40.80131)
 
 [node name="GrobCat" parent="SubViewportContainer" instance=ExtResource("7_btlqb")]

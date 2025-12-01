@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://d27fvc1n8usxn" path="res://Art Assets/Environment/orb_light.tscn" id="5_2ynbp"]
 [ext_resource type="PackedScene" uid="uid://4qr7arofkogc" path="res://Art Assets/Environment/pillar_2.tscn" id="6_n1rjv"]
 [ext_resource type="PackedScene" uid="uid://b8ee46qphe5mo" path="res://Art Assets/Environment/pillar_broken_2.tscn" id="7_3n8va"]
-[ext_resource type="PackedScene" uid="uid://dbeeyfnjo30ug" path="res://Art Assets/Environment/door_2.tscn" id="8_w2qay"]
+[ext_resource type="PackedScene" uid="uid://dbeeyfnjo30ug" path="res://Art Assets/Environment/Door.tscn" id="8_w2qay"]
 [ext_resource type="Material" uid="uid://dbdvic37qtow5" path="res://Art Assets/Environment/Materials/Basic.tres" id="9_fk5si"]
 [ext_resource type="PackedScene" uid="uid://chh2rk7rvthi5" path="res://Rooms/Traps/Spikes/spikes.tscn" id="10_m42jx"]
 [ext_resource type="PackedScene" uid="uid://0cqk3uuhs4ij" path="res://Enemies/Thergg/Thergg.tscn" id="11_w1oxu"]
@@ -39,7 +39,7 @@ size = Vector3(21.358887, 32.82141, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_spfeh"]
 size = Vector3(1.3251953, 28.538849, 41.44098)
 
-[node name="Node3D" type="Node3D"]
+[node name="Level5N" type="Node3D"]
 script = ExtResource("1_ij7l5")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
@@ -307,7 +307,8 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.31
 [node name="Door2" parent="SubViewportContainer/SubViewport" instance=ExtResource("8_w2qay")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2.2311456, 0.5335338, 10.99682)
 
-[node name="Door3" parent="SubViewportContainer/SubViewport" instance=ExtResource("8_w2qay")]
+[node name="Door" parent="SubViewportContainer/SubViewport" instance=ExtResource("8_w2qay")]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 2.2311444, 5.511227, -29.714457)
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="SubViewportContainer/SubViewport"]
@@ -353,7 +354,7 @@ debug_fill = false
 [node name="StaticBody3D2" type="StaticBody3D" parent="SubViewportContainer/SubViewport"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/StaticBody3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.775304, -6.220047, -9.555126)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.733824, -6.186949, -9.602592)
 shape = SubResource("BoxShape3D_spfeh")
 debug_fill = false
 
