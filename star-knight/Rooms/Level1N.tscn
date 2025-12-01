@@ -30,9 +30,6 @@ volumetric_fog_sky_affect = 0.226
 adjustment_enabled = true
 adjustment_saturation = 1.5
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_0qbsl"]
-size = Vector3(1.3251953, 8.549377, 28.813202)
-
 [node name="Level1N" type="Node3D"]
 script = ExtResource("1_oh2mq")
 

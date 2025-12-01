@@ -8,6 +8,8 @@ class_name Player
 @export var hitbox : HitboxComponent
 @export var attack_stats : MeleeAttackStats
 
+@export var rangedBullet : PackedScene
+
 # Audio for player actions
 @export var step_sfx : AudioStream
 @export var jump_sfx : AudioStream
@@ -25,6 +27,10 @@ func _ready() -> void:
 	Dialogic.timeline_ended.connect(Dialogicended)
 
 func _physics_process(delta):
+	if Input.is_action_just_pressed("secondary_attack"):
+		_shoot()
+	
+	
 	const SPEED = 5.5
 	var input_direction_2D = Input.get_vector(
 		"Left", "Right", "Forward", "Back"
@@ -60,11 +66,7 @@ func _physics_process(delta):
 		await get_tree().create_timer(1).timeout
 		if attack_stats.has_overlapping_bodies():
 			print("Can ATTACK!!!")
-			var count = 0
-			for enemy in attack_stats.get_overlapping_bodies():
-				if(attack_stats.get_overlapping_bodies()[count].is_in_group("Enemies")):
-					attack_stats._do_attack(attack_stats.get_overlapping_bodies()[count])
-				count += 1
+			
 	if Dialogic.VAR.Ischatting == false:
 		move_and_slide()
 	
@@ -93,7 +95,11 @@ func swing(direction):
 			print("Attacking Right")
 		else:
 			print("Attacking Left")
-			
+		var count = 0
+		for enemy in attack_stats.get_overlapping_bodies():
+			if(attack_stats.get_overlapping_bodies()[count].is_in_group("Enemies")):
+				attack_stats._do_attack(attack_stats.get_overlapping_bodies()[count])
+			count += 1	
 
 func load_sfx(sfx_to_load):
 	if %sfx_player.stream != sfx_to_load:
@@ -112,3 +118,16 @@ func Dialogicstarted():
 func Dialogicended():
 	isChatting = false
 	
+func _shoot ():
+	%TherggAttackAudio.play()
+	var bullet = rangedBullet.instantiate()
+	print(get_parent().get_parent())
+	get_parent().get_parent().add_sibling(bullet)
+	bullet.position = %SpawnBlock.global_position
+	var dir = bullet.position.direction_to(%RayCast3D.get_collision_point())
+	#dir.x = (dir.x * 1.25)
+	bullet.global_rotation = %RayCast3D.get_collision_point() - bullet.position.normalized()
+	bullet.target_pos = dir
+	#print("Where I am shootin" + str(bullet.target_pos))
+	#print("Where I am at" + str(bullet.position))
+	attack_stats.isOnCoolDown = true
