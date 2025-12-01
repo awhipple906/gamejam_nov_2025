@@ -43,5 +43,6 @@ func target_out_of_range(target):
 	return global_position.distance_to(target.global_position) > attack_range
 
 func cooling_down():
-	await get_tree().create_timer(attack_cooldown).timeout
-	isOnCoolDown = false
+	if(get_tree() != null):
+		await get_tree().create_timer(attack_cooldown).timeout
+		isOnCoolDown = false

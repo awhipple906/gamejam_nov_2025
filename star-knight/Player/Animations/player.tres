@@ -142,7 +142,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bd8xk")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
 "speed": 14.0
 }, {
@@ -162,7 +162,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_oklml")
 }],
-"loop": true,
+"loop": false,
 "name": &"idle",
 "speed": 5.0
 }, {
@@ -223,7 +223,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_n1pgh")
 }],
-"loop": true,
+"loop": false,
 "name": &"walk",
 "speed": 9.0
 }]
