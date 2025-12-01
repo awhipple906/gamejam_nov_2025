@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://bayisn62wil33"]
+[gd_scene load_steps=16 format=3 uid="uid://bayisn62wil33"]
 
 [ext_resource type="Script" uid="uid://caktrk4kl4ekf" path="res://Rooms/hub_room.gd" id="1_7hyac"]
+[ext_resource type="PackedScene" uid="uid://bs7sudu4s7qs5" path="res://Components/GraanMenu.tscn" id="2_rqtfh"]
 [ext_resource type="PackedScene" uid="uid://c76or3qn4nag5" path="res://Player/Model/Player.tscn" id="3_q45mx"]
 [ext_resource type="PackedScene" uid="uid://jcdtkwvi2dus" path="res://Components/TeekoMenu.tscn" id="3_ujprb"]
 [ext_resource type="PackedScene" uid="uid://d27fvc1n8usxn" path="res://Art Assets/Environment/orb_light.tscn" id="4_wcegg"]
@@ -35,7 +36,10 @@ adjustment_saturation = 1.5
 [node name="HubRoom" type="Node3D"]
 script = ExtResource("1_7hyac")
 
+[node name="GraanMenu" parent="." instance=ExtResource("2_rqtfh")]
+
 [node name="TeekoMenu" parent="." instance=ExtResource("3_ujprb")]
+visible = false
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 texture_filter = 1

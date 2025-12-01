@@ -1,15 +1,13 @@
-[signal arg="Ischatting"]
 set {HasTalkedTeeko} = true
 Teeko: Greetings your majesty! How can I assist you?
 PrinceThar: I need parts to repair my starship.
 Teeko: Unfortunately, I don’t possess such treasures. Interstellar ships are rare on Quar.
-Teeko:  You might find such artifacts in the ruins, however. The ancient civiliazation that once lived here were accomplished space voyagers.
+Teeko: You might find such artifacts in the ruins, however. The ancient civiliazation that once lived here were accomplished space voyagers.
 PrinceThar: The ruins? They seem rather dangerous.
 Teeko: Indeed,  the place is overrun with Grobcats and Thurg fanatics, neither of which take kindly to free enterprise or perfectly lawful salvaging, I’ve found.
 PrinceThar: could you sell me anything I can use to protect myself?
-Teeko: [b]{AHA!}[/b] Now that I can help with!
+Teeko: [b]AHA![/b] Now that I can help with!
 Teeko: Take a look over here! Teeko's Talismans(tm) will grant you the strength of ten Saat and let you fly, or your money back!
-Teeko: [i]{all customers please note refunds not actually guaranteed.}[/i]
+Teeko: [i]all customers please note refunds not actually guaranteed.[/i]
 PrinceThar: What was that? I couldn't make out the last part.
 Teeko: Oh, I must have coughed or something. Come look at this!
-[signal arg="Notchatting"]
