@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://cqhk71axtbtv4"]
+[gd_scene load_steps=14 format=3 uid="uid://cqhk71axtbtv4"]
 
 [ext_resource type="PackedScene" uid="uid://c76or3qn4nag5" path="res://Player/Model/Player.tscn" id="1_a5job"]
 [ext_resource type="Script" uid="uid://ro7q8a72qh5l" path="res://Rooms/test_level.gd" id="1_bpfyw"]
+[ext_resource type="PackedScene" uid="uid://b5pfbt048h6f6" path="res://killzone.tscn" id="2_s57xt"]
 [ext_resource type="Material" uid="uid://cxflf76lktjvb" path="res://Art Assets/Environment/Materials/tilefloor.tres" id="2_xpge3"]
 [ext_resource type="Material" uid="uid://dbdvic37qtow5" path="res://Art Assets/Environment/Materials/Basic.tres" id="3_fn06s"]
 [ext_resource type="Material" uid="uid://b6sa4nxd5h0s7" path="res://Art Assets/Environment/Materials/tilewall.tres" id="4_hl85j"]
@@ -29,6 +30,9 @@ adjustment_saturation = 1.5
 
 [node name="Level7N" type="Node3D"]
 script = ExtResource("1_bpfyw")
+
+[node name="Node3D" parent="." instance=ExtResource("2_s57xt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.9182868, 0, -15.304711, -17.216393)
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 texture_filter = 1

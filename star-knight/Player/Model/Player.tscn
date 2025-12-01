@@ -2,7 +2,6 @@
 
 [ext_resource type="SpriteFrames" uid="uid://dla6duj6yja06" path="res://Player/Animations/player.tres" id="1_07klf"]
 [ext_resource type="Script" uid="uid://rvhup4o0a6sb" path="res://Player/Model/Player.gd" id="1_nq1va"]
-[ext_resource type="PackedScene" uid="uid://d2lsmx67mrwq1" path="res://Enemies/Universal Scripts/LaserPlayer.tscn" id="2_x71np"]
 [ext_resource type="AudioStream" uid="uid://dgcps7xtdmdry" path="res://Player/Audio/PlayerJump.mp3" id="3_uexeo"]
 [ext_resource type="PackedScene" uid="uid://gk5hu7ibrphb" path="res://Components/HealthComponent.tscn" id="3_vjkck"]
 [ext_resource type="Material" uid="uid://b56yaekgctmcq" path="res://Art Assets/Environment/Materials/shaders/HitFlash.tres" id="4_3680f"]
@@ -16,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://crj2an8ps1bmm" path="res://Player/Audio/TherggAttack.mp3" id="13_sdbmv"]
 [ext_resource type="PackedScene" uid="uid://c260nqlfcunl8" path="res://Enemies/Universal Scenes/RangedAttack.tscn" id="14_x71np"]
 [ext_resource type="Script" uid="uid://btmbiltc6d8tq" path="res://Enemies/Universal Scripts/RangedAttackStats.gd" id="15_ku8ei"]
+[ext_resource type="FontFile" uid="uid://cxet8cevqsfvf" path="res://Art Assets/UI/Star Knight.ttf" id="16_x71np"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_udf64"]
 
@@ -26,7 +26,7 @@ height = 2.0968018
 [sub_resource type="SphereShape3D" id="SphereShape3D_gdyl3"]
 radius = 2.3237813
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("hitbox", "attack_stats")]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("hitbox", "attack_stats", "chitlabel", "showint")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9937761, 0)
 collision_mask = 15
 safe_margin = 0.01
@@ -34,9 +34,10 @@ script = ExtResource("1_nq1va")
 speed = 15
 hitbox = NodePath("HitboxComponent")
 attack_stats = NodePath("MeleeAttack")
-rangedBullet = ExtResource("2_x71np")
+chitlabel = NodePath("SubViewportContainer/SubViewport/RichTextLabel")
 step_sfx = ExtResource("5_6g8sp")
 jump_sfx = ExtResource("3_uexeo")
+showint = NodePath("LabelComponent")
 
 [node name="PlayerSprite3D" type="AnimatedSprite3D" parent="."]
 unique_name_in_owner = true
@@ -155,5 +156,30 @@ layers = 512
 transparency = 1.0
 cast_shadow = 0
 size = Vector3(0.36157227, 0.62402344, 0.64453125)
+
+[node name="LabelComponent" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2472584, 0)
+visible = false
+text = "Press e"
+font = ExtResource("16_x71np")
+font_size = 400
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="SubViewportContainer/SubViewport"]
+offset_left = 8.0
+offset_top = 840.0
+offset_right = 98.58442
+offset_bottom = 963.0
+scale = Vector2(3.0799997, 1)
+theme_override_fonts/normal_font = ExtResource("16_x71np")
+theme_override_font_sizes/normal_font_size = 300
+text = "0 Chits"
 
 [connection signal="frame_changed" from="PlayerSprite3D" to="." method="_on_player_sprite_3d_frame_changed"]

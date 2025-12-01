@@ -20,11 +20,13 @@ func _process(delta: float) -> void:
 				teekomenu.show()
 func _on_area_3d_body_exited(body: Node3D) -> void:
 	if body.has_method("swing"):
+		InteractEmitter.emit_signal("CantInteract")
 		player_in_area = false
 
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.has_method("swing"):
+		InteractEmitter.emit_signal("CanInteract")
 		player_in_area = true
 
 func run_dialogue(dialogue_string):

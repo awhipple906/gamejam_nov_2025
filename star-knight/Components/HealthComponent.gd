@@ -18,11 +18,14 @@ func damage(attack: Attack):
 		%sfx_hit.play()
 	print("New health value of my parent: " + str(health))
 	if parent is Player and canGetHit: 
+		PlayerVar.playerCurrentHealth -= attack.attack_damage
 		%dmg_player.play()
 	if health <= 0 and parent is Player:
 		canGetHit = false; 
 		print("DEAD")
+		PlayerVar.emit_signal("losechits")
 		get_parent().queue_free()
 		get_tree().change_scene_to_file("res://Rooms/LoseScreen.tscn")
 	elif health <= 0 and parent.is_in_group("Enemies"):
+		PlayerVar.emit_signal("getchits")
 		get_parent().queue_free()

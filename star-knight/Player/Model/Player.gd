@@ -7,6 +7,7 @@ class_name Player
 @export var fall_acceleration = 75
 @export var hitbox : HitboxComponent
 @export var attack_stats : MeleeAttackStats
+@export var chitlabel : RichTextLabel
 
 # Audio for player actions
 @export var step_sfx : AudioStream
@@ -18,14 +19,27 @@ var step_frames : Array = [0,4]
 var target_velocity = Vector3.ZERO
 var last_animation = "idle"
 var health
+var chits
 var isChatting = false
 
 func _ready() -> void:
+	hitbox.health_component.MAX_HEALTH = PlayerVar.playerMaxHealth
+	hitbox.health_component.health = PlayerVar.playerCurrentHealth
 	health = hitbox.health_component.health
+	speed = PlayerVar.playerMoveSpeed
+	attack_stats.damage = PlayerVar.playerMeleeDamage
+	attack_stats.attack_cooldown = PlayerVar.playerCoolDown
+	chits = PlayerVar.chits
+	
+
 	Dialogic.timeline_started.connect(Dialogicstarted)
 	Dialogic.timeline_ended.connect(Dialogicended)
 	InteractEmitter.connect("CanInteract", showlabel)
 	InteractEmitter.connect("CantInteract", hidelabel)
+	PlayerVar.connect("getchits", gainchits)
+	PlayerVar.connect("losechits", lostchits)
+	PlayerVar.connect("chitchange", setchits)
+	setchits()
 
 func _physics_process(delta):
 	const SPEED = 5.5
@@ -120,3 +134,16 @@ func showlabel():
 	print("Press e")
 func hidelabel():
 	showint.hide()
+
+func gainchits():
+	PlayerVar.chits += 50
+	setchits()
+
+func lostchits():
+	PlayerVar.chits -= 50
+	setchits()
+
+
+func setchits():
+	chits = PlayerVar.chits
+	chitlabel.set_text(str(chits) + (" Chits"))

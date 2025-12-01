@@ -1,8 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://f5td7ywlsggr"]
+[gd_scene load_steps=21 format=3 uid="uid://f5td7ywlsggr"]
 
 [ext_resource type="PackedScene" uid="uid://c76or3qn4nag5" path="res://Player/Model/Player.tscn" id="1_cp45k"]
 [ext_resource type="Script" uid="uid://ro7q8a72qh5l" path="res://Rooms/test_level.gd" id="1_n6in7"]
 [ext_resource type="Material" uid="uid://cxflf76lktjvb" path="res://Art Assets/Environment/Materials/tilefloor.tres" id="2_p7evq"]
+[ext_resource type="PackedScene" uid="uid://b5pfbt048h6f6" path="res://killzone.tscn" id="3_0cv24"]
 [ext_resource type="Material" uid="uid://dbdvic37qtow5" path="res://Art Assets/Environment/Materials/Basic.tres" id="3_8ja1w"]
 [ext_resource type="Material" uid="uid://b6sa4nxd5h0s7" path="res://Art Assets/Environment/Materials/tilewall.tres" id="4_mt5q5"]
 [ext_resource type="PackedScene" uid="uid://4qr7arofkogc" path="res://Art Assets/Environment/pillar_2.tscn" id="5_3um5j"]
@@ -33,9 +34,6 @@ volumetric_fog_density = 0.005
 volumetric_fog_sky_affect = 0.226
 adjustment_enabled = true
 adjustment_saturation = 1.5
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_expul"]
-size = Vector3(16.135498, 32.09723, 16.076294)
 
 [node name="Level3N" type="Node3D"]
 script = ExtResource("1_n6in7")
@@ -87,6 +85,9 @@ polygon = PackedVector2Array(-0.18987179, 0.56910825, -0.20013094, 1.6717796, 1.
 transform = Transform3D(-0.9759578, -0.7102284, 0.5981007, -0.5891069, 1.2011107, 0.33954704, -0.81672186, -0.017667793, -0.9596297, 1.6540327, -0.36726475, -1.9287982)
 operation = 2
 polygon = PackedVector2Array(-0.18987179, 0.56910825, -0.20013094, 1.6717796, 1.0540609, 1.7605994, 1.822957, 0.82366323, 1, 0)
+
+[node name="Node3D" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("3_0cv24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.551132, -12.18259)
 
 [node name="Floor2" type="CSGBox3D" parent="SubViewportContainer/SubViewport/NavigationRegion3D"]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.022449, 0, -26.55582)
