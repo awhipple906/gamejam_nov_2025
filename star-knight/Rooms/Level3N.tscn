@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://f5td7ywlsggr"]
+[gd_scene load_steps=21 format=3 uid="uid://f5td7ywlsggr"]
 
 [ext_resource type="PackedScene" uid="uid://c76or3qn4nag5" path="res://Player/Model/Player.tscn" id="1_cp45k"]
+[ext_resource type="Script" uid="uid://ro7q8a72qh5l" path="res://Rooms/test_level.gd" id="1_n6in7"]
 [ext_resource type="Material" uid="uid://cxflf76lktjvb" path="res://Art Assets/Environment/Materials/tilefloor.tres" id="2_p7evq"]
 [ext_resource type="Material" uid="uid://dbdvic37qtow5" path="res://Art Assets/Environment/Materials/Basic.tres" id="3_8ja1w"]
 [ext_resource type="Material" uid="uid://b6sa4nxd5h0s7" path="res://Art Assets/Environment/Materials/tilewall.tres" id="4_mt5q5"]
@@ -12,6 +13,10 @@
 [ext_resource type="PackedScene" uid="uid://dbeeyfnjo30ug" path="res://Art Assets/Environment/door_2.tscn" id="9_ga6ah"]
 [ext_resource type="Material" uid="uid://dmdjoyd1lp1ww" path="res://Art Assets/Environment/Materials/Dark.tres" id="10_a7lny"]
 [ext_resource type="PackedScene" uid="uid://chh2rk7rvthi5" path="res://Rooms/Traps/Spikes/spikes.tscn" id="12_kg2hb"]
+[ext_resource type="PackedScene" uid="uid://ck54j8jubj4cy" path="res://Rooms/Traps/kill_floor.tscn" id="13_8bjte"]
+[ext_resource type="PackedScene" uid="uid://y4u4u344sjdx" path="res://Enemies/Lizkin/Lizkin.tscn" id="15_n6in7"]
+[ext_resource type="PackedScene" uid="uid://demm2645wfky3" path="res://Enemies/GrobCat/GrobCat.tscn" id="16_0cv24"]
+[ext_resource type="PackedScene" uid="uid://oaisdwglo6sw" path="res://Rooms/bgm_player.tscn" id="17_n6in7"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_a7lny"]
 vertices = PackedVector3Array(-4.975315, 0.9363928, -32.326923, -5.975315, 0.9363928, -32.326923, -5.975315, 0.9363928, -31.076923, -4.975315, 0.9363928, -30.826923, -8.975315, 0.9363928, -23.326923, -8.475315, 0.9363928, -23.576923, -5.725315, 0.9363928, -25.326923, -5.725315, 0.9363928, -27.826923, -10.225315, 0.9363928, -22.326923, -8.975315, 0.9363928, -22.326923, -7.225315, 0.9363928, -21.576923, -4.475315, 0.9363928, -21.576923, -4.475315, 0.9363928, -22.576923, -6.975315, 0.9363928, -23.326923, -10.225315, 0.9363928, -30.826923, -4.225315, 0.9363928, -27.826923, -4.225315, 0.9363928, -30.826923, -2.975315, 0.9363928, -22.576923, -3.475315, 0.9363928, -25.576923, 2.274685, 0.9363928, -27.826923, 2.274685, 0.9363928, -26.076923, 4.274685, 0.9363928, -25.826923, 4.274685, 0.9363928, -30.826923, -3.475315, 0.9363928, -27.826923, -2.725315, 0.9363928, -30.826923, 1.2746849, 0.9363928, -31.326923, -0.2253151, 0.9363928, -27.826923, -3.475315, 0.9363928, -26.576923, -0.2253151, 0.9363928, -26.576923, 1.2746849, 0.9363928, -32.326923, -2.725315, 0.9363928, -32.326923, 1.2746849, 0.9363928, -19.076923, 2.024685, 0.9363928, -19.326923, 2.024685, 0.9363928, -20.326923, 3.524685, 0.9363928, -24.576923, 4.274685, 0.9363928, -24.576923, 2.274685, 0.9363928, -25.326923, -1.2253151, 0.9363928, -13.076923, -1.2253151, 0.9363928, -9.576923, 1.0246849, 0.9363928, -9.826923, 2.024685, 0.9363928, -11.576923, 0.024684906, 0.9363928, -14.576923, 2.024685, 0.9363928, -17.326923, 1.2746849, 0.9363928, -17.826923, 0.024684906, 0.9363928, -15.326923, 2.524685, 0.9363928, -22.576923, 3.524685, 0.9363928, -22.576923, 2.524685, 0.9363928, -20.576923, -0.2253151, 0.9363928, -25.576923, -1.2253151, 0.9363928, -20.326923, -2.725315, 0.9363928, -20.576923, -1.2253151, 0.9363928, -15.826923, 1.0246849, 0.9363928, -9.076923, -1.4753151, 0.9363928, -6.3269234, -2.225315, 0.9363928, -6.3269234, -2.225315, 0.9363928, -3.5769234, -1.4753151, 0.9363928, -3.5769234, -1.2253151, 0.9363928, 1.6730766, -0.9753151, 0.9363928, 3.4230766, 2.524685, 0.9363928, 3.4230766, 2.524685, 0.9363928, -0.07692337, -1.4753151, 0.9363928, -1.3269234, -2.225315, 0.9363928, -1.3269234, -2.225315, 0.9363928, 1.6730766, 4.274685, 0.9363928, -0.07692337, 4.274685, 0.9363928, -6.3269234, 2.524685, 0.9363928, -6.3269234, 2.524685, 0.9363928, -8.076923)
@@ -33,6 +38,7 @@ adjustment_saturation = 1.5
 size = Vector3(16.135498, 32.09723, 16.076294)
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_n6in7")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 texture_filter = 1
@@ -491,6 +497,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.084592, 2.955945, -26.262
 size = Vector3(1, 2.883789, 8.29126)
 material = ExtResource("10_a7lny")
 
+[node name="KillFloor" parent="SubViewportContainer/SubViewport" instance=ExtResource("13_8bjte")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5422287, 1.4533548, -0.8779545)
+
+[node name="Lizkin" parent="SubViewportContainer/SubViewport" instance=ExtResource("15_n6in7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.554881, 1.2055522, -23.459614)
+
+[node name="Lizkin2" parent="SubViewportContainer/SubViewport" instance=ExtResource("15_n6in7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09883022, 1.2055511, -29.884233)
+
+[node name="GrobCat" parent="SubViewportContainer/SubViewport" instance=ExtResource("16_0cv24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1857853, 1.1419439, -11.912049)
+
+[node name="GrobCat2" parent="SubViewportContainer/SubViewport" instance=ExtResource("16_0cv24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.264205, 1.1419449, -14.810733)
+
+[node name="GrobCat3" parent="SubViewportContainer/SubViewport" instance=ExtResource("16_0cv24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5518198, 1.1419439, -16.775976)
+
 [node name="Spikes" parent="SubViewportContainer" instance=ExtResource("12_kg2hb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5765448, 0.51860416, -26.026129)
 
@@ -514,3 +538,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1529949, 0, 0)
 
 [node name="Spikes2" parent="SubViewportContainer/Spikes2/Spikes3" instance=ExtResource("12_kg2hb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.1356831)
+
+[node name="BGMplayer" parent="SubViewportContainer" instance=ExtResource("17_n6in7")]

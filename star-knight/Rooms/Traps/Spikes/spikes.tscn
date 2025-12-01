@@ -23,7 +23,8 @@ attack_stats = NodePath("SpikeMeleeAttack")
 surface_material_override/0 = SubResource("StandardMaterial3D_mqp8w")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Cube" index="0"]
-collision_layer = 4
+collision_layer = 0
+collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cube/StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0021972656, 0.0043258667, -0.004211426)
