@@ -5,7 +5,7 @@
 [ext_resource type="Material" uid="uid://cxflf76lktjvb" path="res://Art Assets/Environment/Materials/tilefloor.tres" id="4_mgoex"]
 [ext_resource type="PackedScene" uid="uid://d27fvc1n8usxn" path="res://Art Assets/Environment/orb_light.tscn" id="4_tt43h"]
 [ext_resource type="Material" uid="uid://b6sa4nxd5h0s7" path="res://Art Assets/Environment/Materials/tilewall.tres" id="5_mlio8"]
-[ext_resource type="PackedScene" uid="uid://dbeeyfnjo30ug" path="res://Art Assets/Environment/door_2.tscn" id="5_su5tm"]
+[ext_resource type="PackedScene" uid="uid://dbeeyfnjo30ug" path="res://Art Assets/Environment/Door.tscn" id="5_su5tm"]
 [ext_resource type="PackedScene" uid="uid://4qr7arofkogc" path="res://Art Assets/Environment/pillar_2.tscn" id="7_mlio8"]
 [ext_resource type="PackedScene" uid="uid://b8ee46qphe5mo" path="res://Art Assets/Environment/pillar_broken_2.tscn" id="8_3kvwe"]
 [ext_resource type="PackedScene" uid="uid://0cqk3uuhs4ij" path="res://Enemies/Thergg/Thergg.tscn" id="10_3kvwe"]
@@ -118,7 +118,8 @@ carve_navigation_mesh = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport"]
 environment = SubResource("Environment_nkk0n")
 
-[node name="Door3" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_su5tm")]
+[node name="Door" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_su5tm")]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.968622, 0.39278212, -26.066593)
 
 [node name="Door4" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_su5tm")]
@@ -197,3 +198,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.647522, -12.085754)
 shape = SubResource("BoxShape3D_3kvwe")
 
 [node name="BGMplayer" parent="SubViewportContainer" instance=ExtResource("11_3kvwe")]
+
+[connection signal="pressingInteract" from="SubViewportContainer/SubViewport/Player" to="." method="_on_player_pressing_interact"]
+[connection signal="canEnterDoor" from="SubViewportContainer/SubViewport/Door" to="." method="_on_door_can_enter_door"]

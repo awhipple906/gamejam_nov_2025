@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ro7q8a72qh5l" path="res://Rooms/test_level.gd" id="1_xom2u"]
 [ext_resource type="PackedScene" uid="uid://c76or3qn4nag5" path="res://Player/Model/Player.tscn" id="3_li8q6"]
-[ext_resource type="PackedScene" uid="uid://dbeeyfnjo30ug" path="res://Art Assets/Environment/door_2.tscn" id="5_j5jx8"]
+[ext_resource type="PackedScene" uid="uid://dbeeyfnjo30ug" path="res://Art Assets/Environment/Door.tscn" id="5_j5jx8"]
 [ext_resource type="Material" uid="uid://b6sa4nxd5h0s7" path="res://Art Assets/Environment/Materials/tilewall.tres" id="5_o3va5"]
 [ext_resource type="Material" uid="uid://cxflf76lktjvb" path="res://Art Assets/Environment/Materials/tilefloor.tres" id="5_xom2u"]
 [ext_resource type="PackedScene" uid="uid://4qr7arofkogc" path="res://Art Assets/Environment/pillar_2.tscn" id="6_p51md"]
@@ -116,7 +116,8 @@ environment = SubResource("Environment_nkk0n")
 [node name="Door4" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_j5jx8")]
 transform = Transform3D(-1, 0, -2.6226832e-07, 0, 1, 0, 2.6226832e-07, 0, -1, 3.821972, 0.28246394, 2.382575)
 
-[node name="Door5" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_j5jx8")]
+[node name="Door" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_j5jx8")]
+unique_name_in_owner = true
 transform = Transform3D(-2.1855692e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855692e-07, -5.9216805, 2.7428546, -11.579739)
 
 [node name="Pillar2" parent="SubViewportContainer/SubViewport" instance=ExtResource("6_p51md")]
@@ -171,3 +172,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.647522, -12.085754)
 shape = SubResource("BoxShape3D_p51md")
 
 [node name="BGMplayer" parent="SubViewportContainer" instance=ExtResource("7_p51md")]
+
+[connection signal="pressingInteract" from="SubViewportContainer/SubViewport/Player" to="." method="_on_player_pressing_interact"]
+[connection signal="canEnterDoor" from="SubViewportContainer/SubViewport/Door" to="." method="_on_door_can_enter_door"]
