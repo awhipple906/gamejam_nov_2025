@@ -15,7 +15,7 @@ warnings/check_invalid_track_paths=false
 [application]
 
 config/name="StarKnight"
-run/main_scene="uid://b41buegr7642"
+run/main_scene="uid://bayisn62wil33"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 

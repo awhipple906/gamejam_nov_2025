@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2jt6ppe0sarr"
-path="res://.godot/imported/StarKnightSpriteSheett.png-6ec187053ef91d9014e308c53e4f71e1.ctex"
+uid="uid://bdyhv53lmlluc"
+path="res://.godot/imported/gran-Sheet.png-ea2409bf828aa71f207a8a1713e29e3e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Assets/Sprites/StarKnightSpriteSheett.png"
-dest_files=["res://.godot/imported/StarKnightSpriteSheett.png-6ec187053ef91d9014e308c53e4f71e1.ctex"]
+source_file="res://Art Assets/Sprites/gran-Sheet.png"
+dest_files=["res://.godot/imported/gran-Sheet.png-ea2409bf828aa71f207a8a1713e29e3e.ctex"]
 
 [params]
 

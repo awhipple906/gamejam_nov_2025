@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cutjwh1u2u2yk"]
+
+[ext_resource type="SpriteFrames" uid="uid://dlvpfkwvko1bi" path="res://Art Assets/Animations/Tiko.tres" id="1_2cs82"]
+[ext_resource type="Script" uid="uid://dw30dl2mvv6n8" path="res://Art Assets/Environment/animated_sprite_3d.gd" id="2_gvlip"]
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D"]
+transform = Transform3D(5.5, 0, 0, 0, 5.5, 0, 0, 0, 5.5, 0, 0, 0)
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+sprite_frames = ExtResource("1_2cs82")
+animation = &"idle"
+frame = 3
+frame_progress = 0.31910983
+script = ExtResource("2_gvlip")
