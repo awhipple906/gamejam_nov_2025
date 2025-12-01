@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://6cd4jugkqk6g"]
 
-[ext_resource type="Script" uid="uid://ro7q8a72qh5l" path="res://Rooms/test_level.gd" id="1_xom2u"]
+[ext_resource type="Script" uid="uid://dh4tgt82vpaxc" path="res://Rooms/tutorial_room_5.gd" id="1_li8q6"]
 [ext_resource type="PackedScene" uid="uid://bhrfsont1q2qu" path="res://chitholder.tscn" id="2_li8q6"]
 [ext_resource type="PackedScene" uid="uid://c76or3qn4nag5" path="res://Player/Model/Player.tscn" id="3_li8q6"]
 [ext_resource type="PackedScene" uid="uid://dbeeyfnjo30ug" path="res://Art Assets/Environment/Door.tscn" id="5_j5jx8"]
@@ -29,7 +29,7 @@ adjustment_enabled = true
 adjustment_saturation = 1.5
 
 [node name="TutorialRoom5" type="Node3D"]
-script = ExtResource("1_xom2u")
+script = ExtResource("1_li8q6")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 texture_filter = 1
