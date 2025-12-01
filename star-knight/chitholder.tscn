@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhrfsont1q2qu"]
+
+[ext_resource type="Script" uid="uid://cqrtqfep4f723" path="res://chitholder.gd" id="1_gpbou"]
+[ext_resource type="FontFile" uid="uid://cxet8cevqsfvf" path="res://Art Assets/UI/Star Knight.ttf" id="1_rl8pu"]
+
+[node name="Control" type="Control" node_paths=PackedStringArray("chitlabel")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gpbou")
+chitlabel = NodePath("CanvasLayer/RichTextLabel")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_top = 0.019000001
+anchor_bottom = 0.019000001
+offset_left = 7.0
+offset_top = 736.48
+offset_right = 1424.0
+offset_bottom = 1043.48
+theme_override_fonts/normal_font = ExtResource("1_rl8pu")
+theme_override_font_sizes/normal_font_size = 300
+text = "0 Chits"

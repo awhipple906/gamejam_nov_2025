@@ -78,6 +78,7 @@ unique_name_in_owner = true
 transform = Transform3D(1, -7.450581e-09, -2.3841858e-07, 0, 1, 8.6426735e-07, 2.9802322e-08, 7.450581e-09, 1.0000005, 0.11116544, -0.18389046, -0.25577492)
 layers = 512
 transparency = 1.0
+cast_shadow = 0
 size = Vector3(0.36157227, 0.62402344, 0.64453125)
 
 [node name="hitflashanimation" parent="." instance=ExtResource("9_jy7fw")]
