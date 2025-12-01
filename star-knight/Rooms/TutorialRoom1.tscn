@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bdumuelaq0rtx"]
+[gd_scene load_steps=13 format=3 uid="uid://bdumuelaq0rtx"]
 
 [ext_resource type="Script" uid="uid://dssv8v7s1cvpl" path="res://Rooms/tutorial_room_1.gd" id="1_kjsb8"]
 [ext_resource type="PackedScene" uid="uid://c76or3qn4nag5" path="res://Player/Model/Player.tscn" id="3_qh541"]
@@ -61,7 +61,8 @@ navigation_mesh = SubResource("NavigationMesh_qo3sl")
 [node name="CSGBox3D2" type="CSGBox3D" parent="SubViewportContainer/SubViewport/NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.011515, -0.516552, -11.714116)
 use_collision = true
-collision_mask = 2
+collision_layer = 3
+collision_mask = 3
 size = Vector3(18.320305, 1, 29.289398)
 material = ExtResource("4_kjsb8")
 

@@ -21,15 +21,21 @@ var last_animation = "idle"
 var health
 var isChatting = false
 
+var spawn_point = Vector3(0, 0, 0)
+
 func _ready() -> void:
 	health = hitbox.health_component.health
 	Dialogic.timeline_started.connect(Dialogicstarted)
 	Dialogic.timeline_ended.connect(Dialogicended)
+	spawn_point = self.global_transform.origin
+	print(spawn_point)
 
 func _physics_process(delta):
+	if global_position == Vector3(0,-20,0):
+		respawn()
+	
 	if Input.is_action_just_pressed("secondary_attack"):
 		_shoot()
-	
 	
 	const SPEED = 5.5
 	var input_direction_2D = Input.get_vector(
@@ -57,8 +63,9 @@ func _physics_process(delta):
 		%jump_player.play()
 		%PlayerSprite3D.stop()
 		%PlayerSprite3D.play("jump")
-	elif Input.is_action_just_released("jump") and velocity.y > 0.0:
-		velocity.y = 0.0
+			
+	#elif Input.is_action_just_released("jump") and velocity.y > 0.0:
+		#velocity.y = 0.0
 	elif Input.is_action_just_pressed("primary_attack"):
 		swing(direction)
 		%PlayerSprite3D.stop()
@@ -72,16 +79,16 @@ func _physics_process(delta):
 	
 	
 func play_animation():
-	if velocity == Vector3.ZERO and !%PlayerSprite3D.is_playing():
+	if velocity == Vector3.ZERO and !%PlayerSprite3D.is_playing() and is_on_floor():
 		%PlayerSprite3D.play("idle")
-	if velocity.x < 0:
+	if velocity.x < 0 and is_on_floor():
 		%PlayerSprite3D.play(last_animation)
-	if velocity.z < 0:
+	if velocity.z < 0 and is_on_floor():
 		%PlayerSprite3D.flip_h = false
 		%PlayerSprite3D.play("walk")
-	if velocity.x > 0:
+	if velocity.x > 0 and is_on_floor():
 		%PlayerSprite3D.play(last_animation)
-	if velocity.z > 0:
+	if velocity.z > 0 and is_on_floor():
 		%PlayerSprite3D.flip_h = true
 		%PlayerSprite3D.play("walk")
 	last_animation = "walk"
@@ -131,3 +138,7 @@ func _shoot ():
 	#print("Where I am shootin" + str(bullet.target_pos))
 	#print("Where I am at" + str(bullet.position))
 	attack_stats.isOnCoolDown = true
+
+func respawn():
+	self.global_position = spawn_point
+	velocity = Vector3.ZERO
