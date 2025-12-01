@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bdumuelaq0rtx"]
+[gd_scene load_steps=16 format=3 uid="uid://bdumuelaq0rtx"]
 
 [ext_resource type="Script" uid="uid://dssv8v7s1cvpl" path="res://Rooms/tutorial_room_1.gd" id="1_kjsb8"]
 [ext_resource type="PackedScene" uid="uid://c76or3qn4nag5" path="res://Player/Model/Player.tscn" id="3_qh541"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://4qr7arofkogc" path="res://Art Assets/Environment/pillar_2.tscn" id="8_61x4w"]
 [ext_resource type="PackedScene" uid="uid://d27fvc1n8usxn" path="res://Art Assets/Environment/orb_light.tscn" id="9_f8kwc"]
 [ext_resource type="PackedScene" uid="uid://oaisdwglo6sw" path="res://Rooms/bgm_player.tscn" id="9_kjsb8"]
+[ext_resource type="PackedScene" uid="uid://ck54j8jubj4cy" path="res://Rooms/Traps/kill_floor.tscn" id="9_y5otb"]
 [ext_resource type="Material" uid="uid://b6sa4nxd5h0s7" path="res://Art Assets/Environment/Materials/tilewall.tres" id="10_8ogih"]
 [ext_resource type="PackedScene" uid="uid://bhrfsont1q2qu" path="res://chitholder.tscn" id="10_hxc3k"]
 [ext_resource type="Material" uid="uid://dbdvic37qtow5" path="res://Art Assets/Environment/Materials/Basic.tres" id="10_kjsb8"]
@@ -63,7 +64,8 @@ navigation_mesh = SubResource("NavigationMesh_qo3sl")
 [node name="CSGBox3D2" type="CSGBox3D" parent="SubViewportContainer/SubViewport/NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.011515, -0.516552, -11.714116)
 use_collision = true
-collision_mask = 2
+collision_layer = 3
+collision_mask = 3
 size = Vector3(18.320305, 1, 29.289398)
 material = ExtResource("4_kjsb8")
 
@@ -172,6 +174,10 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.93
 [node name="OrbLight4" parent="SubViewportContainer/SubViewport" instance=ExtResource("9_f8kwc")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0.45386198, -0.04546988, -22.764404)
 
+[node name="KillFloor" parent="SubViewportContainer/SubViewport" instance=ExtResource("9_y5otb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.9410086, 0)
+script = null
+
 [node name="BGMplayer" parent="SubViewportContainer" instance=ExtResource("9_kjsb8")]
 
 [node name="Control" parent="SubViewportContainer" instance=ExtResource("10_hxc3k")]
@@ -212,7 +218,6 @@ spot_range = 23.813
 spot_angle = 15.07
 
 [node name="PauseMenu" parent="." instance=ExtResource("12_hxc3k")]
-visible = false
 
 [connection signal="pressingInteract" from="SubViewportContainer/SubViewport/Player" to="." method="_on_player_pressing_interact"]
 [connection signal="canEnterDoor" from="SubViewportContainer/SubViewport/Door" to="." method="_on_door_can_enter_door"]
