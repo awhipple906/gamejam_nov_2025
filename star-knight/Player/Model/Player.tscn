@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c76or3qn4nag5"]
+[gd_scene load_steps=15 format=3 uid="uid://c76or3qn4nag5"]
 
 [ext_resource type="SpriteFrames" uid="uid://dla6duj6yja06" path="res://Player/Animations/player.tres" id="1_07klf"]
 [ext_resource type="Script" uid="uid://rvhup4o0a6sb" path="res://Player/Model/Player.gd" id="1_nq1va"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dk1oymk1i2vh5" path="res://Art Assets/Effects/hitflashanimation.tscn" id="7_mbhvf"]
 [ext_resource type="AudioStream" uid="uid://ct3wcnxuf5re5" path="res://Player/Audio/PlayerDamage.mp3" id="8_bwk5w"]
 [ext_resource type="PackedScene" uid="uid://bnikcfrbgmvpv" path="res://Player/Audio/sfx_hit.tscn" id="9_gmce5"]
+[ext_resource type="PackedScene" uid="uid://csxhdjx7y84og" path="res://Enemies/Universal Scenes/MeleeAttack.tscn" id="11_ujdnk"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_udf64"]
 
@@ -18,13 +19,17 @@
 radius = 0.30517578
 height = 2.0968018
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("hitbox")]
+[sub_resource type="SphereShape3D" id="SphereShape3D_gdyl3"]
+radius = 2.3237813
+
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("hitbox", "attack_stats")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9937761, 0)
 collision_mask = 15
 safe_margin = 0.01
 script = ExtResource("1_nq1va")
 speed = 15
 hitbox = NodePath("HitboxComponent")
+attack_stats = NodePath("MeleeAttack")
 step_sfx = ExtResource("5_6g8sp")
 jump_sfx = ExtResource("3_uexeo")
 
@@ -38,8 +43,7 @@ shaded = true
 alpha_cut = 2
 texture_filter = 0
 sprite_frames = ExtResource("1_07klf")
-animation = &"walk"
-frame_progress = 0.59336734
+animation = &"jump"
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.9061307, 0.42299786, 0, -0.42299786, 0.9061307, 0, 6.7370896, 13.814444)
@@ -75,7 +79,8 @@ MAX_HEALTH = 100
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0037313, 0)
 health_component = NodePath("../HealthComponent")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="PlayerShape3D" type="CollisionShape3D" parent="."]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.050156355, 0)
 shape = SubResource("CapsuleShape3D_nq1va")
 
@@ -110,5 +115,18 @@ bus = &"SFX"
 [node name="hitflashanimation" parent="." instance=ExtResource("7_mbhvf")]
 unique_name_in_owner = true
 speed_scale = 2.0
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.38429534, -0.9232102, 0, 0.9232102, 0.38429534, 0, 6.7370896, 13.814444)
+
+[node name="MeleeAttack" parent="." instance=ExtResource("11_ujdnk")]
+collision_layer = 2
+collision_mask = 2
+damage = 1.0
+attack_cooldown = 2.5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeleeAttack"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9026427, 0)
+shape = SubResource("SphereShape3D_gdyl3")
 
 [connection signal="frame_changed" from="PlayerSprite3D" to="." method="_on_player_sprite_3d_frame_changed"]

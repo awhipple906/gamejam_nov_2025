@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b8ee46qphe5mo" path="res://Art Assets/Environment/pillar_broken_2.tscn" id="5_qpwqn"]
 [ext_resource type="Material" uid="uid://bt25u86532wts" path="res://Art Assets/Environment/Materials/BrownMetal.tres" id="6_o47t7"]
 [ext_resource type="Material" uid="uid://b6sa4nxd5h0s7" path="res://Art Assets/Environment/Materials/tilewall.tres" id="7_aolmg"]
-[ext_resource type="PackedScene" uid="uid://dbeeyfnjo30ug" path="res://Art Assets/Environment/door_2.tscn" id="8_tih2t"]
+[ext_resource type="PackedScene" uid="uid://dbeeyfnjo30ug" path="res://Art Assets/Environment/Door.tscn" id="8_tih2t"]
 [ext_resource type="PackedScene" uid="uid://chh2rk7rvthi5" path="res://Rooms/Traps/Spikes/spikes.tscn" id="9_gc2in"]
 [ext_resource type="PackedScene" uid="uid://d27fvc1n8usxn" path="res://Art Assets/Environment/orb_light.tscn" id="10_sbp0x"]
 [ext_resource type="PackedScene" uid="uid://y4u4u344sjdx" path="res://Enemies/Lizkin/Lizkin.tscn" id="11_7v2o2"]
@@ -31,7 +31,10 @@ volumetric_fog_sky_affect = 0.226
 adjustment_enabled = true
 adjustment_saturation = 1.5
 
-[node name="Node3D" type="Node3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_jrdlj"]
+size = Vector3(1, 16.693787, 28.17163)
+
+[node name="Level6N" type="Node3D"]
 script = ExtResource("1_fr64v")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
@@ -444,7 +447,8 @@ polygon = PackedVector2Array(-0.18987179, 0.56910825, -0.20013094, 1.6717796, 1.
 [node name="Door2" parent="SubViewportContainer/SubViewport" instance=ExtResource("8_tih2t")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.23877358, 0.5533098, 19.586084)
 
-[node name="Door3" parent="SubViewportContainer/SubViewport" instance=ExtResource("8_tih2t")]
+[node name="Door" parent="SubViewportContainer/SubViewport" instance=ExtResource("8_tih2t")]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5549135, 5.3327045, -8.487705)
 
 [node name="Spikes" parent="SubViewportContainer/SubViewport" instance=ExtResource("9_gc2in")]

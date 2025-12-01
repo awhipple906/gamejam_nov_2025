@@ -6,11 +6,12 @@ class_name Player
 # The downward acceleration when in the air, in meters per second squared.
 @export var fall_acceleration = 75
 @export var hitbox : HitboxComponent
+@export var attack_stats : MeleeAttackStats
 
 # Audio for player actions
 @export var step_sfx : AudioStream
 @export var jump_sfx : AudioStream
-
+signal pressingInteract
 var step_frames : Array = [0,4]
 
 var target_velocity = Vector3.ZERO
@@ -35,38 +36,53 @@ func _physics_process(delta):
 	var direction = transform.basis * input_direction_3D
 	#print(direction)
 	if isChatting == false:
-		play_animation(direction)
+		play_animation()
 	
 	
 	velocity.x = direction.x * SPEED
 	velocity.z = direction.z * SPEED
-
+	
 	velocity.y -= 20.0 * delta
-	if Input.is_action_just_pressed("jump") and is_on_floor() and !isChatting:
+	if Input.is_action_just_pressed("interact"):
+		print("Interacting!")
+		pressingInteract.emit()
+	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = 10.0 
 		%jump_player.play()
+		%PlayerSprite3D.stop()
+		%PlayerSprite3D.play("jump")
 	elif Input.is_action_just_released("jump") and velocity.y > 0.0:
 		velocity.y = 0.0
 	elif Input.is_action_just_pressed("primary_attack"):
 		swing(direction)
-	if isChatting == false:
+		%PlayerSprite3D.stop()
+		%PlayerSprite3D.play("attack")
+		await get_tree().create_timer(1).timeout
+		if attack_stats.has_overlapping_bodies():
+			print("Can ATTACK!!!")
+			var count = 0
+			for enemy in attack_stats.get_overlapping_bodies():
+				if(attack_stats.get_overlapping_bodies()[count].is_in_group("Enemies")):
+					attack_stats._do_attack(attack_stats.get_overlapping_bodies()[count])
+				count += 1
+	if Dialogic.VAR.Ischatting == false:
 		move_and_slide()
 	
 	
-func play_animation(direction):
-	#var last_pressed = Input.
-	if !Input.is_anything_pressed():
+func play_animation():
+	if velocity == Vector3.ZERO and !%PlayerSprite3D.is_playing():
 		%PlayerSprite3D.play("idle")
-	if direction.x == -1:
+	if velocity.x < 0:
 		%PlayerSprite3D.play(last_animation)
-	if direction.z == -1:
-		%PlayerSprite3D.play("left to right")
-		last_animation = "left to right"
-	if direction.x == 1:
+	if velocity.z < 0:
+		%PlayerSprite3D.flip_h = false
+		%PlayerSprite3D.play("walk")
+	if velocity.x > 0:
 		%PlayerSprite3D.play(last_animation)
-	if direction.z == 1:
-		%PlayerSprite3D.play("right to left")
-		last_animation = "right to left"
+	if velocity.z > 0:
+		%PlayerSprite3D.flip_h = true
+		%PlayerSprite3D.play("walk")
+	last_animation = "walk"
 
 
 	
@@ -78,13 +94,7 @@ func swing(direction):
 		else:
 			print("Attacking Left")
 			
-#func damage(attack_damage):
-	#health =- attack_damage
-	#print(health)
-	#healthChanged.emit()
-	#if health <= 0:
-		#print("YOU ARE DEAD")
-		
+
 func load_sfx(sfx_to_load):
 	if %sfx_player.stream != sfx_to_load:
 		%sfx_player.stop()

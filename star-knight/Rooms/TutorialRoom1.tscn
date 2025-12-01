@@ -9,8 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://oaisdwglo6sw" path="res://Rooms/bgm_player.tscn" id="9_kjsb8"]
 [ext_resource type="Material" uid="uid://b6sa4nxd5h0s7" path="res://Art Assets/Environment/Materials/tilewall.tres" id="10_8ogih"]
 [ext_resource type="Material" uid="uid://dbdvic37qtow5" path="res://Art Assets/Environment/Materials/Basic.tres" id="10_kjsb8"]
-[ext_resource type="PackedScene" uid="uid://ck54j8jubj4cy" path="res://Rooms/Traps/kill_floor.tscn" id="11_8ogih"]
-[ext_resource type="PackedScene" uid="uid://dbeeyfnjo30ug" path="res://Art Assets/Environment/door_2.tscn" id="12_hx1pi"]
+[ext_resource type="PackedScene" uid="uid://dbeeyfnjo30ug" path="res://Art Assets/Environment/Door.tscn" id="12_hx1pi"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_qo3sl"]
 vertices = PackedVector3Array(-0.8986373, 0.48344803, -23.858814, 0.3513627, 0.48344803, -23.858814, 0.3513627, 0.48344803, -25.858814, -4.6486373, 0.48344803, -25.858814, 0.101362705, 0.48344803, -18.608814, 0.8513627, 0.48344803, -18.608814, 0.8513627, 0.48344803, -21.608814, -0.8986373, 0.48344803, -21.608814, 0.3513627, 0.48344803, -16.358814, -4.6486373, 0.48344803, -15.858814, 10.851362, 0.48344803, -18.608814, 10.851362, 0.48344803, -17.358814, 12.601362, 0.48344803, -17.358814, 12.601362, 0.48344803, -25.858814, 1.6013627, 0.48344803, -23.858814, 1.6013627, 0.48344803, -21.608814, 2.6013627, 0.48344803, -18.608814, 8.601362, 0.48344803, -18.608814, 2.6013627, 0.48344803, -17.358814, 8.601362, 0.48344803, -17.358814, 10.851362, 0.48344803, -16.108814, 10.351362, 0.48344803, -6.8588142, 10.351362, 0.48344803, -5.6088142, 12.601362, 0.48344803, -5.6088142, 2.1013627, 0.48344803, -6.6088142, 2.1013627, 0.48344803, -5.8588142, 8.101362, 0.48344803, -5.8588142, 8.101362, 0.48344803, -6.8588142, 8.601362, 0.48344803, -16.108814, 2.3513627, 0.48344803, -16.108814, -4.6486373, 0.48344803, -5.8588142, -0.1486373, 0.48344803, -5.8588142, -0.1486373, 0.48344803, -6.8588142, -0.1486373, 0.48344803, -4.6088142, 1.8513627, 0.48344803, 2.3911858, 1.8513627, 0.48344803, -4.6088142, -4.6486373, 0.48344803, 2.3911858, 10.101362, 0.48344803, -4.3588142, 12.601362, 0.48344803, 2.3911858, 8.101362, 0.48344803, -4.6088142)
@@ -158,7 +157,8 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 11.9
 [node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport"]
 environment = SubResource("Environment_nkk0n")
 
-[node name="Door4" parent="SubViewportContainer/SubViewport" instance=ExtResource("12_hx1pi")]
+[node name="Door" parent="SubViewportContainer/SubViewport" instance=ExtResource("12_hx1pi")]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4310007, 0.03208664, -26.28703)
 
 [node name="PillarBroken2" parent="SubViewportContainer/SubViewport" instance=ExtResource("8_7aasw")]
@@ -206,5 +206,5 @@ shadow_enabled = true
 spot_range = 23.813
 spot_angle = 15.07
 
-[node name="KillFloor" parent="." instance=ExtResource("11_8ogih")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.956123, 5.6312613, 1.3667269)
+[connection signal="pressingInteract" from="SubViewportContainer/SubViewport/Player" to="." method="_on_player_pressing_interact"]
+[connection signal="canEnterDoor" from="SubViewportContainer/SubViewport/Door" to="." method="_on_door_can_enter_door"]
