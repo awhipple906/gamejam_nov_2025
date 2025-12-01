@@ -37,7 +37,7 @@ size = Vector3(33.833252, 32.82141, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_spfeh"]
 size = Vector3(1.3251953, 28.538849, 58.28987)
 
-[node name="Node3D" type="Node3D"]
+[node name="Level2N" type="Node3D"]
 script = ExtResource("1_tktae")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
@@ -297,7 +297,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.248646, -3.7701654, 15.0767
 [node name="Door2" parent="SubViewportContainer/SubViewport" instance=ExtResource("8_lb5bj")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -14.844385, 7.1533346, -8.008632)
 
-[node name="Door3" parent="SubViewportContainer/SubViewport" instance=ExtResource("8_lb5bj")]
+[node name="Door" parent="SubViewportContainer/SubViewport" instance=ExtResource("8_lb5bj")]
+unique_name_in_owner = true
 transform = Transform3D(-2.1855695e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855695e-07, -3.2120667, -3.5728173, 18.159824)
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="SubViewportContainer/SubViewport"]

@@ -37,7 +37,7 @@ adjustment_saturation = 1.5
 [sub_resource type="BoxShape3D" id="BoxShape3D_expul"]
 size = Vector3(16.135498, 32.09723, 16.076294)
 
-[node name="Node3D" type="Node3D"]
+[node name="Level3N" type="Node3D"]
 script = ExtResource("1_n6in7")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
@@ -489,7 +489,8 @@ material = ExtResource("4_mt5q5")
 [node name="Door2" parent="SubViewportContainer/SubViewport" instance=ExtResource("9_ga6ah")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.6984706, 0.562345, 3.4698536)
 
-[node name="Door3" parent="SubViewportContainer/SubViewport" instance=ExtResource("9_ga6ah")]
+[node name="Door" parent="SubViewportContainer/SubViewport" instance=ExtResource("9_ga6ah")]
+unique_name_in_owner = true
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -10.380932, 0.54698527, -26.104792)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="SubViewportContainer/SubViewport"]

@@ -6,7 +6,7 @@
 [ext_resource type="Material" uid="uid://dbdvic37qtow5" path="res://Art Assets/Environment/Materials/Basic.tres" id="3_oh2mq"]
 [ext_resource type="PackedScene" uid="uid://ck54j8jubj4cy" path="res://Rooms/Traps/kill_floor.tscn" id="3_qcvuq"]
 [ext_resource type="Material" uid="uid://b6sa4nxd5h0s7" path="res://Art Assets/Environment/Materials/tilewall.tres" id="4_qcvuq"]
-[ext_resource type="PackedScene" uid="uid://dbeeyfnjo30ug" path="res://Art Assets/Environment/door_2.tscn" id="5_e6o42"]
+[ext_resource type="PackedScene" uid="uid://dbeeyfnjo30ug" path="res://Art Assets/Environment/Door.tscn" id="5_e6o42"]
 [ext_resource type="PackedScene" uid="uid://y4u4u344sjdx" path="res://Enemies/Lizkin/Lizkin.tscn" id="5_msd3x"]
 [ext_resource type="PackedScene" uid="uid://chh2rk7rvthi5" path="res://Rooms/Traps/Spikes/spikes.tscn" id="6_msd3x"]
 [ext_resource type="PackedScene" uid="uid://4qr7arofkogc" path="res://Art Assets/Environment/pillar_2.tscn" id="7_6velc"]
@@ -33,7 +33,7 @@ adjustment_saturation = 1.5
 [sub_resource type="BoxShape3D" id="BoxShape3D_0qbsl"]
 size = Vector3(1.3251953, 8.549377, 28.813202)
 
-[node name="Node3D" type="Node3D"]
+[node name="Level1N" type="Node3D"]
 script = ExtResource("1_oh2mq")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
@@ -170,7 +170,8 @@ size = Vector3(29.220451, 8.245514, 0.7862549)
 [node name="Door2" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_e6o42")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2, -0.0068968832, 4.1769433)
 
-[node name="Door3" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_e6o42")]
+[node name="Door" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_e6o42")]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 2, -0.0068968832, -24.756897)
 
 [node name="Spikes" parent="SubViewportContainer/SubViewport" instance=ExtResource("6_msd3x")]
@@ -348,3 +349,6 @@ shape = SubResource("BoxShape3D_0qbsl")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.74308205, 1.3679243, -19.062113)
 
 [node name="BGMplayer" parent="SubViewportContainer" instance=ExtResource("13_msd3x")]
+
+[connection signal="pressingInteract" from="SubViewportContainer/SubViewport/Player" to="." method="_on_player_pressing_interact"]
+[connection signal="canEnterDoor" from="SubViewportContainer/SubViewport/Door" to="." method="_on_door_can_enter_door"]

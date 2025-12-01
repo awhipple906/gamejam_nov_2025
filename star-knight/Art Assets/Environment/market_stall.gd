@@ -11,9 +11,10 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if player_in_area == true:
-		if Input.is_action_just_pressed("interact"):
-			teekomenu.show()
-
+		if Input.is_action_just_pressed("e"):
+			if Dialogic.VAR.HasTalkedTeeko == false:
+				Dialogic.timeline_ended.connect(_on_timeline_ended)
+				run_dialogue("TeekoConvo")
 
 			elif Dialogic.VAR.HasTalkedTeeko == true:	
 				teekomenu.show()

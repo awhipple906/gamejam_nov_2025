@@ -12,7 +12,6 @@ class_name Player
 @export var step_sfx : AudioStream
 @export var jump_sfx : AudioStream
 signal pressingInteract
-signal canEnterDoor
 var step_frames : Array = [0,4]
 
 var target_velocity = Vector3.ZERO
@@ -37,7 +36,7 @@ func _physics_process(delta):
 	var direction = transform.basis * input_direction_3D
 	#print(direction)
 	if isChatting == false:
-		play_animation(direction)
+		play_animation()
 	
 	
 	velocity.x = direction.x * SPEED
@@ -50,10 +49,15 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = 10.0 
 		%jump_player.play()
+		%PlayerSprite3D.stop()
+		%PlayerSprite3D.play("jump")
 	elif Input.is_action_just_released("jump") and velocity.y > 0.0:
 		velocity.y = 0.0
 	elif Input.is_action_just_pressed("primary_attack"):
 		swing(direction)
+		%PlayerSprite3D.stop()
+		%PlayerSprite3D.play("attack")
+		await get_tree().create_timer(1).timeout
 		if attack_stats.has_overlapping_bodies():
 			print("Can ATTACK!!!")
 			var count = 0
@@ -65,20 +69,20 @@ func _physics_process(delta):
 		move_and_slide()
 	
 	
-func play_animation(direction):
-	#var last_pressed = Input.
-	if !Input.is_anything_pressed():
+func play_animation():
+	if velocity == Vector3.ZERO and !%PlayerSprite3D.is_playing():
 		%PlayerSprite3D.play("idle")
-	if direction.x == -1:
+	if velocity.x < 0:
 		%PlayerSprite3D.play(last_animation)
-	if direction.z == -1:
-		%PlayerSprite3D.play("left to right")
-		last_animation = "left to right"
-	if direction.x == 1:
+	if velocity.z < 0:
+		%PlayerSprite3D.flip_h = false
+		%PlayerSprite3D.play("walk")
+	if velocity.x > 0:
 		%PlayerSprite3D.play(last_animation)
-	if direction.z == 1:
-		%PlayerSprite3D.play("right to left")
-		last_animation = "right to left"
+	if velocity.z > 0:
+		%PlayerSprite3D.flip_h = true
+		%PlayerSprite3D.play("walk")
+	last_animation = "walk"
 
 
 	

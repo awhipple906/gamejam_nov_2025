@@ -33,7 +33,7 @@ adjustment_saturation = 1.5
 [sub_resource type="BoxShape3D" id="BoxShape3D_jrdlj"]
 size = Vector3(1, 16.693787, 28.17163)
 
-[node name="Node3D" type="Node3D"]
+[node name="Level4N" type="Node3D"]
 script = ExtResource("1_fppyd")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
@@ -457,7 +457,8 @@ polygon = PackedVector2Array(-0.18987179, 0.56910825, -0.20013094, 1.6717796, 1.
 [node name="Door2" parent="SubViewportContainer/SubViewport" instance=ExtResource("6_64kqv")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -7.421998, 0.5533098, -3.9946752)
 
-[node name="Door3" parent="SubViewportContainer/SubViewport" instance=ExtResource("6_64kqv")]
+[node name="Door" parent="SubViewportContainer/SubViewport" instance=ExtResource("6_64kqv")]
+unique_name_in_owner = true
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -9.5549135, 5.3327045, 19.438877)
 
 [node name="Spikes" parent="SubViewportContainer/SubViewport" instance=ExtResource("7_ay757")]

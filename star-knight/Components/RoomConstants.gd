@@ -8,6 +8,7 @@ var Rooms = [
 	"Level4N",
 	"Level5N",
 	"Level6N",
+	"Level7N"
 ]
 
 var TutorialRooms = [
