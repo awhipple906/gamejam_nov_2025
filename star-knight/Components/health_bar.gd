@@ -5,6 +5,8 @@ extends TextureProgressBar
 var body
 func _ready() -> void:
 	body = get_parent().get_parent().get_parent().get_parent()
+	if (body.is_in_group("Enemies")):
+		visible = false
 	print(body.hitbox)
 	body.hitbox.health_component.healthChanged.connect(update)
 	max_value = body.hitbox.health_component.MAX_HEALTH

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bayisn62wil33"]
+[gd_scene load_steps=17 format=3 uid="uid://bayisn62wil33"]
 
 [ext_resource type="Script" uid="uid://caktrk4kl4ekf" path="res://Rooms/hub_room.gd" id="1_7hyac"]
 [ext_resource type="PackedScene" uid="uid://c76or3qn4nag5" path="res://Player/Model/Player.tscn" id="3_q45mx"]
@@ -13,6 +13,7 @@
 [ext_resource type="Material" uid="uid://dbdvic37qtow5" path="res://Art Assets/Environment/Materials/Basic.tres" id="9_rqtfh"]
 [ext_resource type="PackedScene" uid="uid://oaisdwglo6sw" path="res://Rooms/bgm_player.tscn" id="12_qgiw8"]
 [ext_resource type="PackedScene" uid="uid://cmhhwbvmk8w7y" path="res://Art Assets/Sprites/Gran.tscn" id="13_rqtfh"]
+[ext_resource type="PackedScene" uid="uid://ck54j8jubj4cy" path="res://Rooms/Traps/kill_floor.tscn" id="14_7kq75"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_54g3h"]
 specular_mode = 1
@@ -146,3 +147,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.9740462, 0)
 
 [node name="Node3D" parent="." instance=ExtResource("13_rqtfh")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.60489273, -0.016550064, -10.295595)
+
+[node name="KillFloor" parent="Node3D" instance=ExtResource("14_7kq75")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.956123, 5.5211816, 1.3667269)

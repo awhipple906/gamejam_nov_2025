@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://f5td7ywlsggr"]
+[gd_scene load_steps=20 format=3 uid="uid://f5td7ywlsggr"]
 
 [ext_resource type="PackedScene" uid="uid://c76or3qn4nag5" path="res://Player/Model/Player.tscn" id="1_cp45k"]
 [ext_resource type="Script" uid="uid://ro7q8a72qh5l" path="res://Rooms/test_level.gd" id="1_n6in7"]
@@ -463,16 +463,6 @@ height = 1.6428223
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.3613873)
 radius = 0.056640625
 height = 1.6428223
-
-[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09606838, -2.083305, 10.719706)
-shape = SubResource("BoxShape3D_expul")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.711964, -2.083305, -26.352114)
-shape = SubResource("BoxShape3D_expul")
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(-4.371139e-08, 0, 0.6729379, 0, 1, 0, -1, 0, -2.9415052e-08, 4.2195716, 0.41702425, -22.182808)
