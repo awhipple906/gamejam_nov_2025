@@ -23,7 +23,7 @@ func _on_timer_timeout() -> void:
 func _on_area_3d_body_entered(_body: Node3D) -> void:
 	if _body.is_in_group("Enemies"):
 		var attack = Attack.new()
-		attack.attack_damage = 2.0
+		attack.attack_damage = 1.0
 		_body.hitbox.damage(attack)
 	else :
 		queue_free()
