@@ -11,6 +11,7 @@ class_name Player
 # Audio for player actions
 @export var step_sfx : AudioStream
 @export var jump_sfx : AudioStream
+@export var showint : Label3D
 signal pressingInteract
 var step_frames : Array = [0,4]
 
@@ -23,6 +24,8 @@ func _ready() -> void:
 	health = hitbox.health_component.health
 	Dialogic.timeline_started.connect(Dialogicstarted)
 	Dialogic.timeline_ended.connect(Dialogicended)
+	InteractEmitter.connect("CanInteract", showlabel)
+	InteractEmitter.connect("CantInteract", hidelabel)
 
 func _physics_process(delta):
 	const SPEED = 5.5
@@ -65,7 +68,7 @@ func _physics_process(delta):
 				if(attack_stats.get_overlapping_bodies()[count].is_in_group("Enemies")):
 					attack_stats._do_attack(attack_stats.get_overlapping_bodies()[count])
 				count += 1
-	if Dialogic.VAR.Ischatting == false:
+	if isChatting == false:
 		move_and_slide()
 	
 	
@@ -111,4 +114,9 @@ func Dialogicstarted():
 
 func Dialogicended():
 	isChatting = false
-	
+
+func showlabel():
+	showint.show()
+	print("Press e")
+func hidelabel():
+	showint.hide()
