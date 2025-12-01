@@ -1,5 +1,6 @@
 extends Node3D
 
+
 @export var graanmenu: Window
 var player_in_area = false
 # Called when the node enters the scene tree for the first time.
@@ -29,10 +30,10 @@ func _on_timeline_ended():
 	
 
 
-func _on_area_3d_body_entered(body: Node3D) -> void:
-	if body.has_method("swing"):
-		player_in_area = true
-
 func _on_area_3d_body_exited(body: Node3D) -> void:
 	if body.has_method("swing"):
 		player_in_area = false
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	if body.has_method("swing"):
+		player_in_area = true
