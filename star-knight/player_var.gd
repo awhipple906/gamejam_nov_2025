@@ -1,6 +1,6 @@
 extends Node
 var playerMaxHealth = 100
-var playerCurrentHealth = 5
+var playerCurrentHealth = 100
 var playerMeleeDamage = 5.0
 var playerCoolDown = 5.0
 var playerMoveSpeed = 14

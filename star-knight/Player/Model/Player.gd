@@ -29,17 +29,13 @@ func _ready() -> void:
 	speed = PlayerVar.playerMoveSpeed
 	attack_stats.damage = PlayerVar.playerMeleeDamage
 	attack_stats.attack_cooldown = PlayerVar.playerCoolDown
-	chits = PlayerVar.chits
 	
 
 	Dialogic.timeline_started.connect(Dialogicstarted)
 	Dialogic.timeline_ended.connect(Dialogicended)
 	InteractEmitter.connect("CanInteract", showlabel)
 	InteractEmitter.connect("CantInteract", hidelabel)
-	PlayerVar.connect("getchits", gainchits)
-	PlayerVar.connect("losechits", lostchits)
-	PlayerVar.connect("chitchange", setchits)
-	setchits()
+
 
 func _physics_process(delta):
 	const SPEED = 5.5
@@ -52,8 +48,7 @@ func _physics_process(delta):
 
 	var direction = transform.basis * input_direction_3D
 	#print(direction)
-	if isChatting == false:
-		play_animation()
+	play_animation()
 	
 	
 	velocity.x = direction.x * SPEED
@@ -70,7 +65,7 @@ func _physics_process(delta):
 		%PlayerSprite3D.play("jump")
 	elif Input.is_action_just_released("jump") and velocity.y > 0.0:
 		velocity.y = 0.0
-	elif Input.is_action_just_pressed("primary_attack"):
+	elif Input.is_action_just_pressed("primary_attack") and !isChatting:
 		swing(direction)
 		%PlayerSprite3D.stop()
 		%PlayerSprite3D.play("attack")
@@ -89,14 +84,16 @@ func _physics_process(delta):
 func play_animation():
 	if velocity == Vector3.ZERO and !%PlayerSprite3D.is_playing():
 		%PlayerSprite3D.play("idle")
-	if velocity.x < 0:
+	if isChatting:
+		%PlayerSprite3D.play("idle")
+	if velocity.x < 0 and !isChatting:
 		%PlayerSprite3D.play(last_animation)
-	if velocity.z < 0:
+	if velocity.z < 0 and !isChatting:
 		%PlayerSprite3D.flip_h = false
 		%PlayerSprite3D.play("walk")
-	if velocity.x > 0:
+	if velocity.x > 0 and !isChatting:
 		%PlayerSprite3D.play(last_animation)
-	if velocity.z > 0:
+	if velocity.z > 0 and !isChatting:
 		%PlayerSprite3D.flip_h = true
 		%PlayerSprite3D.play("walk")
 	last_animation = "walk"
@@ -135,15 +132,4 @@ func showlabel():
 func hidelabel():
 	showint.hide()
 
-func gainchits():
-	PlayerVar.chits += 50
-	setchits()
 
-func lostchits():
-	PlayerVar.chits -= 50
-	setchits()
-
-
-func setchits():
-	chits = PlayerVar.chits
-	chitlabel.set_text(str(chits) + (" Chits"))

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dv7y24hx0r1fc"]
+[gd_scene load_steps=22 format=3 uid="uid://dv7y24hx0r1fc"]
 
 [ext_resource type="Script" uid="uid://ro7q8a72qh5l" path="res://Rooms/test_level.gd" id="1_tktae"]
 [ext_resource type="PackedScene" uid="uid://c76or3qn4nag5" path="res://Player/Model/Player.tscn" id="1_wesfj"]
@@ -15,6 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://y4u4u344sjdx" path="res://Enemies/Lizkin/Lizkin.tscn" id="12_tktae"]
 [ext_resource type="PackedScene" uid="uid://oaisdwglo6sw" path="res://Rooms/bgm_player.tscn" id="14_hwkrn"]
 [ext_resource type="PackedScene" uid="uid://b5pfbt048h6f6" path="res://killzone.tscn" id="15_63upp"]
+[ext_resource type="PackedScene" uid="uid://bhrfsont1q2qu" path="res://chitholder.tscn" id="15_lb5bj"]
+[ext_resource type="PackedScene" uid="uid://rt5mmfegfcet" path="res://Components/PauseMenu.tscn" id="17_omwis"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_wesfj"]
 vertices = PackedVector3Array(5.6699195, -3.1220927, 21.823772, 5.6699195, -3.1220927, 16.323772, 3.9199195, -3.1220927, 16.323772, 3.9199195, -3.1220927, 14.573772, -3.0800805, -3.1220927, 14.573772, -3.0800805, -3.1220927, 21.823772)
@@ -350,5 +352,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6353698, -2.9165406, 15.949
 
 [node name="BGMplayer" parent="SubViewportContainer" instance=ExtResource("14_hwkrn")]
 
+[node name="Control" parent="SubViewportContainer" instance=ExtResource("15_lb5bj")]
+layout_mode = 2
+
 [node name="Node3D" parent="." instance=ExtResource("15_63upp")]
 transform = Transform3D(1.2296515, 0, 0, 0, 1, 0, 0, 0, 2.179106, -13.683628, -14.942121, 1.4466934)
+
+[node name="PauseMenu" parent="." instance=ExtResource("17_omwis")]
