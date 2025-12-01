@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bdumuelaq0rtx"]
+[gd_scene load_steps=14 format=3 uid="uid://bdumuelaq0rtx"]
 
 [ext_resource type="Script" uid="uid://dssv8v7s1cvpl" path="res://Rooms/tutorial_room_1.gd" id="1_kjsb8"]
 [ext_resource type="PackedScene" uid="uid://c76or3qn4nag5" path="res://Player/Model/Player.tscn" id="3_qh541"]

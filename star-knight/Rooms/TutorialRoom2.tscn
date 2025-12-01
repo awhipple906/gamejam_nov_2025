@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://demm2645wfky3" path="res://Enemies/GrobCat/GrobCat.tscn" id="11_r1d0l"]
 [ext_resource type="PackedScene" uid="uid://y4u4u344sjdx" path="res://Enemies/Lizkin/Lizkin.tscn" id="12_u05gc"]
 [ext_resource type="PackedScene" uid="uid://oaisdwglo6sw" path="res://Rooms/bgm_player.tscn" id="13_u05gc"]
+[ext_resource type="PackedScene" uid="uid://ck54j8jubj4cy" path="res://Rooms/Traps/kill_floor.tscn" id="14_scj68"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_qo3sl"]
 vertices = PackedVector3Array(-3.3640902, 8.25, -32.891327, -3.3640902, 8.25, 3.108673, -2.8640902, 8.25, 3.108673, -2.8640902, 8.25, -32.891327, -2.1140902, 0.5, -30.641327, -0.8640902, 0.5, -30.641327, -0.6140902, 0.5, -31.391327, -2.1140902, 0.5, -31.891327, 1.3859098, 0.5, -31.391327, 1.3859098, 0.5, -31.891327, 1.8859098, 0.5, -30.641327, 9.13591, 0.5, -31.891327, -1.1140902, 0.5, -29.641327, -2.1140902, 0.5, -16.641327, -1.3640902, 0.5, -16.641327, -1.1140902, 0.5, -18.641327, -0.6140902, 0.5, -28.891327, 1.6359098, 0.5, -18.641327, 3.3859098, 0.75, -19.641327, 1.6359098, 0.5, -28.641327, 1.8859098, 0.5, -16.891327, 3.3859098, 0.5, -16.891327, 9.38591, 0.5, -29.391327, 7.63591, 0.75, -19.641327, 9.88591, 0.5, -30.891327, 7.88591, 0.5, -16.891327, 9.13591, 0.5, -16.891327, 9.38591, 0.5, -18.641327, 10.13591, 0.5, -28.391327, 12.13591, 0.5, -18.641327, 12.38591, 0.5, -16.891327, 13.63591, 0.5, -16.891327, 13.63591, 0.5, -31.891327, 12.13591, 0.5, -28.641327, 12.13591, 0.5, -31.141327, -2.1140902, 0.5, 0.3586731, -1.1140902, 0.5, 0.3586731, -1.1140902, 0.5, -0.6413269, 1.6359098, 0.5, 1.1086731, 0.1359098, 0.5, 1.1086731, 0.3859098, 0.5, 2.108673, 11.13591, 0.5, 2.108673, 11.13591, 0.5, 1.3586731, 9.88591, 0.5, 1.1086731, 12.63591, 0.5, -0.8913269, 12.63591, 0.5, 0.6086731, 13.63591, 0.5, 0.3586731, -1.1140902, 0.5, -15.391327, -0.3640902, 0.5, -1.6413269, 12.13591, 0.5, -15.391327, 9.38591, 0.5, -15.391327, 7.88591, 0.75, -14.391327, 1.1359098, 0.5, -1.6413269, 1.8859098, 0.5, -0.6413269, 9.88591, 0.5, -1.1413269, 12.13591, 0.5, -1.3913269, 3.3859098, 0.75, -14.391327, 1.6359098, 0.5, -15.391327, -0.8640902, 0.5, 1.1086731, -2.1140902, 0.5, 2.108673, 12.13591, 0.5, 1.3586731, 13.63591, 0.5, 2.108673)
@@ -30,9 +31,6 @@ volumetric_fog_density = 0.005
 volumetric_fog_sky_affect = 0.226
 adjustment_enabled = true
 adjustment_saturation = 1.5
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_be64x"]
-size = Vector3(1, 8.510864, 37.180786)
 
 [node name="TutorialRoom2" type="Node3D"]
 script = ExtResource("1_be64x")
@@ -242,12 +240,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.212594, 3.9757442, 2.91325
 
 [node name="Pillar11" parent="SubViewportContainer/SubViewport" instance=ExtResource("8_qfam7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8833723, 3.9757442, 2.9132538)
-
-[node name="InvisibleWall" type="StaticBody3D" parent="SubViewportContainer/SubViewport"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/InvisibleWall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.002772, 3.7554321, -14.592346)
-shape = SubResource("BoxShape3D_be64x")
 
 [node name="BGMplayer" parent="SubViewportContainer" instance=ExtResource("13_u05gc")]
 
