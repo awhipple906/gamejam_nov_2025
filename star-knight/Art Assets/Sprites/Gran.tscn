@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmhhwbvmk8w7y"]
+
+[ext_resource type="SpriteFrames" uid="uid://ca5l5lo6celq0" path="res://Art Assets/Animations/Gran.tres" id="1_xnycs"]
+[ext_resource type="Script" uid="uid://ns0kdvlqpabe" path="res://Art Assets/Sprites/GranAnimation.gd" id="2_ucx3c"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ucx3c"]
+radius = 1.222168
+height = 3.0758057
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 1.6280538, 0)
+shaded = true
+texture_filter = 0
+sprite_frames = ExtResource("1_xnycs")
+animation = &"idle"
+script = ExtResource("2_ucx3c")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5471802, 0)
+shape = SubResource("CapsuleShape3D_ucx3c")

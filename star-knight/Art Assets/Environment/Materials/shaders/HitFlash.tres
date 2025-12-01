@@ -1,7 +1,7 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://b56yaekgctmcq"]
 
 [ext_resource type="Shader" uid="uid://b4xhdr5mitwc3" path="res://Art Assets/Environment/Materials/shaders/HitFlash.gdshader" id="1_iymvo"]
-[ext_resource type="Texture2D" uid="uid://dy3en86q663tf" path="res://Art Assets/Sprites/MAINCharacterSpriteSheet.png" id="2_0w4pc"]
+[ext_resource type="Texture2D" uid="uid://c2jt6ppe0sarr" path="res://Art Assets/Sprites/StarKnightSpriteSheett.png" id="2_0w4pc"]
 
 [resource]
 resource_local_to_scene = true
