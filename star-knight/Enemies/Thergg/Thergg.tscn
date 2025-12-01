@@ -1,15 +1,24 @@
-[gd_scene load_steps=12 format=3 uid="uid://0cqk3uuhs4ij"]
+[gd_scene load_steps=15 format=3 uid="uid://0cqk3uuhs4ij"]
 
 [ext_resource type="SpriteFrames" uid="uid://bbcqdisey8en2" path="res://Enemies/Thergg/Visuals/Thergg.tres" id="1_3hk3u"]
 [ext_resource type="Script" uid="uid://bxld7cxhpddgm" path="res://Enemies/Universal Scripts/RangedEnemyLogic.gd" id="1_dt0hm"]
 [ext_resource type="PackedScene" uid="uid://gk5hu7ibrphb" path="res://Components/HealthComponent.tscn" id="2_dt0hm"]
 [ext_resource type="PackedScene" uid="uid://dmtj51o2weu17" path="res://Enemies/Universal Scripts/Laser.tscn" id="2_jxwja"]
+[ext_resource type="Shader" uid="uid://b4xhdr5mitwc3" path="res://Art Assets/Environment/Materials/shaders/HitFlash.gdshader" id="3_255f2"]
 [ext_resource type="PackedScene" uid="uid://clurdw1xfhx5s" path="res://Components/HitboxComponent.tscn" id="3_ub7q1"]
+[ext_resource type="Texture2D" uid="uid://5v5stgynop6q" path="res://Enemies/Thergg/Visuals/EnemyThergg-Sheet.png" id="4_xdg4a"]
 [ext_resource type="PackedScene" uid="uid://c260nqlfcunl8" path="res://Enemies/Universal Scenes/RangedAttack.tscn" id="5_w2ly6"]
 [ext_resource type="Script" uid="uid://btmbiltc6d8tq" path="res://Enemies/Universal Scripts/RangedAttackStats.gd" id="6_jxwja"]
 [ext_resource type="AudioStream" uid="uid://crj2an8ps1bmm" path="res://Player/Audio/TherggAttack.mp3" id="6_spghp"]
 [ext_resource type="PackedScene" uid="uid://dk1oymk1i2vh5" path="res://Art Assets/Effects/hitflashanimation.tscn" id="9_jy7fw"]
 [ext_resource type="PackedScene" uid="uid://bnikcfrbgmvpv" path="res://Player/Audio/sfx_hit.tscn" id="10_pck7l"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kbt7l"]
+render_priority = 0
+shader = ExtResource("3_255f2")
+shader_parameter/tex = ExtResource("4_xdg4a")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/intensity = 0.0
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3hk3u"]
 height = 2.7004395
@@ -26,6 +35,7 @@ rangedBullet = ExtResource("2_jxwja")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 1.5177217, 0)
+material_override = SubResource("ShaderMaterial_kbt7l")
 shaded = true
 alpha_cut = 2
 texture_filter = 0
@@ -65,7 +75,7 @@ attack_range = 10.0
 
 [node name="SpawnBlock" type="CSGBox3D" parent="RangedAttack"]
 unique_name_in_owner = true
-transform = Transform3D(1, -7.450581e-09, -2.3841858e-07, 0, 1, 8.493662e-07, 2.9802322e-08, 7.450581e-09, 1.0000005, 1.3252189, -0.09006941, -0.87167346)
+transform = Transform3D(1, -7.450581e-09, -2.3841858e-07, 0, 1, 8.6426735e-07, 2.9802322e-08, 7.450581e-09, 1.0000005, 0.11116544, -0.18389046, -0.25577492)
 layers = 512
 transparency = 1.0
 size = Vector3(0.36157227, 0.62402344, 0.64453125)
@@ -74,3 +84,4 @@ size = Vector3(0.36157227, 0.62402344, 0.64453125)
 unique_name_in_owner = true
 
 [node name="sfx_hit" parent="." instance=ExtResource("10_pck7l")]
+unique_name_in_owner = true

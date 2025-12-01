@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dk1oymk1i2vh5" path="res://Art Assets/Effects/hitflashanimation.tscn" id="8_v2iq5"]
 [ext_resource type="PackedScene" uid="uid://bnikcfrbgmvpv" path="res://Player/Audio/sfx_hit.tscn" id="11_n2vd5"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_p2578"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n2vd5"]
 resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("3_0gdhn")
@@ -38,7 +38,7 @@ animation = NodePath("GrobCatSprite3d")
 [node name="GrobCatSprite3d" parent="." instance=ExtResource("1_l4lsv")]
 unique_name_in_owner = true
 transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, 0, 0.9946672, 0)
-material_override = SubResource("ShaderMaterial_p2578")
+material_override = SubResource("ShaderMaterial_n2vd5")
 shaded = true
 alpha_cut = 2
 texture_filter = 0
@@ -85,5 +85,6 @@ unique_name_in_owner = true
 speed_scale = 2.0
 
 [node name="sfx_hit" parent="." instance=ExtResource("11_n2vd5")]
+unique_name_in_owner = true
 
 [connection signal="animation_finished" from="GrobCatSprite3d" to="." method="_on_grob_cat_attack_loop_finished"]
