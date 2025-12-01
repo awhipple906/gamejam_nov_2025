@@ -13,7 +13,7 @@ func _ready() -> void:
 
 
 func gainchits():
-	PlayerVar.chits += 50
+	PlayerVar.chits += 25
 	setchits()
 
 func lostchits():
