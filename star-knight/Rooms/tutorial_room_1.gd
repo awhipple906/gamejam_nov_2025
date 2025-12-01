@@ -9,8 +9,11 @@ var next_scene_index
 
 
 func _ready():
+	InteractEmitter.connect("CanInteract", setnear)
+	InteractEmitter.connect("CantInteract", setfar)
 	run_dialogue("TutorialRoom1")
 	print(current_scene)
+	
 	##Tutorial Rooms will go in sequence
 	if current_scene in roomConstants.TutorialRooms:
 		next_scene_index = roomConstants.TutorialRooms.find(current_scene,0) + 1
@@ -36,8 +39,12 @@ func _change_scene():
 	print(sceneParser)
 	get_tree().change_scene_to_file(sceneParser)
 
-func _on_door_can_enter_door():
-	closeToDoor = true
+
 
 func _on_player_pressing_interact():
 	pressingE = true
+
+func setnear():
+	closeToDoor = true
+func setfar():
+	closeToDoor = false

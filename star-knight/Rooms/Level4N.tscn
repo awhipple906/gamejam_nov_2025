@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cw2r1xe5qekgb"]
+[gd_scene load_steps=19 format=3 uid="uid://cw2r1xe5qekgb"]
 
 [ext_resource type="Script" uid="uid://ro7q8a72qh5l" path="res://Rooms/test_level.gd" id="1_fppyd"]
 [ext_resource type="PackedScene" uid="uid://c76or3qn4nag5" path="res://Player/Model/Player.tscn" id="1_u3ydm"]
@@ -13,7 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://d27fvc1n8usxn" path="res://Art Assets/Environment/orb_light.tscn" id="8_jrdlj"]
 [ext_resource type="PackedScene" uid="uid://demm2645wfky3" path="res://Enemies/GrobCat/GrobCat.tscn" id="12_ovray"]
 [ext_resource type="PackedScene" uid="uid://oaisdwglo6sw" path="res://Rooms/bgm_player.tscn" id="13_iphi7"]
+[ext_resource type="PackedScene" uid="uid://bhrfsont1q2qu" path="res://chitholder.tscn" id="14_86c22"]
 [ext_resource type="PackedScene" uid="uid://ck54j8jubj4cy" path="res://Rooms/Traps/kill_floor.tscn" id="14_mxds6"]
+[ext_resource type="PackedScene" uid="uid://rt5mmfegfcet" path="res://Components/PauseMenu.tscn" id="16_6uvvs"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_yc8g3"]
 vertices = PackedVector3Array(-7.993389, 5.75, -5.4401903, -7.993389, 5.75, -4.4401903, -6.993389, 5.75, -4.1901903, -6.993389, 5.75, -7.9401903, -12.493389, 5.75, -4.1901903, -10.493389, 5.75, -4.1901903, -10.493389, 5.75, -5.4401903, -12.493389, 5.75, -7.9401903, 3.2566109, 1, -0.44019032, 3.2566109, 1, 0.059809685, 4.256611, 1, 0.059809685, -1.4933891, 1, -0.6901903, -1.7433891, 1, 0.059809685, 0.0066108704, 1, 0.059809685, 0.0066108704, 1, -0.44019032, -3.9933891, 1, -0.6901903, 3.0066109, 1, -5.9401903, 4.256611, 1, -7.9401903, -6.493389, 1, -7.9401903, 4.256611, 1, -5.9401903, -6.493389, 1, 0.059809685, -3.9933891, 1, 0.059809685, 4.256611, 1, -4.6901903, 3.0066109, 1, -4.6901903, -8.243389, 5.75, -2.9401903, -8.993389, 5.75, -0.44019032, -8.993389, 5.75, 0.30980968, -6.993389, 5.75, 0.30980968, -10.493389, 5.75, -3.1901903, -12.493389, 5.75, 0.30980968, -10.243389, 5.75, 0.30980968, -10.243389, 5.75, -0.44019032, 3.2566109, 1, 11.05981, 3.2566109, 1, 11.80981, 4.256611, 1, 11.80981, 3.2566109, 1, 0.8098097, -1.7433891, 1, 11.30981, 0.0066108704, 1, 11.55981, 0.0066108704, 1, 11.05981, 0.0066108704, 1, 0.5598097, 1.2566109, 1, 0.8098097, -8.993389, 5.75, 10.55981, -8.993389, 5.75, 11.05981, -6.993389, 5.75, 11.05981, -8.993389, 5.75, 0.8098097, -12.493389, 5.75, 11.05981, -10.243389, 5.75, 11.05981, -10.243389, 5.75, 10.55981, -10.243389, 5.75, 0.8098097, -3.2433891, 1, 19.05981, -3.2433891, 1, 17.55981, -5.493389, 1, 17.55981, -6.493389, 1, 19.05981, -5.493389, 1, 15.30981, -6.493389, 1, 10.55981, -3.9933891, 1, 12.05981, -4.243389, 1, 10.55981, -4.493389, 1, 15.30981, -8.993389, 5.75, 11.80981, -6.993389, 5.75, 19.05981, -10.243389, 5.75, 11.80981, -12.493389, 5.75, 19.05981, 3.2566109, 1, 12.30981, -1.7433891, 1, 12.05981, 0.0066108704, 1, 12.05981, -2.9933891, 1, 15.30981, 4.256611, 1, 19.05981, 3.0066109, 1, 17.05981, 4.256611, 1, 17.05981, 3.0066109, 1, 15.80981, 1.7566109, 1, 12.30981, 4.256611, 1, 15.80981)
@@ -30,9 +32,6 @@ volumetric_fog_density = 0.005
 volumetric_fog_sky_affect = 0.226
 adjustment_enabled = true
 adjustment_saturation = 1.5
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_jrdlj"]
-size = Vector3(1, 16.693787, 28.17163)
 
 [node name="Level4N" type="Node3D"]
 script = ExtResource("1_fppyd")
@@ -525,5 +524,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013922691, 1.2055522, 16.03
 
 [node name="BGMplayer" parent="SubViewportContainer" instance=ExtResource("13_iphi7")]
 
+[node name="Control" parent="SubViewportContainer" instance=ExtResource("14_86c22")]
+layout_mode = 2
+
 [node name="KillFloor" parent="." instance=ExtResource("14_mxds6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.956123, 5.298694, 1.3667269)
+
+[node name="PauseMenu" parent="." instance=ExtResource("16_6uvvs")]
