@@ -18,11 +18,12 @@ var step_frames : Array = [0,4]
 var target_velocity = Vector3.ZERO
 var last_animation = "idle"
 var health
-
+var isChatting = false
 
 func _ready() -> void:
 	health = hitbox.health_component.health
-
+	Dialogic.timeline_started.connect(Dialogicstarted)
+	Dialogic.timeline_ended.connect(Dialogicended)
 
 func _physics_process(delta):
 	const SPEED = 5.5
@@ -35,7 +36,7 @@ func _physics_process(delta):
 
 	var direction = transform.basis * input_direction_3D
 	#print(direction)
-	if Dialogic.VAR.Ischatting == false:
+	if isChatting == false:
 		play_animation(direction)
 	
 	
@@ -100,4 +101,10 @@ func _on_player_sprite_3d_frame_changed():
 	if %PlayerSprite3D.animation == 'jump': return
 	load_sfx(step_sfx)
 	if %PlayerSprite3D.frame in step_frames and is_on_floor(): %sfx_player.play()
+
+func Dialogicstarted():
+	isChatting = true
+
+func Dialogicended():
+	isChatting = false
 	

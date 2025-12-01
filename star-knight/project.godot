@@ -15,7 +15,7 @@ warnings/check_invalid_track_paths=false
 [application]
 
 config/name="StarKnight"
-run/main_scene="uid://b41buegr7642"
+run/main_scene="uid://bayisn62wil33"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -27,11 +27,14 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 directories/dch_directory={
 "Cloaked Stranger": "res://addons/dialogic/Resources/Characters/Cloaked Stranger.dch",
+"FourArmedStranger": "res://addons/dialogic/Resources/Characters/FourArmedStranger.dch",
+"Graan": "res://addons/dialogic/Resources/Characters/Graan.dch",
 "PrinceThar": "res://addons/dialogic/Resources/Characters/PrinceThar.dch",
 "Teeko": "res://addons/dialogic/Resources/Characters/Teeko.dch"
 }
 directories/dtl_directory={
 "HubFirstConvo": "res://addons/dialogic/Resources/Timelines/HubFirstConvo.dtl",
+"TeekoConvo": "res://addons/dialogic/Resources/Timelines/TeekoConvo.dtl",
 "TutorialRoom1": "res://addons/dialogic/Resources/Timelines/TutorialRoom1.dtl",
 "TutorialRoom2": "res://addons/dialogic/Resources/Timelines/TutorialRoom2.dtl",
 "TutorialRoom3": "res://addons/dialogic/Resources/Timelines/TutorialRoom3.dtl",
@@ -43,6 +46,7 @@ layout/style_directory={}
 glossary/default_case_sensitive=true
 variables={
 "HasSeen": false,
+"HasTalkedTeeko": false,
 "Ischatting": false
 }
 layout/style_list=[]
