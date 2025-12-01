@@ -1,5 +1,5 @@
 # Game Jam 2025- STAR KNIGHT
-Jackson - lead writer, Nathan - lead artist, Alex - lead programmer...game entry to the Github Itchio November 2025 Game Jam
+Jackson - lead writer, Nathan - lead artist, Alex - lead programmer. Music by David...game entry to the Github Itchio November 2025 Game Jam
 
 
 ## Week 1:
