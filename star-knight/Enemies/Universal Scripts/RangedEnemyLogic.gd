@@ -11,6 +11,7 @@ var canCheckPhysics = true
 var stunned := false
 var current_speed := 0.0
 var walking = false
+var isChatting = false
 
 @onready var nav_agent = $NavigationAgent3D
 @onready var physicsCheckNum = int(randf_range(2,30))
@@ -24,6 +25,8 @@ func _ready() -> void:
 	animation_player.set_animation(animation)
 	print("Physics Num:" + str(physicsCheckNum))
 	attack_stats.isOnCoolDown =  false
+	Dialogic.timeline_started.connect(Dialogicstarted)
+	Dialogic.timeline_ended.connect(Dialogicended)
 
 #This is the Enemy pathing to the player
 func _physics_process(delta: float) -> void:
@@ -42,7 +45,7 @@ func _physics_process(delta: float) -> void:
 			walking = false
 			velocity = Vector3.ZERO
 			animation_player.play_attack_animation()
-			if (!attack_stats.isOnCoolDown):
+			if (!attack_stats.isOnCoolDown and !isChatting):
 				_shoot()
 				attack_stats.isOnCoolDown = true
 				await attack_stats.cooling_down()
@@ -101,5 +104,11 @@ func _shoot ():
 	#print("Where I am at" + str(bullet.position))
 	attack_stats.isOnCoolDown = true
 	print()
+
+func Dialogicstarted():
+	isChatting = true
+
+func Dialogicended():
+	isChatting = false
 	
 	
