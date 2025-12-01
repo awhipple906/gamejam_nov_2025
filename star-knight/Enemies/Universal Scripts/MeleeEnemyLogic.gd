@@ -10,6 +10,7 @@ var animation_player
 var canCheckPhysics = true
 var stunned := false
 var current_speed := 0.0
+var isChatting = false
 
 @onready var nav_agent = $NavigationAgent3D
 @onready var physicsCheckNum = int(randf_range(2,30))
@@ -22,11 +23,12 @@ func _ready() -> void:
 	animation_player = EnemyMovementAnimations.new()
 	animation_player.set_animation(animation)
 	print("Physics Num:" + str(physicsCheckNum))
-
+	Dialogic.timeline_started.connect(Dialogicstarted)
+	Dialogic.timeline_ended.connect(Dialogicended)
 #This is the Enemy pathing to the player
 func _physics_process(delta: float) -> void:
 	#If character is talking stop moving and leave physics process method and do nothing else.
-	if Dialogic.VAR.Ischatting == true:
+	if isChatting == true:
 		velocity = Vector3.ZERO
 		return
 	#Small if statement to ensure we aren't checking physics every single second and tanking our machines
@@ -59,4 +61,9 @@ func calculate_path() -> Vector3:
 	var next_location = nav_agent.get_next_path_position()
 	var new_velocity = (next_location - current_position).normalized() * max_speed
 	return new_velocity
-	
+
+func Dialogicstarted():
+	isChatting = true
+
+func Dialogicended():
+	isChatting = false
