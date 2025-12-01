@@ -33,6 +33,7 @@ directories/dch_directory={
 "Teeko": "res://addons/dialogic/Resources/Characters/Teeko.dch"
 }
 directories/dtl_directory={
+"GraanConvo": "res://addons/dialogic/Resources/Timelines/GraanConvo.dtl",
 "HubFirstConvo": "res://addons/dialogic/Resources/Timelines/HubFirstConvo.dtl",
 "TeekoConvo": "res://addons/dialogic/Resources/Timelines/TeekoConvo.dtl",
 "TutorialRoom1": "res://addons/dialogic/Resources/Timelines/TutorialRoom1.dtl",
@@ -46,8 +47,8 @@ layout/style_directory={}
 glossary/default_case_sensitive=true
 variables={
 "HasSeen": false,
-"HasTalkedTeeko": false,
-"Ischatting": false
+"HasTalkedGraan1": false,
+"HasTalkedTeeko1": false
 }
 layout/style_list=[]
 layout/default_style="Default"
