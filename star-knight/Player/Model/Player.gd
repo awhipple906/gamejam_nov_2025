@@ -6,11 +6,13 @@ class_name Player
 # The downward acceleration when in the air, in meters per second squared.
 @export var fall_acceleration = 75
 @export var hitbox : HitboxComponent
+@export var attack_stats : MeleeAttackStats
 
 # Audio for player actions
 @export var step_sfx : AudioStream
 @export var jump_sfx : AudioStream
 signal pressingInteract
+signal canEnterDoor
 var step_frames : Array = [0,4]
 
 var target_velocity = Vector3.ZERO
@@ -39,9 +41,10 @@ func _physics_process(delta):
 	
 	velocity.x = direction.x * SPEED
 	velocity.z = direction.z * SPEED
-
+	
 	velocity.y -= 20.0 * delta
-	if Input.is_action_just_pressed("Interact"):
+	if Input.is_action_just_pressed("interact"):
+		print("Interacting!")
 		pressingInteract.emit()
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = 10.0 
@@ -50,6 +53,13 @@ func _physics_process(delta):
 		velocity.y = 0.0
 	elif Input.is_action_just_pressed("primary_attack"):
 		swing(direction)
+		if attack_stats.has_overlapping_bodies():
+			print("Can ATTACK!!!")
+			var count = 0
+			for enemy in attack_stats.get_overlapping_bodies():
+				if(attack_stats.get_overlapping_bodies()[count].is_in_group("Enemies")):
+					attack_stats._do_attack(attack_stats.get_overlapping_bodies()[count])
+				count += 1
 	if Dialogic.VAR.Ischatting == false:
 		move_and_slide()
 	

@@ -5,7 +5,7 @@ extends Node
 var roomConstants = RoomConstants.new()
 
 @onready var current_scene = get_tree().current_scene.name
-var next_scene : PackedScene
+var next_scene
 var next_scene_index
 
 func _ready() -> void:
@@ -14,7 +14,7 @@ func _ready() -> void:
 	if current_scene in roomConstants.TutorialRooms:
 		next_scene_index = roomConstants.TutorialRooms.find(current_scene,0) + 1
 		if (next_scene_index > roomConstants.TutorialRooms.size()):
-			next_scene = current_scene
+			next_scene = "HubRoom"
 		else:
 			next_scene = roomConstants.TutorialRooms[next_scene_index]
 		print(next_scene)
@@ -29,6 +29,7 @@ func _physics_process(delta: float) -> void:
 		return
 	get_tree().call_group("Enemies", "update_target_location", player.global_transform.origin)
 
-#func _change_scene():
-	#if (%Player.pressingInteract && Door.canEnterDoor):
-		#change scene
+func _change_scene():
+	if (%Player.pressingInteract and %Door.canEnterDoor):
+		var sceneParser = "res://" + next_scene + ".tscn"
+		get_tree().change_scene_to_file(sceneParser)

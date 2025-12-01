@@ -203,7 +203,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.230917, 0, -1.9073486e-06)
 [node name="Spikes4" parent="SubViewportContainer/SubViewport/Spikes2" instance=ExtResource("10_be64x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0974073, 0, -1.9073486e-06)
 
-[node name="Door3" parent="SubViewportContainer/SubViewport" instance=ExtResource("10_siaci")]
+[node name="Door" parent="SubViewportContainer/SubViewport" instance=ExtResource("10_siaci")]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.348536, 0.07455602, -32.977318)
 
 [node name="Door4" parent="SubViewportContainer/SubViewport" instance=ExtResource("10_siaci")]
@@ -249,3 +250,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.002772, 3.7554321, -14.592
 shape = SubResource("BoxShape3D_be64x")
 
 [node name="BGMplayer" parent="SubViewportContainer" instance=ExtResource("13_u05gc")]
+
+[connection signal="pressingInteract" from="SubViewportContainer/SubViewport/Player" to="." method="_on_player_pressing_interact"]
+[connection signal="canEnterDoor" from="SubViewportContainer/SubViewport/Door" to="." method="_on_door_can_enter_door"]

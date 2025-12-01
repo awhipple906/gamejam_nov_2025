@@ -11,7 +11,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if player_in_area == true:
-		if Input.is_action_just_pressed("e"):
+		if Input.is_action_just_pressed("interact"):
 			teekomenu.show()
 
 
