@@ -19,4 +19,4 @@ func damage(attack: Attack):
 		%dmg_player.play()
 	if health <= 0: 
 		print("DEAD")
-		get_parent().queue_free()
+		get_tree().change_scene_to_file("res://Rooms/LoseScreen.tscn")
