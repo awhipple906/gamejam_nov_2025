@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c76or3qn4nag5"]
+[gd_scene load_steps=14 format=3 uid="uid://c76or3qn4nag5"]
 
 [ext_resource type="SpriteFrames" uid="uid://dla6duj6yja06" path="res://Player/Animations/player.tres" id="1_07klf"]
 [ext_resource type="Script" uid="uid://rvhup4o0a6sb" path="res://Player/Model/Player.gd" id="1_nq1va"]
@@ -7,6 +7,7 @@
 [ext_resource type="Material" uid="uid://b56yaekgctmcq" path="res://Art Assets/Environment/Materials/shaders/HitFlash.tres" id="4_3680f"]
 [ext_resource type="PackedScene" uid="uid://clurdw1xfhx5s" path="res://Components/HitboxComponent.tscn" id="4_b7dwa"]
 [ext_resource type="AudioStream" uid="uid://8ml3kqab0xkm" path="res://Player/Audio/PlayerStep.mp3" id="5_6g8sp"]
+[ext_resource type="Script" uid="uid://devbfj10aolvn" path="res://Player/Model/raycast.gd" id="6_ujdnk"]
 [ext_resource type="PackedScene" uid="uid://dk1oymk1i2vh5" path="res://Art Assets/Effects/hitflashanimation.tscn" id="7_mbhvf"]
 [ext_resource type="AudioStream" uid="uid://ct3wcnxuf5re5" path="res://Player/Audio/PlayerDamage.mp3" id="8_bwk5w"]
 [ext_resource type="PackedScene" uid="uid://bnikcfrbgmvpv" path="res://Player/Audio/sfx_hit.tscn" id="9_gmce5"]
@@ -43,6 +44,12 @@ frame_progress = 0.59336734
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.9061307, 0.42299786, 0, -0.42299786, 0.9061307, 0, 6.7370896, 13.814444)
 fov = 37.849285
+script = ExtResource("6_ujdnk")
+
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
+collision_mask = 7
+debug_shape_custom_color = Color(0.87, 0.08700002, 0.08700002, 1)
+debug_shape_thickness = 5
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 5.2671537, 0.6693473)
@@ -103,8 +110,5 @@ bus = &"SFX"
 [node name="hitflashanimation" parent="." instance=ExtResource("7_mbhvf")]
 unique_name_in_owner = true
 speed_scale = 2.0
-
-[node name="RayCast3D" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.38429534, -0.9232102, 0, 0.9232102, 0.38429534, 0, 6.7370896, 13.814444)
 
 [connection signal="frame_changed" from="PlayerSprite3D" to="." method="_on_player_sprite_3d_frame_changed"]

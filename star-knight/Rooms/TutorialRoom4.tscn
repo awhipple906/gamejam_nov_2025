@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://0cqk3uuhs4ij" path="res://Enemies/Thergg/Thergg.tscn" id="10_3kvwe"]
 [ext_resource type="PackedScene" uid="uid://oaisdwglo6sw" path="res://Rooms/bgm_player.tscn" id="11_3kvwe"]
 [ext_resource type="PackedScene" uid="uid://demm2645wfky3" path="res://Enemies/GrobCat/GrobCat.tscn" id="11_irjjd"]
+[ext_resource type="PackedScene" uid="uid://ck54j8jubj4cy" path="res://Rooms/Traps/kill_floor.tscn" id="12_irjjd"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_qo3sl"]
 vertices = PackedVector3Array(10.413551, 0.7470479, -12.618002, 10.413551, 0.7470479, -11.618002, 13.413551, 0.7470479, -11.618002, 13.413551, 0.7470479, -12.618002, -4.8364487, 0.7470479, -24.618002, -4.3364487, 0.7470479, -12.868002, -0.58644867, 0.7470479, -12.868002, -4.3364487, 0.7470479, -11.868002, -0.58644867, 0.7470479, -11.618002, 15.163551, 0.7470479, -24.868002, -4.8364487, 0.7470479, -12.868002, 15.163551, 0.7470479, -12.618002, 10.413551, 0.7470479, -10.368002, 13.413551, 0.7470479, -10.368002, -0.58644867, 0.7470479, -10.368002, -4.8364487, 0.7470479, 1.1319981, 15.163551, 0.7470479, 1.3819981, -4.3364487, 0.7470479, -10.618002, -4.8364487, 0.7470479, -10.618002, 15.163551, 0.7470479, -10.368002)
@@ -28,9 +29,6 @@ volumetric_fog_density = 0.005
 volumetric_fog_sky_affect = 0.226
 adjustment_enabled = true
 adjustment_saturation = 1.5
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_3kvwe"]
-size = Vector3(1, 10.295044, 28.955444)
 
 [node name="TutorialRoom4" type="Node3D"]
 script = ExtResource("1_mgoex")
@@ -189,11 +187,7 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -3.0805116, 0.23920941,
 [node name="OrbLight2" parent="SubViewportContainer/SubViewport" instance=ExtResource("4_tt43h")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 12.865252, 0.23920941, -23.013142)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.7976265, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.647522, -12.085754)
-shape = SubResource("BoxShape3D_3kvwe")
-
 [node name="BGMplayer" parent="SubViewportContainer" instance=ExtResource("11_3kvwe")]
+
+[node name="KillFloor" parent="." instance=ExtResource("12_irjjd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.956123, 6.347818, 1.3667269)

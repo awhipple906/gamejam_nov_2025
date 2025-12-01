@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://demm2645wfky3" path="res://Enemies/GrobCat/GrobCat.tscn" id="9_jwtrg"]
 [ext_resource type="PackedScene" uid="uid://dbeeyfnjo30ug" path="res://Art Assets/Environment/door_2.tscn" id="9_k73bx"]
 [ext_resource type="PackedScene" uid="uid://oaisdwglo6sw" path="res://Rooms/bgm_player.tscn" id="10_5isky"]
+[ext_resource type="PackedScene" uid="uid://ck54j8jubj4cy" path="res://Rooms/Traps/kill_floor.tscn" id="11_5451v"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_jwtrg"]
 vertices = PackedVector3Array(-2.3675575, 0.4970479, -24.972, -2.3675575, 0.4970479, -23.472, -0.36755753, 0.4970479, -23.472, -0.36755753, 0.4970479, -20.972, -2.3675575, 0.4970479, -20.972, -2.3675575, 0.4970479, -19.222, 8.632442, 0.4970479, -19.222, 8.882442, 0.4970479, -20.972, 2.3824425, 0.4970479, -20.972, 2.3824425, 0.4970479, -23.472, 15.382442, 0.4970479, -23.472, 15.382442, 0.4970479, -24.972, 10.382442, 0.4970479, -19.222, 15.382442, 0.4970479, -20.972, 10.382442, 0.4970479, -16.722, 8.632442, 0.4970479, -16.722, 9.132442, 0.4970479, -14.472, 15.382442, 0.4970479, -14.472, -0.36755753, 0.4970479, -14.222, -0.36755753, 0.4970479, -13.222, 2.6324425, 0.4970479, -13.222, 2.6324425, 0.4970479, -14.472, -2.3675575, 0.4970479, -16.722, -2.3675575, 0.4970479, -14.222, -0.36755753, 0.4970479, -11.722, -2.3675575, 0.4970479, -11.972, -2.3675575, 0.4970479, -9.472, 2.6324425, 0.4970479, -11.972, 8.382442, 0.4970479, -9.472, 8.382442, 0.4970479, -11.972, 10.382442, 0.4970479, -6.972, 8.882442, 0.4970479, -6.972, 9.132442, 0.4970479, -4.222, 12.882442, 0.4970479, -4.222, 10.382442, 0.4970479, -9.472, 15.382442, 0.4970479, -11.972, 15.382442, 0.4970479, -4.722, -2.3675575, 0.4970479, -6.972, -2.3675575, 0.4970479, -4.472, 13.132442, 0.4970479, -1.9720001, 15.382442, 0.4970479, 0.5279999, -2.3675575, 0.4970479, -1.9720001, -2.3675575, 0.4970479, 0.5279999)
@@ -27,9 +28,6 @@ volumetric_fog_density = 0.005
 volumetric_fog_sky_affect = 0.226
 adjustment_enabled = true
 adjustment_saturation = 1.5
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_jwtrg"]
-size = Vector3(1, 10.295044, 28.955444)
 
 [node name="TutorialRoom3" type="Node3D"]
 script = ExtResource("1_5yguk")
@@ -561,11 +559,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8580265, 0, 1.322773)
 [node name="Pillar4" parent="SubViewportContainer/SubViewport/Pillar5" instance=ExtResource("8_5yguk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.9870214, 0)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.101273, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.647522, -12.085754)
-shape = SubResource("BoxShape3D_jwtrg")
-
 [node name="BGMplayer" parent="SubViewportContainer" instance=ExtResource("10_5isky")]
+
+[node name="KillFloor" parent="SubViewportContainer" instance=ExtResource("11_5451v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.956123, 5.926687, 1.3667269)

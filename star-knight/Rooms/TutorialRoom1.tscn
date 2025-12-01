@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bdumuelaq0rtx"]
+[gd_scene load_steps=14 format=3 uid="uid://bdumuelaq0rtx"]
 
 [ext_resource type="Script" uid="uid://dssv8v7s1cvpl" path="res://Rooms/tutorial_room_1.gd" id="1_kjsb8"]
 [ext_resource type="PackedScene" uid="uid://c76or3qn4nag5" path="res://Player/Model/Player.tscn" id="3_qh541"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://oaisdwglo6sw" path="res://Rooms/bgm_player.tscn" id="9_kjsb8"]
 [ext_resource type="Material" uid="uid://b6sa4nxd5h0s7" path="res://Art Assets/Environment/Materials/tilewall.tres" id="10_8ogih"]
 [ext_resource type="Material" uid="uid://dbdvic37qtow5" path="res://Art Assets/Environment/Materials/Basic.tres" id="10_kjsb8"]
+[ext_resource type="PackedScene" uid="uid://ck54j8jubj4cy" path="res://Rooms/Traps/kill_floor.tscn" id="11_8ogih"]
 [ext_resource type="PackedScene" uid="uid://dbeeyfnjo30ug" path="res://Art Assets/Environment/door_2.tscn" id="12_hx1pi"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_qo3sl"]
@@ -204,3 +205,6 @@ light_energy = 128.0
 shadow_enabled = true
 spot_range = 23.813
 spot_angle = 15.07
+
+[node name="KillFloor" parent="." instance=ExtResource("11_8ogih")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.956123, 5.6312613, 1.3667269)
