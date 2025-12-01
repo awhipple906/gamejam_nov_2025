@@ -7,6 +7,7 @@ func _process(delta: float) -> void:
 		show()
 
 func _on_menu_button_pressed() -> void:
+	print("Pressing")
 	get_tree().change_scene_to_file("res://Rooms/MainMenu.tscn")
 
 

@@ -503,7 +503,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.405656, 0, -20.217201)
 [node name="Spikes120" parent="SubViewportContainer/SubViewport/Spikes" instance=ExtResource("4_5yguk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.495905, 0, -20.217201)
 
-[node name="Door3" parent="SubViewportContainer/SubViewport" instance=ExtResource("9_k73bx")]
+[node name="Door" parent="SubViewportContainer/SubViewport" instance=ExtResource("9_k73bx")]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.311365, -0.008790106, -26.323063)
 
 [node name="Door4" parent="SubViewportContainer/SubViewport" instance=ExtResource("9_k73bx")]

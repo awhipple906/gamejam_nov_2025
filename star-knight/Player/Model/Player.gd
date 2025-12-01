@@ -44,6 +44,7 @@ func _ready() -> void:
 
 
 func _physics_process(delta):
+	_check_height()
 	if global_position == Vector3(0,-20,0):
 		respawn()
 	
@@ -78,17 +79,12 @@ func _physics_process(delta):
 	elif Input.is_action_just_released("jump") and velocity.y > 0.0:
 		velocity.y = 0.0
 	elif Input.is_action_just_pressed("primary_attack") and !isChatting:
-		swing(direction)
 		%PlayerSprite3D.stop()
 		%PlayerSprite3D.play("attack")
-		await get_tree().create_timer(1).timeout
 		if attack_stats.has_overlapping_bodies():
-			print("Can ATTACK!!!")
-			var count = 0
-			for enemy in attack_stats.get_overlapping_bodies():
-				if(attack_stats.get_overlapping_bodies()[count].is_in_group("Enemies")):
-					attack_stats._do_attack(attack_stats.get_overlapping_bodies()[count])
-				count += 1
+			_hit_enemies(attack_stats.get_overlapping_bodies())
+		await attack_stats.cooling_down()
+
 	if isChatting == false:
 		move_and_slide()
 	
@@ -108,18 +104,19 @@ func play_animation():
 	if velocity.z > 0 and !isChatting and is_on_floor():
 		%PlayerSprite3D.flip_h = true
 		%PlayerSprite3D.play("walk")
+	if velocity.y == 0 and !Input.is_anything_pressed() and is_on_floor():
+		%PlayerSprite3D.play("idle")
 	last_animation = "walk"
 
-
-	
-func swing(direction):
-		var attack_angle = direction.z
-		print("Attack angle: " + str(attack_angle))
-		if attack_angle < 0:
-			print("Attacking Right")
-		else:
-			print("Attacking Left")
 			
+func _hit_enemies(enemies : Array):
+	var count = 0
+	for enemy in enemies:
+		if(enemies[count].is_in_group("Enemies")):
+			attack_stats._do_attack(enemy)
+			enemy.velocity = Vector3(randf_range(-PI / 4, PI / 4) * 10, 1, randf_range(-PI / 4, PI / 4) * 10)
+			print("HITTING " + str(enemy))
+		count += 1
 
 func load_sfx(sfx_to_load):
 	if %sfx_player.stream != sfx_to_load:
@@ -147,18 +144,17 @@ func hidelabel():
 func _shoot ():
 	%TherggAttackAudio.play()
 	var bullet = rangedBullet.instantiate()
-	print(get_parent().get_parent())
 	get_parent().get_parent().add_sibling(bullet)
 	bullet.position = %SpawnBlock.global_position
 	var dir = bullet.position.direction_to(%RayCast3D.get_collision_point())
-	#dir.x = (dir.x * 1.25)
 	bullet.global_rotation = %RayCast3D.get_collision_point() - bullet.position.normalized()
 	bullet.target_pos = dir
-	#print("Where I am shootin" + str(bullet.target_pos))
-	#print("Where I am at" + str(bullet.position))
 	attack_stats.isOnCoolDown = true
 
 func respawn():
 	self.global_position = spawn_point
 	velocity = Vector3.ZERO
 	
+func _check_height():
+	if position.y < -100:
+		respawn()

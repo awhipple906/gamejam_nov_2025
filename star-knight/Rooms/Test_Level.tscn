@@ -51,7 +51,6 @@ offset_top = -2.0
 offset_bottom = -2.0
 
 [node name="PauseMenu" parent="." instance=ExtResource("3_ecqcg")]
-visible = false
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 texture_filter = 1

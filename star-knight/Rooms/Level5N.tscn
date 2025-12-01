@@ -315,7 +315,7 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2.23
 
 [node name="Door" parent="SubViewportContainer/SubViewport" instance=ExtResource("8_w2qay")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 2.2311444, 5.511227, -29.714457)
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 2.2311444, 5.511227, -29.215988)
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.211863, -10.523744, 7.0645237)

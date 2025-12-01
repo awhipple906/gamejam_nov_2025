@@ -28,7 +28,7 @@ func _do_attack(body: Node3D) -> void:
 		print("Dealing: " + str(damage) + " to Player")
 		hitbox.damage(attack)
 		isOnCoolDown = true
-	elif body.get_groups().has("Enemies") and !isOnCoolDown:
+	elif body.is_in_group("Enemies"):
 		print("ENEMY HITBOX ENTERED")
 		hitbox = body.hitbox
 		print("Dealing: " + str(damage) + " to Enemy")

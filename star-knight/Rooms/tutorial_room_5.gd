@@ -14,12 +14,12 @@ var next_scene_index
 func _ready():
 	InteractEmitter.connect("CanInteract", setnear)
 	InteractEmitter.connect("CantInteract", setfar)
-	run_dialogue("TutorialRoom3")
+	run_dialogue("TutorialRoom5")
 	print(current_scene)
 	##Tutorial Rooms will go in sequence
 	if current_scene in roomConstants.TutorialRooms:
 		next_scene_index = roomConstants.TutorialRooms.find(current_scene,0) + 1
-		if (next_scene_index > roomConstants.TutorialRooms.size()):
+		if (next_scene_index >= roomConstants.TutorialRooms.size()):
 			next_scene = "HubRoom"
 		else:
 			next_scene = roomConstants.TutorialRooms[next_scene_index]
@@ -32,7 +32,7 @@ func _ready():
 	##Tutorial Rooms will go in sequence
 	if current_scene in roomConstants.TutorialRooms:
 		next_scene_index = roomConstants.TutorialRooms.find(current_scene,0) + 1
-		if (next_scene_index > roomConstants.TutorialRooms.size()):
+		if (next_scene_index >= roomConstants.TutorialRooms.size()):
 			next_scene = "HubRoom"
 		else:
 			next_scene = roomConstants.TutorialRooms[next_scene_index]

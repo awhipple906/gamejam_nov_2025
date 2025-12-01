@@ -118,7 +118,8 @@ carve_navigation_mesh = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport"]
 environment = SubResource("Environment_nkk0n")
 
-[node name="Door3" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_su5tm")]
+[node name="Door" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_su5tm")]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.968622, 0.39278212, -26.066593)
 
 [node name="Door4" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_su5tm")]

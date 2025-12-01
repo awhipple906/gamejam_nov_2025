@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://6cd4jugkqk6g"]
 
-[ext_resource type="Script" uid="uid://ro7q8a72qh5l" path="res://Rooms/test_level.gd" id="1_xom2u"]
+[ext_resource type="Script" uid="uid://dh4tgt82vpaxc" path="res://Rooms/tutorial_room_5.gd" id="1_li8q6"]
 [ext_resource type="PackedScene" uid="uid://bhrfsont1q2qu" path="res://chitholder.tscn" id="2_li8q6"]
 [ext_resource type="PackedScene" uid="uid://c76or3qn4nag5" path="res://Player/Model/Player.tscn" id="3_li8q6"]
 [ext_resource type="PackedScene" uid="uid://dbeeyfnjo30ug" path="res://Art Assets/Environment/Door.tscn" id="5_j5jx8"]
@@ -29,7 +29,7 @@ adjustment_enabled = true
 adjustment_saturation = 1.5
 
 [node name="TutorialRoom5" type="Node3D"]
-script = ExtResource("1_xom2u")
+script = ExtResource("1_li8q6")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 texture_filter = 1
@@ -119,7 +119,8 @@ environment = SubResource("Environment_nkk0n")
 [node name="Door4" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_j5jx8")]
 transform = Transform3D(-1, 0, -2.6226832e-07, 0, 1, 0, 2.6226832e-07, 0, -1, 3.821972, 0.28246394, 2.382575)
 
-[node name="Door5" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_j5jx8")]
+[node name="Door" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_j5jx8")]
+unique_name_in_owner = true
 transform = Transform3D(-2.1855692e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855692e-07, -5.9216805, 2.7428546, -11.579739)
 
 [node name="Pillar2" parent="SubViewportContainer/SubViewport" instance=ExtResource("6_p51md")]
