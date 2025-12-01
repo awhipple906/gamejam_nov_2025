@@ -23,6 +23,7 @@ var last_animation = "idle"
 var health
 var chits
 var isChatting = false
+var attacking = false
 
 var spawn_point = Vector3(0, 0, 0)
 
@@ -78,18 +79,22 @@ func _physics_process(delta):
 		%PlayerSprite3D.play("jump")
 	elif Input.is_action_just_released("jump") and velocity.y > 0.0:
 		velocity.y = 0.0
-	elif Input.is_action_just_pressed("primary_attack") and !isChatting:
+	elif Input.is_action_just_pressed("primary_attack") and !isChatting and !attacking:
 		%PlayerSprite3D.stop()
 		%PlayerSprite3D.play("attack")
+		attacking = true
 		if attack_stats.has_overlapping_bodies():
 			_hit_enemies(attack_stats.get_overlapping_bodies())
-		await attack_stats.cooling_down()
+		await get_tree().create_timer(0.5).timeout
+		attacking = false
 
 	if isChatting == false:
 		move_and_slide()
 	
 	
 func play_animation():
+	if attacking:
+		return
 	if velocity == Vector3.ZERO and !%PlayerSprite3D.is_playing() and is_on_floor():
 		%PlayerSprite3D.play("idle")
 	if isChatting:
