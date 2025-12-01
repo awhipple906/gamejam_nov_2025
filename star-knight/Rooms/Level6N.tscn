@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://rdt05k7x20cr"]
+[gd_scene load_steps=18 format=3 uid="uid://rdt05k7x20cr"]
 
 [ext_resource type="Material" uid="uid://cxflf76lktjvb" path="res://Art Assets/Environment/Materials/tilefloor.tres" id="1_dgj3l"]
 [ext_resource type="Script" uid="uid://ro7q8a72qh5l" path="res://Rooms/test_level.gd" id="1_fr64v"]
@@ -9,7 +9,6 @@
 [ext_resource type="Material" uid="uid://bt25u86532wts" path="res://Art Assets/Environment/Materials/BrownMetal.tres" id="6_o47t7"]
 [ext_resource type="Material" uid="uid://b6sa4nxd5h0s7" path="res://Art Assets/Environment/Materials/tilewall.tres" id="7_aolmg"]
 [ext_resource type="PackedScene" uid="uid://dbeeyfnjo30ug" path="res://Art Assets/Environment/Door.tscn" id="8_tih2t"]
-[ext_resource type="PackedScene" uid="uid://chh2rk7rvthi5" path="res://Rooms/Traps/Spikes/spikes.tscn" id="9_gc2in"]
 [ext_resource type="PackedScene" uid="uid://d27fvc1n8usxn" path="res://Art Assets/Environment/orb_light.tscn" id="10_sbp0x"]
 [ext_resource type="PackedScene" uid="uid://y4u4u344sjdx" path="res://Enemies/Lizkin/Lizkin.tscn" id="11_7v2o2"]
 [ext_resource type="PackedScene" uid="uid://oaisdwglo6sw" path="res://Rooms/bgm_player.tscn" id="13_sqf3m"]
@@ -449,42 +448,6 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.2
 [node name="Door" parent="SubViewportContainer/SubViewport" instance=ExtResource("8_tih2t")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5549135, 5.3327045, -8.487705)
-
-[node name="Spikes" parent="SubViewportContainer/SubViewport" instance=ExtResource("9_gc2in")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.586041, 0.53988695, 16.504692)
-
-[node name="Spikes2" parent="SubViewportContainer/SubViewport/Spikes" instance=ExtResource("9_gc2in")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14634895, 0, -21.820045)
-
-[node name="Spikes3" parent="SubViewportContainer/SubViewport/Spikes" instance=ExtResource("9_gc2in")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.936502, 0, -4.905739)
-
-[node name="Spikes4" parent="SubViewportContainer/SubViewport/Spikes" instance=ExtResource("9_gc2in")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9493022, 0, -4.9088182)
-
-[node name="Spikes5" parent="SubViewportContainer/SubViewport/Spikes" instance=ExtResource("9_gc2in")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.936502, 0, -16.329649)
-
-[node name="Spikes6" parent="SubViewportContainer/SubViewport/Spikes" instance=ExtResource("9_gc2in")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9493022, 0, -16.33273)
-
-[node name="Spikes7" parent="SubViewportContainer/SubViewport/Spikes" instance=ExtResource("9_gc2in")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.101501, 4.755797, -5.3633814)
-
-[node name="Spikes8" parent="SubViewportContainer/SubViewport/Spikes" instance=ExtResource("9_gc2in")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.101501, 4.755797, -16.397549)
-
-[node name="Lizkin" parent="SubViewportContainer/SubViewport/Spikes" instance=ExtResource("11_7v2o2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.819923, 5.4320693, -1.5469885)
-
-[node name="Lizkin2" parent="SubViewportContainer/SubViewport/Spikes" instance=ExtResource("11_7v2o2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.049894, 5.4320703, -1.9869356)
-
-[node name="Lizkin3" parent="SubViewportContainer/SubViewport/Spikes" instance=ExtResource("11_7v2o2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.924551, 5.43207, -8.570155)
-
-[node name="Lizkin4" parent="SubViewportContainer/SubViewport/Spikes" instance=ExtResource("11_7v2o2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.896769, 5.43207, -7.1038494)
 
 [node name="OrbLight" parent="SubViewportContainer/SubViewport" instance=ExtResource("10_sbp0x")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -9.383894, 5.2301364, 15.703226)

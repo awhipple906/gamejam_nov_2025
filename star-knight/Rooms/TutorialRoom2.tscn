@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b0oivcbqahjhk"]
+[gd_scene load_steps=19 format=3 uid="uid://b0oivcbqahjhk"]
 
 [ext_resource type="Script" uid="uid://cr7mnr1677vhi" path="res://Rooms/tutorial_room_2.gd" id="1_be64x"]
 [ext_resource type="PackedScene" uid="uid://c76or3qn4nag5" path="res://Player/Model/Player.tscn" id="3_r1d0l"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://demm2645wfky3" path="res://Enemies/GrobCat/GrobCat.tscn" id="11_r1d0l"]
 [ext_resource type="PackedScene" uid="uid://y4u4u344sjdx" path="res://Enemies/Lizkin/Lizkin.tscn" id="12_u05gc"]
 [ext_resource type="PackedScene" uid="uid://oaisdwglo6sw" path="res://Rooms/bgm_player.tscn" id="13_u05gc"]
+[ext_resource type="PackedScene" uid="uid://ck54j8jubj4cy" path="res://Rooms/Traps/kill_floor.tscn" id="13_ysmmt"]
 [ext_resource type="PackedScene" uid="uid://bhrfsont1q2qu" path="res://chitholder.tscn" id="14_errrv"]
 [ext_resource type="PackedScene" uid="uid://rt5mmfegfcet" path="res://Components/PauseMenu.tscn" id="15_ysmmt"]
 
@@ -242,13 +243,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.212594, 3.9757442, 2.91325
 [node name="Pillar11" parent="SubViewportContainer/SubViewport" instance=ExtResource("8_qfam7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8833723, 3.9757442, 2.9132538)
 
+[node name="KillFloor" parent="SubViewportContainer/SubViewport" instance=ExtResource("13_ysmmt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.2107277, 0)
+script = null
+
 [node name="BGMplayer" parent="SubViewportContainer" instance=ExtResource("13_u05gc")]
 
 [node name="Control" parent="SubViewportContainer" instance=ExtResource("14_errrv")]
 layout_mode = 2
 
 [node name="PauseMenu" parent="." instance=ExtResource("15_ysmmt")]
-visible = false
 
 [connection signal="pressingInteract" from="SubViewportContainer/SubViewport/Player" to="." method="_on_player_pressing_interact"]
 [connection signal="canEnterDoor" from="SubViewportContainer/SubViewport/Door" to="." method="_on_door_can_enter_door"]

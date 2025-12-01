@@ -31,4 +31,3 @@ func _on_health_button_pressed() -> void:
 		PlayerVar.emit_signal("chitchange")
 	
 	
-

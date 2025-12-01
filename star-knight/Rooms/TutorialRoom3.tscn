@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cj8x4yy8gxlrt"]
+[gd_scene load_steps=15 format=3 uid="uid://cj8x4yy8gxlrt"]
 
 [ext_resource type="Script" uid="uid://bbqrc4fo3sr6c" path="res://Rooms/tutorial_room_3.gd" id="1_5yguk"]
 [ext_resource type="Material" uid="uid://cxflf76lktjvb" path="res://Art Assets/Environment/Materials/tilefloor.tres" id="3_5isky"]
@@ -7,7 +7,6 @@
 [ext_resource type="Material" uid="uid://b6sa4nxd5h0s7" path="res://Art Assets/Environment/Materials/tilewall.tres" id="4_5451v"]
 [ext_resource type="PackedScene" uid="uid://d27fvc1n8usxn" path="res://Art Assets/Environment/orb_light.tscn" id="5_jarbq"]
 [ext_resource type="PackedScene" uid="uid://4qr7arofkogc" path="res://Art Assets/Environment/pillar_2.tscn" id="8_5yguk"]
-[ext_resource type="PackedScene" uid="uid://demm2645wfky3" path="res://Enemies/GrobCat/GrobCat.tscn" id="9_jwtrg"]
 [ext_resource type="PackedScene" uid="uid://dbeeyfnjo30ug" path="res://Art Assets/Environment/Door.tscn" id="9_k73bx"]
 [ext_resource type="PackedScene" uid="uid://oaisdwglo6sw" path="res://Rooms/bgm_player.tscn" id="10_5isky"]
 [ext_resource type="PackedScene" uid="uid://ck54j8jubj4cy" path="res://Rooms/Traps/kill_floor.tscn" id="11_5451v"]

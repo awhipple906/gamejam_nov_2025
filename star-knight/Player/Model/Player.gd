@@ -9,6 +9,8 @@ class_name Player
 @export var attack_stats : MeleeAttackStats
 @export var chitlabel : RichTextLabel
 
+@export var rangedBullet : PackedScene
+
 # Audio for player actions
 @export var step_sfx : AudioStream
 @export var jump_sfx : AudioStream
@@ -37,9 +39,17 @@ func _ready() -> void:
 	Dialogic.timeline_ended.connect(Dialogicended)
 	InteractEmitter.connect("CanInteract", showlabel)
 	InteractEmitter.connect("CantInteract", hidelabel)
+	
+	spawn_point = self.global_transform.origin
 
 
 func _physics_process(delta):
+	if global_position == Vector3(0,-20,0):
+		respawn()
+	
+	if Input.is_action_just_pressed("secondary_attack"):
+		_shoot()
+		
 	const SPEED = 5.5
 	var input_direction_2D = Input.get_vector(
 		"Left", "Right", "Forward", "Back"
@@ -88,14 +98,14 @@ func play_animation():
 		%PlayerSprite3D.play("idle")
 	if isChatting:
 		%PlayerSprite3D.play("idle")
-	if velocity.x < 0 and !isChatting:
+	if velocity.x < 0 and !isChatting and is_on_floor():
 		%PlayerSprite3D.play(last_animation)
-	if velocity.z < 0 and !isChatting:
+	if velocity.z < 0 and !isChatting and is_on_floor():
 		%PlayerSprite3D.flip_h = false
 		%PlayerSprite3D.play("walk")
-	if velocity.x > 0 and !isChatting:
+	if velocity.x > 0 and !isChatting and is_on_floor():
 		%PlayerSprite3D.play(last_animation)
-	if velocity.z > 0 and !isChatting:
+	if velocity.z > 0 and !isChatting and is_on_floor():
 		%PlayerSprite3D.flip_h = true
 		%PlayerSprite3D.play("walk")
 	last_animation = "walk"
@@ -134,4 +144,21 @@ func showlabel():
 func hidelabel():
 	showint.hide()
 
+func _shoot ():
+	%TherggAttackAudio.play()
+	var bullet = rangedBullet.instantiate()
+	print(get_parent().get_parent())
+	get_parent().get_parent().add_sibling(bullet)
+	bullet.position = %SpawnBlock.global_position
+	var dir = bullet.position.direction_to(%RayCast3D.get_collision_point())
+	#dir.x = (dir.x * 1.25)
+	bullet.global_rotation = %RayCast3D.get_collision_point() - bullet.position.normalized()
+	bullet.target_pos = dir
+	#print("Where I am shootin" + str(bullet.target_pos))
+	#print("Where I am at" + str(bullet.position))
+	attack_stats.isOnCoolDown = true
 
+func respawn():
+	self.global_position = spawn_point
+	velocity = Vector3.ZERO
+	
