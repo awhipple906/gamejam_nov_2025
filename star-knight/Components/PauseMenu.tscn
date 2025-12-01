@@ -72,7 +72,7 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
 
-[sub_resource type="Image" id="Image_spstr"]
+[sub_resource type="Image" id="Image_60ava"]
 data = {
 "data": PackedByteArray(255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255),
 "format": "RGBA8",
@@ -82,7 +82,7 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_px3il"]
-image = SubResource("Image_spstr")
+image = SubResource("Image_60ava")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l3122"]
 content_margin_left = 0.0
@@ -169,6 +169,7 @@ transparent_bg = true
 oversampling_override = 1.0
 initial_position = 1
 size = Vector2i(1500, 900)
+visible = false
 theme = SubResource("Theme_1tob0")
 script = ExtResource("2_60ava")
 

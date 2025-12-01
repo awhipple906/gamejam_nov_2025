@@ -10,6 +10,8 @@ var next_scene_index
 
 
 func _ready():
+	InteractEmitter.connect("CanInteract", setnear)
+	InteractEmitter.connect("CantInteract", setfar)
 	print(current_scene)
 	##Tutorial Rooms will go in sequence
 	if current_scene in roomConstants.TutorialRooms:
@@ -25,6 +27,10 @@ func _ready():
 		next_scene = roomConstants.Rooms[next_scene_index]
 
 func _process(delta: float) -> void:
+	if Input.is_physical_key_pressed(KEY_E):
+		pressingE = true
+	else:
+		pressingE = false
 	if(pressingE and closeToDoor):
 		_change_scene()
 
@@ -39,8 +45,8 @@ func _change_scene():
 	print(sceneParser)
 	get_tree().change_scene_to_file(sceneParser)
 
-func _on_door_can_enter_door():
-	closeToDoor = true
 
-func _on_player_pressing_interact():
-	pressingE = true
+func setnear():
+	closeToDoor = true
+func setfar():
+	closeToDoor = false

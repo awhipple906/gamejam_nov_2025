@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b41buegr7642"]
+[gd_scene load_steps=17 format=3 uid="uid://b41buegr7642"]
 
 [ext_resource type="Script" uid="uid://dypbdpttdix6j" path="res://Rooms/tutorial_room_4.gd" id="1_mgoex"]
 [ext_resource type="PackedScene" uid="uid://c76or3qn4nag5" path="res://Player/Model/Player.tscn" id="3_su5tm"]
@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://oaisdwglo6sw" path="res://Rooms/bgm_player.tscn" id="11_3kvwe"]
 [ext_resource type="PackedScene" uid="uid://demm2645wfky3" path="res://Enemies/GrobCat/GrobCat.tscn" id="11_irjjd"]
 [ext_resource type="PackedScene" uid="uid://ck54j8jubj4cy" path="res://Rooms/Traps/kill_floor.tscn" id="12_irjjd"]
+[ext_resource type="PackedScene" uid="uid://bhrfsont1q2qu" path="res://chitholder.tscn" id="12_qt7c2"]
+[ext_resource type="PackedScene" uid="uid://rt5mmfegfcet" path="res://Components/PauseMenu.tscn" id="14_asmd2"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_qo3sl"]
 vertices = PackedVector3Array(10.413551, 0.7470479, -12.618002, 10.413551, 0.7470479, -11.618002, 13.413551, 0.7470479, -11.618002, 13.413551, 0.7470479, -12.618002, -4.8364487, 0.7470479, -24.618002, -4.3364487, 0.7470479, -12.868002, -0.58644867, 0.7470479, -12.868002, -4.3364487, 0.7470479, -11.868002, -0.58644867, 0.7470479, -11.618002, 15.163551, 0.7470479, -24.868002, -4.8364487, 0.7470479, -12.868002, 15.163551, 0.7470479, -12.618002, 10.413551, 0.7470479, -10.368002, 13.413551, 0.7470479, -10.368002, -0.58644867, 0.7470479, -10.368002, -4.8364487, 0.7470479, 1.1319981, 15.163551, 0.7470479, 1.3819981, -4.3364487, 0.7470479, -10.618002, -4.8364487, 0.7470479, -10.618002, 15.163551, 0.7470479, -10.368002)
@@ -189,5 +191,10 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 12.865252, 0.23920941, 
 
 [node name="BGMplayer" parent="SubViewportContainer" instance=ExtResource("11_3kvwe")]
 
+[node name="Control" parent="SubViewportContainer" instance=ExtResource("12_qt7c2")]
+layout_mode = 2
+
 [node name="KillFloor" parent="." instance=ExtResource("12_irjjd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.956123, 6.347818, 1.3667269)
+
+[node name="PauseMenu" parent="." instance=ExtResource("14_asmd2")]
