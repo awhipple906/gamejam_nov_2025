@@ -17,7 +17,6 @@ warnings/check_invalid_track_paths=false
 config/name="StarKnight"
 run/main_scene="uid://dgkf26p8mlmae"
 config/features=PackedStringArray("4.5", "Forward Plus")
-config/icon="res://icon.svg"
 
 [autoload]
 

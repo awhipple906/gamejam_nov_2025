@@ -117,7 +117,7 @@ material = SubResource("StandardMaterial3D_54g3h")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport"]
 environment = SubResource("Environment_nkk0n")
 
-[node name="Door2" parent="SubViewportContainer/SubViewport" instance=ExtResource("8_ujprb")]
+[node name="Door" parent="SubViewportContainer/SubViewport" instance=ExtResource("8_ujprb")]
 transform = Transform3D(-0.015148819, 0, 0.99988526, 0, 1, 0, -0.99988526, 0, -0.015148819, -7.795281, 0.041897207, -7.2782307)
 
 [node name="MarketStall" parent="SubViewportContainer/SubViewport" node_paths=PackedStringArray("teekomenu") instance=ExtResource("8_wcegg")]
@@ -165,3 +165,6 @@ graanmenu = NodePath("../GraanMenu")
 [node name="KillFloor" parent="." instance=ExtResource("17_uloep")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.208556, 0)
 script = null
+
+[connection signal="pressingInteract" from="SubViewportContainer/SubViewport/Player" to="." method="_on_player_pressing_interact"]
+[connection signal="canEnterDoor" from="SubViewportContainer/SubViewport/Door" to="." method="_on_door_can_enter_door"]

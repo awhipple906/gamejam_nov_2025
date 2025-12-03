@@ -7,6 +7,7 @@ var next_scene
 var next_scene_index
 @onready var closeToDoor = false
 @onready var pressingE = false
+@onready var nearDoor = false
 
 func _ready():
 	%Player.hitbox.health_component.health = PlayerVar.playerMaxHealth
@@ -17,18 +18,8 @@ func _ready():
 	InteractEmitter.connect("CanInteract", setnear)
 	InteractEmitter.connect("CantInteract", setfar)
 	print(current_scene)
-	##Tutorial Rooms will go in sequence
-	if current_scene in roomConstants.TutorialRooms:
-		next_scene_index = roomConstants.TutorialRooms.find(current_scene,0) + 1
-		if (next_scene_index > roomConstants.TutorialRooms.size()):
-			next_scene = "HubRoom"
-		else:
-			next_scene = roomConstants.TutorialRooms[next_scene_index]
-		print(next_scene)
-	##Any other room will randomly proceed current room
-	elif  current_scene in roomConstants.Rooms:
-		next_scene_index = randi_range(0, roomConstants.Rooms.size() -1)
-		next_scene = roomConstants.Rooms[next_scene_index]
+	next_scene_index = randi_range(0, roomConstants.Rooms.size() -1)
+	next_scene = roomConstants.Rooms[next_scene_index]
 
 func run_dialogue(dialogue_string):
 	Dialogic.start(dialogue_string)
@@ -39,7 +30,7 @@ func _process(delta: float) -> void:
 		pressingE = true
 	else:
 		pressingE = false
-	if(pressingE and closeToDoor):
+	if(pressingE and nearDoor):
 		_change_scene()
 
 func _physics_process(_delta: float) -> void:
@@ -57,3 +48,6 @@ func setnear():
 	closeToDoor = true
 func setfar():
 	closeToDoor = false
+	
+func _on_door_can_enter_door() -> void:
+	nearDoor = true # Replace with function body.
