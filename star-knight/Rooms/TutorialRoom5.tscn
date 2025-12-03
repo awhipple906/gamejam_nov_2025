@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://6cd4jugkqk6g"]
+[gd_scene load_steps=13 format=3 uid="uid://6cd4jugkqk6g"]
 
-[ext_resource type="Script" uid="uid://ro7q8a72qh5l" path="res://Rooms/test_level.gd" id="1_xom2u"]
+[ext_resource type="Script" uid="uid://dh4tgt82vpaxc" path="res://Rooms/tutorial_room_5.gd" id="1_li8q6"]
+[ext_resource type="PackedScene" uid="uid://bhrfsont1q2qu" path="res://chitholder.tscn" id="2_li8q6"]
 [ext_resource type="PackedScene" uid="uid://c76or3qn4nag5" path="res://Player/Model/Player.tscn" id="3_li8q6"]
 [ext_resource type="PackedScene" uid="uid://dbeeyfnjo30ug" path="res://Art Assets/Environment/Door.tscn" id="5_j5jx8"]
 [ext_resource type="Material" uid="uid://b6sa4nxd5h0s7" path="res://Art Assets/Environment/Materials/tilewall.tres" id="5_o3va5"]
@@ -8,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://4qr7arofkogc" path="res://Art Assets/Environment/pillar_2.tscn" id="6_p51md"]
 [ext_resource type="PackedScene" uid="uid://oaisdwglo6sw" path="res://Rooms/bgm_player.tscn" id="7_p51md"]
 [ext_resource type="PackedScene" uid="uid://ck54j8jubj4cy" path="res://Rooms/Traps/kill_floor.tscn" id="8_xom2u"]
+[ext_resource type="PackedScene" uid="uid://rt5mmfegfcet" path="res://Components/PauseMenu.tscn" id="10_276wm"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_xom2u"]
 vertices = PackedVector3Array(-1.3364487, 1.9970479, -14.868002, -0.08644867, 1.9970479, -14.868002, -0.08644867, 0.9970479, -16.868002, -1.3364487, 0.9970479, -16.868002, 1.4135513, 0.7470479, -24.618002, -4.8364487, 0.7470479, -13.368002, -2.3364487, 0.7470479, -13.368002, -2.3364487, 0.7470479, -16.868002, -4.8364487, 0.7470479, -24.618002, 0.91355133, 0.7470479, -16.618002, 0.91355133, 0.7470479, -14.868002, 8.913551, 0.7470479, -14.868002, 8.913551, 0.7470479, -24.618002, -1.5864487, 2.997048, -12.368002, -1.3364487, 2.997048, -10.618002, -0.08644867, 0.9970479, -6.368002, -0.08644867, 2.997048, -10.618002, -0.08644867, 2.747048, -13.451335, -4.8364487, 2.997048, -12.368002, -4.8364487, 2.997048, -10.868002, -1.3364487, 0.9970479, -6.368002, 0.66355133, 0.7470479, 1.1319981, -2.3364487, 0.7470479, -6.368002, -2.3364487, 0.7470479, -9.868002, -4.8364487, 0.7470479, -9.868002, -4.8364487, 0.7470479, 1.1319981, 0.66355133, 0.7470479, -6.368002, 0.91355133, 0.7470479, -8.368002, 8.913551, 0.7470479, -8.368002, -4.8364487, 0.7470479, -12.118002, -4.8364487, 0.7470479, -11.118002, -0.08644867, 0.7470479, -11.118002, -0.08644867, 0.7470479, -12.118002, 8.913551, 0.7470479, 1.1319981)
@@ -27,7 +29,7 @@ adjustment_enabled = true
 adjustment_saturation = 1.5
 
 [node name="TutorialRoom5" type="Node3D"]
-script = ExtResource("1_xom2u")
+script = ExtResource("1_li8q6")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 texture_filter = 1
@@ -40,6 +42,9 @@ size_flags_stretch_ratio = 0.0
 stretch = true
 stretch_shrink = 5
 metadata/_edit_use_anchors_ = true
+
+[node name="Control" parent="SubViewportContainer" instance=ExtResource("2_li8q6")]
+layout_mode = 2
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 handle_input_locally = false
@@ -166,3 +171,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.9870214, 0)
 
 [node name="KillFloor" parent="." instance=ExtResource("8_xom2u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.956123, 6.654712, 1.3667269)
+
+[node name="PauseMenu" parent="." instance=ExtResource("10_276wm")]

@@ -7,6 +7,9 @@ func _process(delta: float) -> void:
 		show()
 
 func _on_menu_button_pressed() -> void:
+	get_tree().paused = false
+	if Dialogic.current_timeline:
+		Dialogic.end_timeline()
 	get_tree().change_scene_to_file("res://Rooms/MainMenu.tscn")
 
 
@@ -17,4 +20,7 @@ func _on_close_requested() -> void:
 	get_tree().paused = false
 
 func _on_hub_button_pressed() -> void:
+	get_tree().paused = false
+	if Dialogic.current_timeline:
+		Dialogic.end_timeline()	
 	get_tree().change_scene_to_file("res://Rooms/HubRoom.tscn")

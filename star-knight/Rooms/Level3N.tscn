@@ -1,8 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://f5td7ywlsggr"]
+[gd_scene load_steps=23 format=3 uid="uid://f5td7ywlsggr"]
 
 [ext_resource type="PackedScene" uid="uid://c76or3qn4nag5" path="res://Player/Model/Player.tscn" id="1_cp45k"]
 [ext_resource type="Script" uid="uid://ro7q8a72qh5l" path="res://Rooms/test_level.gd" id="1_n6in7"]
 [ext_resource type="Material" uid="uid://cxflf76lktjvb" path="res://Art Assets/Environment/Materials/tilefloor.tres" id="2_p7evq"]
+[ext_resource type="PackedScene" uid="uid://b5pfbt048h6f6" path="res://killzone.tscn" id="3_0cv24"]
 [ext_resource type="Material" uid="uid://dbdvic37qtow5" path="res://Art Assets/Environment/Materials/Basic.tres" id="3_8ja1w"]
 [ext_resource type="Material" uid="uid://b6sa4nxd5h0s7" path="res://Art Assets/Environment/Materials/tilewall.tres" id="4_mt5q5"]
 [ext_resource type="PackedScene" uid="uid://4qr7arofkogc" path="res://Art Assets/Environment/pillar_2.tscn" id="5_3um5j"]
@@ -17,6 +18,8 @@
 [ext_resource type="PackedScene" uid="uid://y4u4u344sjdx" path="res://Enemies/Lizkin/Lizkin.tscn" id="15_n6in7"]
 [ext_resource type="PackedScene" uid="uid://demm2645wfky3" path="res://Enemies/GrobCat/GrobCat.tscn" id="16_0cv24"]
 [ext_resource type="PackedScene" uid="uid://oaisdwglo6sw" path="res://Rooms/bgm_player.tscn" id="17_n6in7"]
+[ext_resource type="PackedScene" uid="uid://bhrfsont1q2qu" path="res://chitholder.tscn" id="19_c3igd"]
+[ext_resource type="PackedScene" uid="uid://rt5mmfegfcet" path="res://Components/PauseMenu.tscn" id="20_0c41d"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_a7lny"]
 vertices = PackedVector3Array(-4.975315, 0.9363928, -32.326923, -5.975315, 0.9363928, -32.326923, -5.975315, 0.9363928, -31.076923, -4.975315, 0.9363928, -30.826923, -8.975315, 0.9363928, -23.326923, -8.475315, 0.9363928, -23.576923, -5.725315, 0.9363928, -25.326923, -5.725315, 0.9363928, -27.826923, -10.225315, 0.9363928, -22.326923, -8.975315, 0.9363928, -22.326923, -7.225315, 0.9363928, -21.576923, -4.475315, 0.9363928, -21.576923, -4.475315, 0.9363928, -22.576923, -6.975315, 0.9363928, -23.326923, -10.225315, 0.9363928, -30.826923, -4.225315, 0.9363928, -27.826923, -4.225315, 0.9363928, -30.826923, -2.975315, 0.9363928, -22.576923, -3.475315, 0.9363928, -25.576923, 2.274685, 0.9363928, -27.826923, 2.274685, 0.9363928, -26.076923, 4.274685, 0.9363928, -25.826923, 4.274685, 0.9363928, -30.826923, -3.475315, 0.9363928, -27.826923, -2.725315, 0.9363928, -30.826923, 1.2746849, 0.9363928, -31.326923, -0.2253151, 0.9363928, -27.826923, -3.475315, 0.9363928, -26.576923, -0.2253151, 0.9363928, -26.576923, 1.2746849, 0.9363928, -32.326923, -2.725315, 0.9363928, -32.326923, 1.2746849, 0.9363928, -19.076923, 2.024685, 0.9363928, -19.326923, 2.024685, 0.9363928, -20.326923, 3.524685, 0.9363928, -24.576923, 4.274685, 0.9363928, -24.576923, 2.274685, 0.9363928, -25.326923, -1.2253151, 0.9363928, -13.076923, -1.2253151, 0.9363928, -9.576923, 1.0246849, 0.9363928, -9.826923, 2.024685, 0.9363928, -11.576923, 0.024684906, 0.9363928, -14.576923, 2.024685, 0.9363928, -17.326923, 1.2746849, 0.9363928, -17.826923, 0.024684906, 0.9363928, -15.326923, 2.524685, 0.9363928, -22.576923, 3.524685, 0.9363928, -22.576923, 2.524685, 0.9363928, -20.576923, -0.2253151, 0.9363928, -25.576923, -1.2253151, 0.9363928, -20.326923, -2.725315, 0.9363928, -20.576923, -1.2253151, 0.9363928, -15.826923, 1.0246849, 0.9363928, -9.076923, -1.4753151, 0.9363928, -6.3269234, -2.225315, 0.9363928, -6.3269234, -2.225315, 0.9363928, -3.5769234, -1.4753151, 0.9363928, -3.5769234, -1.2253151, 0.9363928, 1.6730766, -0.9753151, 0.9363928, 3.4230766, 2.524685, 0.9363928, 3.4230766, 2.524685, 0.9363928, -0.07692337, -1.4753151, 0.9363928, -1.3269234, -2.225315, 0.9363928, -1.3269234, -2.225315, 0.9363928, 1.6730766, 4.274685, 0.9363928, -0.07692337, 4.274685, 0.9363928, -6.3269234, 2.524685, 0.9363928, -6.3269234, 2.524685, 0.9363928, -8.076923)
@@ -33,9 +36,6 @@ volumetric_fog_density = 0.005
 volumetric_fog_sky_affect = 0.226
 adjustment_enabled = true
 adjustment_saturation = 1.5
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_expul"]
-size = Vector3(16.135498, 32.09723, 16.076294)
 
 [node name="Level3N" type="Node3D"]
 script = ExtResource("1_n6in7")
@@ -87,6 +87,9 @@ polygon = PackedVector2Array(-0.18987179, 0.56910825, -0.20013094, 1.6717796, 1.
 transform = Transform3D(-0.9759578, -0.7102284, 0.5981007, -0.5891069, 1.2011107, 0.33954704, -0.81672186, -0.017667793, -0.9596297, 1.6540327, -0.36726475, -1.9287982)
 operation = 2
 polygon = PackedVector2Array(-0.18987179, 0.56910825, -0.20013094, 1.6717796, 1.0540609, 1.7605994, 1.822957, 0.82366323, 1, 0)
+
+[node name="Node3D" parent="SubViewportContainer/SubViewport/NavigationRegion3D" instance=ExtResource("3_0cv24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.023605347, -9.611071, -12.170825)
 
 [node name="Floor2" type="CSGBox3D" parent="SubViewportContainer/SubViewport/NavigationRegion3D"]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.022449, 0, -26.55582)
@@ -531,3 +534,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1529949, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.1356831)
 
 [node name="BGMplayer" parent="SubViewportContainer" instance=ExtResource("17_n6in7")]
+
+[node name="Control" parent="SubViewportContainer" instance=ExtResource("19_c3igd")]
+layout_mode = 2
+
+[node name="PauseMenu" parent="." instance=ExtResource("20_0c41d")]

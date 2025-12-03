@@ -72,7 +72,7 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
 
-[sub_resource type="Image" id="Image_spstr"]
+[sub_resource type="Image" id="Image_60ava"]
 data = {
 "data": PackedByteArray(255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255),
 "format": "RGBA8",
@@ -82,7 +82,7 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_px3il"]
-image = SubResource("Image_spstr")
+image = SubResource("Image_60ava")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l3122"]
 content_margin_left = 0.0
@@ -164,15 +164,23 @@ border_width_bottom = 6
 border_color = Color(0.986173, 0.9916946, 0.11262085, 1)
 border_blend = true
 
-[node name="PauseMenu" type="Window"]
+[node name="Control" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PauseMenu" type="Window" parent="."]
 transparent_bg = true
 oversampling_override = 1.0
 initial_position = 1
 size = Vector2i(1500, 900)
+visible = false
 theme = SubResource("Theme_1tob0")
 script = ExtResource("2_60ava")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="RichTextLabel" type="RichTextLabel" parent="PauseMenu"]
 anchors_preset = -1
 anchor_right = 0.119
 anchor_bottom = 0.245
@@ -184,7 +192,7 @@ theme_override_font_sizes/normal_font_size = 200
 text = "Game Paused"
 scroll_active = false
 
-[node name="MenuButton" type="Button" parent="."]
+[node name="MenuButton" type="Button" parent="PauseMenu"]
 offset_left = 478.0
 offset_top = 217.0
 offset_right = 1008.0
@@ -198,7 +206,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_tlal7")
 theme_override_styles/hover = SubResource("StyleBoxFlat_qhukd")
 text = "Main Menu"
 
-[node name="HubButton" type="Button" parent="."]
+[node name="HubButton" type="Button" parent="PauseMenu"]
 offset_left = 476.0
 offset_top = 408.0
 offset_right = 1006.0
@@ -212,6 +220,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_tlal7")
 theme_override_styles/hover = SubResource("StyleBoxFlat_qhukd")
 text = "Return To Hub"
 
-[connection signal="close_requested" from="." to="." method="_on_close_requested"]
-[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]
-[connection signal="pressed" from="HubButton" to="." method="_on_hub_button_pressed"]
+[connection signal="close_requested" from="PauseMenu" to="PauseMenu" method="_on_close_requested"]
+[connection signal="pressed" from="PauseMenu/MenuButton" to="PauseMenu" method="_on_menu_button_pressed"]
+[connection signal="pressed" from="PauseMenu/HubButton" to="PauseMenu" method="_on_hub_button_pressed"]

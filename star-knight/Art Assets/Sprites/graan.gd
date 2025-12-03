@@ -1,7 +1,7 @@
 extends Node3D
 
 
-@export var teekomenu: Window
+@export var graanmenu: Window
 var player_in_area = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,26 +12,30 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if player_in_area == true:
 		if Input.is_action_just_pressed("interact"):
-			if Dialogic.VAR.HasTalkedTeeko1 == false:
+			if Dialogic.VAR.HasTalkedGraan1 == false:
 				Dialogic.timeline_ended.connect(_on_timeline_ended)
-				run_dialogue("TeekoConvo")
+				run_dialogue("GraanConvo")
 
-			elif Dialogic.VAR.HasTalkedTeeko1 == true:	
-				teekomenu.show()
-func _on_area_3d_body_exited(body: Node3D) -> void:
-	if body is Player:
-		InteractEmitter.emit_signal("CantInteract")
-		player_in_area = false
-
-
-func _on_area_3d_body_entered(body: Node3D) -> void:
-	if body is Player:
-		InteractEmitter.emit_signal("CanInteract")
-		player_in_area = true
+			elif Dialogic.VAR.HasTalkedGraan1 == true:	
+				graanmenu.show()
 
 func run_dialogue(dialogue_string):
 	Dialogic.start(dialogue_string)
 
 func _on_timeline_ended():
 	Dialogic.timeline_ended.disconnect(_on_timeline_ended)
-	teekomenu.show()
+	graanmenu.show()
+
+
+	
+
+
+func _on_area_3d_body_exited(body: Node3D) -> void:
+	if body is Player:
+		InteractEmitter.emit_signal("CantInteract")
+		player_in_area = false
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	if body is Player:
+		InteractEmitter.emit_signal("CanInteract")
+		player_in_area = true
